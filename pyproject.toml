@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "econiac"
+version = "0.0.2"
+description = "Thermodynamic information routing and economic gauge theory on the Pacioli manifold"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Ian R. C. Buckley", email = "ian.r.c.buckley@gmail.com" }]
+keywords = [
+    "economics",
+    "gauge-theory",
+    "thermodynamics",
+    "information-routing",
+    "agent-based-models",
+    "financial-mathematics",
+    "maslov-gibbs",
+    "pacioli-manifold",
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Office/Business :: Financial",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/roguetrainer/econiac"
+Repository = "https://github.com/roguetrainer/econiac"
+Documentation = "https://adelic-simplicial-architecture.github.io"
