@@ -1,4 +1,4 @@
-# Why does econiac use topology?
+# Why does Econiac use topology?
 
 *Topology sounds like abstract mathematics with no practical content. In fact, you have been using it for seven centuries without knowing its name.*
 

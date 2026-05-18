@@ -1,4 +1,4 @@
-# Why does econiac use differential geometry?
+# Why does Econiac use differential geometry?
 
 *Exchange rates multiply. That single fact forces you into geometry whether you want to be or not.*
 

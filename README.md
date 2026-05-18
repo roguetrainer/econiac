@@ -1,4 +1,4 @@
-# econiac
+# Econiac
 
 **Thermodynamic information routing and economic gauge theory on the Pacioli manifold.**
 
@@ -8,7 +8,7 @@
 
 ---
 
-## What is econiac?
+## What is Econiac?
 
 `econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
 
@@ -32,7 +32,7 @@ pip install econiac
 
 In 1949, the New Zealand economist Bill Phillips built [MONIAC](https://en.wikipedia.org/wiki/MONIAC): a hydraulic computer that modelled the British economy as a system of tanks, pipes, and valves, with coloured water representing money flows. Conservation was enforced physically — what flowed in had to flow out. It was a working analogue computer that correctly predicted macroeconomic dynamics.
 
-The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → econiac.
+The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → EconIAC.
 
 `econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
 
@@ -63,17 +63,17 @@ Pacioli's contribution was to recognise the mathematical structure and give it a
 
 ## FAQ
 
-**Is econiac analogue or digital?**
+**Is Econiac analogue or digital?**
 
 All three, in historical order:
 
 - **ENIAC (1945)** was *digital* — discrete voltage states, Boolean logic, stored program.
 - **MONIAC (1949)** was *analogue* — continuous water flows, physical conservation enforced by hydraulics.
-- **econiac** is *analogue emulated on a digital computer* — continuous probability flows (the Gibbs distribution) running on discrete hardware.
+- **EconIAC** is *analogue emulated on a digital computer* — continuous probability flows (the Gibbs distribution) running on discrete hardware.
 
-There is a precise sense in which econiac is also digital: in the high-β (low-temperature) limit, the Gibbs weights collapse to a hard argmax — one route takes all the flow, all others get zero. This is winner-takes-all, i.e. digital switching. At low β the weights are a soft mixture over all routes: fully analogue. The β-schedule therefore interpolates between analogue (exploration) and digital (commitment) behaviour. The SNAP phase of the MGE algorithm is literally this transition — analogue search crystallising into a discrete decision.
+There is a precise sense in which Econiac is also digital: in the high-β (low-temperature) limit, the Gibbs weights collapse to a hard argmax — one route takes all the flow, all others get zero. This is winner-takes-all, i.e. digital switching. At low β the weights are a soft mixture over all routes: fully analogue. The β-schedule therefore interpolates between analogue (exploration) and digital (commitment) behaviour. The SNAP phase of the MGE algorithm is literally this transition — analogue search crystallising into a discrete decision.
 
-So econiac is analogue at heart, digital at the boundary, and the boundary is where the answer lives.
+So Econiac is analogue at heart, digital at the boundary, and the boundary is where the answer lives.
 
 ## References
 

@@ -1,4 +1,4 @@
-# Why does econiac use thermodynamics?
+# Why does Econiac use thermodynamics?
 
 *You are an economist or quant. You have never needed a partition function. Why should you start now?*
 

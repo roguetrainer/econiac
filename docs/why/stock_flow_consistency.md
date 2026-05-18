@@ -1,4 +1,4 @@
-# Why does econiac use stock-flow consistency?
+# Why does Econiac use stock-flow consistency?
 
 *Every pound that exists was created somewhere and is owed to someone. Models that forget this are wrong in ways that only show up in crises.*
 

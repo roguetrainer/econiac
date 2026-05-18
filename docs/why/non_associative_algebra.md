@@ -1,4 +1,4 @@
-# Why does econiac use non-associative algebra?
+# Why does Econiac use non-associative algebra?
 
 *Policy interventions don't commute. Raise rates then regulate banks is not the same as regulate banks then raise rates. Standard causal models assume otherwise.*
 
@@ -38,7 +38,7 @@ Standard models handle this by assuming away the non-associativity — either ex
 
 The consequence: policy interaction effects are systematically underestimated. Stress tests that treat each risk factor as independent miss the amplification that occurs when factors interact through a shared constraint. Models that estimate fiscal multipliers from normal-times data misapply them at the zero lower bound.
 
-## The mathematics econiac uses
+## The mathematics Econiac uses
 
 econiac models policy interventions using **magmas** — algebraic structures with a binary operation that is not required to be associative. The economy's response to a sequence of interventions is a path in a magma: the result depends on both the order and the bracketing.
 

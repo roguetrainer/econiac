@@ -1,4 +1,4 @@
-# Why does econiac use abstract mathematics?
+# Why does Econiac use abstract mathematics?
 
 econiac is built on concepts borrowed from physics and pure mathematics that most economists and quants will not have encountered before. This is not gratuitous abstraction — each tool solves a specific problem that the standard toolkit cannot.
 

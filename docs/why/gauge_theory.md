@@ -1,4 +1,4 @@
-# Why does econiac use gauge theory?
+# Why does Econiac use gauge theory?
 
 *The choice of currency should not change the economics. The mathematical name for this obvious requirement is gauge invariance — and most models violate it.*
 
