@@ -2,7 +2,7 @@
 
 **Thermodynamic information routing and economic gauge theory on the Pacioli manifold.**
 
-**Econ**omic **I**ntegrator **A**nd **C**omputer — named after [MONIAC](https://en.wikipedia.org/wiki/MONIAC) (1949), Bill Phillips's hydraulic computer that modelled the economy as a conserved flow system using tanks, pipes, and valves. `econiac` does the same with differential geometry, the Maslov-Gibbs partition function, and JAX.
+**Econ**omic **I**ntegrator **A**nd **C**omputer — named after [MONIAC](https://en.wikipedia.org/wiki/MONIAC) (1949), Bill Phillips's hydraulic computer that modelled the economy as a conserved flow system using tanks, pipes, and valves. `Econiac` does the same with differential geometry, the Maslov-Gibbs partition function, and JAX.
 
 > *"The economy is a flow network. Conservation laws are not optional."*
 
@@ -32,7 +32,7 @@ pip install econiac
 
 In 1949, the New Zealand economist Bill Phillips built [MONIAC](https://en.wikipedia.org/wiki/MONIAC): a hydraulic computer that modelled the British economy as a system of tanks, pipes, and valves, with coloured water representing money flows. Conservation was enforced physically — what flowed in had to flow out. It was a working analogue computer that correctly predicted macroeconomic dynamics.
 
-The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → econiac.
+The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `Econiac` continues that chain: ENIAC → MONIAC → econiac.
 
 `Econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `Econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
 
