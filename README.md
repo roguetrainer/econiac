@@ -34,7 +34,7 @@ In 1949, the New Zealand economist Bill Phillips built [MONIAC](https://en.wikip
 
 The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → econiac.
 
-`Econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
+`Econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `Econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
 
 **What does it compute?** All of the following are special cases of the same underlying computation — the free energy of a flow network at inverse temperature β:
 
@@ -46,7 +46,7 @@ The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipe
 | Optima & equilibria | The high-β (low-temperature) limit of the Gibbs distribution |
 | Calibration weights | The β-schedule trajectory from analogue exploration to discrete commitment |
 
-`econiac` is MONIAC for the 21st century: the same conservation laws, the same flow network, but implemented with differential geometry (the Pacioli manifold), thermodynamic routing (the Maslov-Gibbs partition function), and automatic differentiation (JAX).
+`Econiac` is MONIAC for the 21st century: the same conservation laws, the same flow network, but implemented with differential geometry (the Pacioli manifold), thermodynamic routing (the Maslov-Gibbs partition function), and automatic differentiation (JAX).
 
 ## The Pacioli manifold
 
