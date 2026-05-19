@@ -10,7 +10,7 @@
 
 ## What is Econiac?
 
-`econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
+`Econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
 
 - **Thermodynamic Information Routing (TIR)** — the Gibbs distribution as a universal routing primitive across economics, game theory, neuroscience, and computation ([Paper 294](https://doi.org/10.5281/zenodo.20237288))
 - **Economic Gauge Theory (EGT)** — stock-flow consistency as a discrete gauge theory on the Pacioli manifold ([Paper 300](https://doi.org/10.5281/zenodo.20259495))
