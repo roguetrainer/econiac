@@ -13,6 +13,7 @@ from econiac.pcl.combinators import (
     repeat,
     typecheck,
     typecheck_strict,
+    conservation_loss,
     compile,
     depth,
     leaves,

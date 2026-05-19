@@ -25,6 +25,21 @@ from econiac.core.geometry import (
     geometry_type_of,
 )
 
+from econiac.core.manifold import (
+    BalanceSheet,
+    GodleyTable,
+    PacioliManifold,
+    HomologyGroups,
+    CurvedBalanceSheet,
+    holonomy,
+    add_residual_sector,
+    add_float_sector,
+    residual_magnitude,
+    RESIDUAL_SECTOR,
+    FLOAT_SECTOR,
+    three_sector_sfc,
+)
+
 from econiac.core.ensemble import (
     partition_function,
     log_partition,

@@ -398,6 +398,60 @@ def compile(comp: Computation) -> Computation:
 
 
 # ---------------------------------------------------------------------------
+# Mechanism 3: conservation_loss — soft enforcement for calibration
+# ---------------------------------------------------------------------------
+
+def conservation_loss(
+    comp:          Computation,
+    bs:            BalanceSheet,
+    sigma:         float = 1.0,
+) -> jax.Array:
+    """
+    Differentiable conservation penalty for gradient-based calibration.
+
+    Replaces the binary typecheck() with a smooth loss:
+
+        L = ||col_sums(comp(bs))||² / sigma²
+
+    Interpretation:
+    - sigma: measurement noise scale (same units as positions).
+      Set to the known standard error of your data source:
+        national accounts: ~10bn (ONS/BEA headline uncertainty)
+        bank balance sheets: ~1mn (audited, tight)
+        survey data: ~50bn (large sampling error)
+    - At sigma → 0: infinite penalty for any conservation violation;
+      equivalent to hard typecheck().
+    - At finite sigma: Bayesian likelihood under Gaussian measurement
+      noise — conservation is a prior, not a constraint.
+
+    The loss is fully differentiable via JAX: gradients flow through
+    `comp` (if it contains differentiable parameters such as β in
+    choose() or fold()) and through `bs.positions`.
+
+    Usage in calibration:
+        def total_loss(params, balance_sheet, observed):
+            model   = build_model(params)
+            pred    = model(balance_sheet)
+            fit     = mse(pred.positions, observed)
+            penalty = conservation_loss(model, balance_sheet, sigma=10.0)
+            return fit + penalty
+
+        grad_fn = jax.grad(total_loss)
+
+    Args:
+        comp:  a PCL Computation
+        bs:    the input BalanceSheet
+        sigma: noise scale; larger = softer conservation enforcement
+
+    Returns:
+        scalar JAX array — the conservation penalty (≥ 0)
+    """
+    result   = comp(bs)
+    col_sums = result.positions.sum(axis=0)
+    return jnp.sum(col_sums ** 2) / (sigma ** 2)
+
+
+# ---------------------------------------------------------------------------
 # Tree inspection utilities
 # ---------------------------------------------------------------------------
 

@@ -307,6 +307,214 @@ class PacioliManifold:
 
 
 # ---------------------------------------------------------------------------
+# Mechanism 2: CurvedBalanceSheet — non-flat Pacioli manifold
+# ---------------------------------------------------------------------------
+
+@dataclass
+class CurvedBalanceSheet:
+    """
+    A balance sheet on a curved Pacioli manifold.
+
+    Extends BalanceSheet with a curvature field F (field strength tensor)
+    representing the failure of flatness:
+
+        ∂²(bs) = F(bs)    instead of 0
+
+    F is a skew-symmetric (n_instruments,) vector of curvature values —
+    one per instrument column. When F=0 everywhere, this reduces to a
+    flat BalanceSheet and the standard PCL type system applies.
+
+    Physical interpretation:
+    - F=0: no arbitrage; the manifold is flat.
+    - F≠0: genuine arbitrage or risk premium at this point; the manifold
+      has non-zero field strength. The magnitude ||F|| is the arbitrage
+      profit per unit of capital deployed on a round trip.
+
+    Relation to gauge theory:
+        F = dA + A∧A
+    where A is the connection (exchange-rate gauge field). Non-zero F
+    means parallel transport around a closed loop returns a different
+    value — the holonomy is non-trivial.
+
+    Args:
+        positions:   shape (n_sectors, n_instruments)
+        sectors:     list of sector names
+        instruments: list of instrument names
+        curvature:   shape (n_instruments,) — field strength per instrument;
+                     zero recovers flat BalanceSheet behaviour
+    """
+    positions:   jax.Array
+    sectors:     list[str]
+    instruments: list[str]
+    curvature:   jax.Array      # shape (n_instruments,); zero = flat
+
+    def __post_init__(self):
+        n_s = len(self.sectors)
+        n_i = len(self.instruments)
+        if self.positions.shape != (n_s, n_i):
+            raise ValueError(
+                f"positions shape {self.positions.shape} != ({n_s}, {n_i})"
+            )
+        if self.curvature.shape != (n_i,):
+            raise ValueError(
+                f"curvature shape {self.curvature.shape} != ({n_i},)"
+            )
+
+    def column_sums(self) -> jax.Array:
+        """Net position per instrument. Equals curvature F when non-flat."""
+        return self.positions.sum(axis=0)
+
+    def is_consistent(self, atol: float = 1e-6) -> bool:
+        """True iff column sums equal the curvature field (generalised ∂²=0)."""
+        return bool(jnp.allclose(self.column_sums(), self.curvature, atol=atol))
+
+    def is_flat(self, atol: float = 1e-6) -> bool:
+        """True iff the curvature field is zero (standard PCL flatness)."""
+        return bool(jnp.allclose(self.curvature, jnp.zeros_like(self.curvature), atol=atol))
+
+    def net_worth(self) -> jax.Array:
+        """Net financial worth of each sector (row sums)."""
+        return self.positions.sum(axis=1)
+
+    def to_flat(self) -> 'BalanceSheet':
+        """
+        Project to a flat BalanceSheet by zeroing the curvature.
+
+        The projection adjusts the last sector's positions so that column
+        sums are exactly zero. Use when you need PCL combinators (which
+        require flat inputs) but want to work near a curved manifold.
+        """
+        adjustment = self.column_sums()  # = F
+        new_positions = self.positions.at[-1].add(-adjustment)
+        return BalanceSheet(
+            positions=new_positions,
+            sectors=self.sectors,
+            instruments=self.instruments,
+        )
+
+    def __repr__(self) -> str:
+        flat = "flat" if self.is_flat() else f"curved ||F||={float(jnp.linalg.norm(self.curvature)):.4g}"
+        return (
+            f"CurvedBalanceSheet({len(self.sectors)} sectors × "
+            f"{len(self.instruments)} instruments, {flat})"
+        )
+
+
+def holonomy(
+    computation: 'Computation',
+    curved_bs: CurvedBalanceSheet,
+) -> jax.Array:
+    """
+    Compute the holonomy of a computation on a curved balance sheet.
+
+    Holonomy measures path-dependence: the residual after applying
+    `computation` and returning to the start. On a flat manifold,
+    holonomy is zero. On a curved manifold, it equals the integrated
+    field strength around the loop — the arbitrage profit.
+
+    Args:
+        computation: a PCL Computation (BalanceSheet → BalanceSheet)
+        curved_bs:   the base point on the curved manifold
+
+    Returns:
+        shape (n_instruments,) — holonomy per instrument;
+        zero means no arbitrage; non-zero magnitude = arbitrage profit
+    """
+    from econiac.pcl.combinators import Computation  # avoid circular import
+    flat_in  = curved_bs.to_flat()
+    flat_out = computation(flat_in)
+    # Holonomy = column sums of result - column sums of input (both should be 0 on flat)
+    # On curved manifold: measures how much the curvature F is exposed by this path
+    return flat_out.column_sums() - flat_in.column_sums() + curved_bs.curvature
+
+
+# ---------------------------------------------------------------------------
+# Mechanism 1: Residual sector utilities
+# ---------------------------------------------------------------------------
+
+RESIDUAL_SECTOR = "_residual"
+FLOAT_SECTOR    = "_float"
+
+
+def add_residual_sector(bs: BalanceSheet) -> BalanceSheet:
+    """
+    Extend a BalanceSheet with a `_residual` sector for discrepancy accounting.
+
+    The residual sector absorbs any imbalance in the existing positions,
+    making the extended balance sheet exactly flat (∂²=0). Its initial
+    positions are set to -column_sums(bs) so that the total column sums
+    are zero.
+
+    Usage:
+        bs_raw = ...  # national accounts data (may not balance exactly)
+        bs     = add_residual_sector(bs_raw)
+        assert bs.is_consistent()  # guaranteed
+
+    The residual sector's net position is observable: large values indicate
+    either data quality issues or model misspecification.
+
+    Args:
+        bs: the original (potentially inconsistent) balance sheet
+
+    Returns:
+        a new BalanceSheet with one extra sector ('_residual') that
+        exactly absorbs any imbalance
+    """
+    imbalance    = bs.column_sums()                     # shape (n_instruments,)
+    residual_row = (-imbalance).reshape(1, bs.n_instruments)
+    new_positions = jnp.concatenate([bs.positions, residual_row], axis=0)
+    return BalanceSheet(
+        positions=new_positions,
+        sectors=bs.sectors + [RESIDUAL_SECTOR],
+        instruments=bs.instruments,
+    )
+
+
+def add_float_sector(bs: BalanceSheet) -> BalanceSheet:
+    """
+    Extend a BalanceSheet with a `_float` sector for in-transit payments.
+
+    The float sector acts as a temporary holding account for payments that
+    have been sent but not yet received. Its initial balance is zero.
+
+    Typical usage:
+        # Payment sent (sender's books updated immediately):
+        send    = flow("payer", "_float", "deposits", amount)
+        # Payment received (receiver's books updated at settlement):
+        receive = flow("_float", "payee",  "deposits", amount)
+        # sequence(send, receive) has zero net float — the float clears.
+
+    Args:
+        bs: the original balance sheet
+
+    Returns:
+        a new BalanceSheet with one extra sector ('_float') initialised to zero
+    """
+    float_row    = jnp.zeros((1, bs.n_instruments))
+    new_positions = jnp.concatenate([bs.positions, float_row], axis=0)
+    return BalanceSheet(
+        positions=new_positions,
+        sectors=bs.sectors + [FLOAT_SECTOR],
+        instruments=bs.instruments,
+    )
+
+
+def residual_magnitude(bs: BalanceSheet) -> float:
+    """
+    Return the L2 norm of the `_residual` sector's positions.
+
+    Zero means perfect conservation; large values indicate data discrepancy
+    or model misspecification. Use as a diagnostic or calibration loss term.
+
+    Returns 0.0 if the balance sheet has no `_residual` sector.
+    """
+    if RESIDUAL_SECTOR not in bs.sectors:
+        return 0.0
+    idx = bs.sectors.index(RESIDUAL_SECTOR)
+    return float(jnp.linalg.norm(bs.positions[idx]))
+
+
+# ---------------------------------------------------------------------------
 # Convenience constructors for common economic structures
 # ---------------------------------------------------------------------------
 
