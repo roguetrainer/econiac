@@ -1,8 +1,8 @@
-# Econiac
+# EconIAC
 
 **Thermodynamic information routing and economic gauge theory on the Pacioli manifold.**
 
-**Econ**omic **I**ntegrator **A**nd **C**omputer — named after [MONIAC](https://en.wikipedia.org/wiki/MONIAC) (1949), Bill Phillips's hydraulic computer that modelled the economy as a conserved flow system using tanks, pipes, and valves. `econiac` does the same with differential geometry, the Maslov-Gibbs partition function, and JAX.
+**Econ**omic **I**ntegrator **A**nd **C**omputer — named after [MONIAC](https://en.wikipedia.org/wiki/MONIAC) (1949), Bill Phillips's hydraulic computer that modelled the economy as a conserved flow system using tanks, pipes, and valves. `Econiac` does the same with differential geometry, the Maslov-Gibbs partition function, and JAX.
 
 > *"The economy is a flow network. Conservation laws are not optional."*
 
@@ -10,7 +10,7 @@
 
 ## What is Econiac?
 
-`econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
+`Econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
 
 - **Thermodynamic Information Routing (TIR)** — the Gibbs distribution as a universal routing primitive across economics, game theory, neuroscience, and computation ([Paper 294](https://doi.org/10.5281/zenodo.20237288))
 - **Economic Gauge Theory (EGT)** — stock-flow consistency as a discrete gauge theory on the Pacioli manifold ([Paper 300](https://doi.org/10.5281/zenodo.20259495))
@@ -32,9 +32,9 @@ pip install econiac
 
 In 1949, the New Zealand economist Bill Phillips built [MONIAC](https://en.wikipedia.org/wiki/MONIAC): a hydraulic computer that modelled the British economy as a system of tanks, pipes, and valves, with coloured water representing money flows. Conservation was enforced physically — what flowed in had to flow out. It was a working analogue computer that correctly predicted macroeconomic dynamics.
 
-The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → EconIAC.
+The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `Econiac` continues that chain: ENIAC → MONIAC → Econiac.
 
-`econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
+`Econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `Econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
 
 **What does it compute?** All of the following are special cases of the same underlying computation — the free energy of a flow network at inverse temperature β:
 
@@ -46,7 +46,7 @@ The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipe
 | Optima & equilibria | The high-β (low-temperature) limit of the Gibbs distribution |
 | Calibration weights | The β-schedule trajectory from analogue exploration to discrete commitment |
 
-`econiac` is MONIAC for the 21st century: the same conservation laws, the same flow network, but implemented with differential geometry (the Pacioli manifold), thermodynamic routing (the Maslov-Gibbs partition function), and automatic differentiation (JAX).
+`Econiac` is MONIAC for the 21st century: the same conservation laws, the same flow network, but implemented with differential geometry (the Pacioli manifold), thermodynamic routing (the Maslov-Gibbs partition function), and automatic differentiation (JAX).
 
 ## The Pacioli manifold
 
@@ -63,17 +63,17 @@ Pacioli's contribution was to recognise the mathematical structure and give it a
 
 ## FAQ
 
-**Is Econiac analogue or digital?**
+**Is econiac analogue or digital?**
 
 All three, in historical order:
 
 - **ENIAC (1945)** was *digital* — discrete voltage states, Boolean logic, stored program.
 - **MONIAC (1949)** was *analogue* — continuous water flows, physical conservation enforced by hydraulics.
-- **EconIAC** is *analogue emulated on a digital computer* — continuous probability flows (the Gibbs distribution) running on discrete hardware.
+- **econiac** is *analogue emulated on a digital computer* — continuous probability flows (the Gibbs distribution) running on discrete hardware.
 
-There is a precise sense in which Econiac is also digital: in the high-β (low-temperature) limit, the Gibbs weights collapse to a hard argmax — one route takes all the flow, all others get zero. This is winner-takes-all, i.e. digital switching. At low β the weights are a soft mixture over all routes: fully analogue. The β-schedule therefore interpolates between analogue (exploration) and digital (commitment) behaviour. The SNAP phase of the MGE algorithm is literally this transition — analogue search crystallising into a discrete decision.
+There is a precise sense in which econiac is also digital: in the high-β (low-temperature) limit, the Gibbs weights collapse to a hard argmax — one route takes all the flow, all others get zero. This is winner-takes-all, i.e. digital switching. At low β the weights are a soft mixture over all routes: fully analogue. The β-schedule therefore interpolates between analogue (exploration) and digital (commitment) behaviour. The SNAP phase of the MGE algorithm is literally this transition — analogue search crystallising into a discrete decision.
 
-So Econiac is analogue at heart, digital at the boundary, and the boundary is where the answer lives.
+So econiac is analogue at heart, digital at the boundary, and the boundary is where the answer lives.
 
 ## References
 
