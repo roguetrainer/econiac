@@ -25,5 +25,5 @@ See: https://doi.org/10.5281/zenodo.20237288 (Thermodynamic Information Routing)
      https://doi.org/10.5281/zenodo.20262070 (Pacioli Combinator Library)
 """
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = "Ian R. C. Buckley"

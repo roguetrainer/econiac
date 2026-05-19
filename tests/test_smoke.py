@@ -3,7 +3,7 @@
 import econiac
 
 def test_version():
-    assert econiac.__version__ == "0.0.2"
+    assert econiac.__version__ == "0.0.3"
 
 def test_imports():
     from econiac.core import ensemble, manifold, connections, geometry
