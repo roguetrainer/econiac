@@ -29,6 +29,9 @@ theme:
 
 plugins:
   - search
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
   - mkdocstrings:
       handlers:
         python:
@@ -67,6 +70,7 @@ nav:
 
   - Tutorials:
     - tutorials/index.md
+    - Keen predator-prey: tutorials/keen_predator_prey.ipynb
 
   - API Reference:
     - Core:

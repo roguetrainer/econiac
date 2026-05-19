@@ -40,8 +40,13 @@ Repository = "https://github.com/roguetrainer/econiac"
 Documentation = "https://roguetrainer.github.io/econiac/"
 
 [project.optional-dependencies]
+tutorials = [
+    "matplotlib>=3.8",
+    "jupyter>=1.0",
+]
 docs = [
     "mkdocs-material>=9.5",
     "mkdocstrings[python]>=0.25",
     "pymdown-extensions>=10.7",
+    "mkdocs-jupyter>=0.24",
 ]
