@@ -8,7 +8,7 @@
 
 ---
 
-## What is econiac?
+## What is Econiac?
 
 `econiac` is the Python implementation of the **Adelic Simplicial Architecture (ASA)** economic and financial frameworks:
 
@@ -34,7 +34,7 @@ In 1949, the New Zealand economist Bill Phillips built [MONIAC](https://en.wikip
 
 The name MONIAC was itself a deliberate portmanteau of [ENIAC](https://en.wikipedia.org/wiki/ENIAC) — the 1945 electronic general-purpose computer — and "money". Phillips coined it to signal that economic computation deserved the same ambition as the cutting-edge computing of his day. `econiac` continues that chain: ENIAC → MONIAC → econiac.
 
-`econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
+`Econiac` also backronyms cleanly: **Econ**omic **I**ntegrator **A**nd **C**omputer — echoing ENIAC's own expansion (*Electronic Numerical Integrator And Computer*), with "Integrator" shared verbatim. The word is doubly apt: `econiac` literally integrates ODEs (Keen debt dynamics, pysd/Stella/Vensim models) and integrates in the measure-theoretic sense (partition functions Z(β), path integrals over the Pacioli manifold).
 
 **What does it compute?** All of the following are special cases of the same underlying computation — the free energy of a flow network at inverse temperature β:
 
