@@ -1,4 +1,4 @@
-# econiac
+# Econiac
 
 **Thermodynamic information routing and economic gauge theory on the Pacioli manifold.**
 
