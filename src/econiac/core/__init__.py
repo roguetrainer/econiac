@@ -15,6 +15,16 @@ from econiac.core.connections import (
     discount_connection,
 )
 
+from econiac.core.geometry import (
+    GeometryType,
+    AbelianGeometry,
+    FanoGeometry,
+    FANO_LINES,
+    G2Geometry,
+    CatalanGeometry,
+    geometry_type_of,
+)
+
 from econiac.core.ensemble import (
     partition_function,
     log_partition,
