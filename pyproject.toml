@@ -37,4 +37,11 @@ dependencies = []
 [project.urls]
 Homepage = "https://github.com/roguetrainer/econiac"
 Repository = "https://github.com/roguetrainer/econiac"
-Documentation = "https://adelic-simplicial-architecture.github.io"
+Documentation = "https://roguetrainer.github.io/econiac/"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+    "pymdown-extensions>=10.7",
+]

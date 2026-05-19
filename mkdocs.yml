@@ -1,0 +1,79 @@
+site_name: EconIAC
+site_description: Thermodynamic information routing and economic gauge theory on the Pacioli manifold
+site_author: Ian R. C. Buckley
+site_url: https://roguetrainer.github.io/econiac/
+repo_url: https://github.com/roguetrainer/econiac
+repo_name: roguetrainer/econiac
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            members_order: source
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - attr_list
+  - tables
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+
+  - Why EconIAC?:
+    - Overview: why/README.md
+    - Thermodynamics: why/thermodynamics.md
+    - Topology: why/topology.md
+    - Differential geometry: why/geometry.md
+    - Stock-flow consistency: why/stock_flow_consistency.md
+    - Gauge theory: why/gauge_theory.md
+    - Non-associative algebra: why/non_associative_algebra.md
+    - Combinator library: why/combinators.md
+    - Relaxing flatness: why/flatness.md
+
+  - Tutorials:
+    - tutorials/index.md
+
+  - API Reference:
+    - Core:
+      - Manifold: api/core/manifold.md
+      - Ensemble: api/core/ensemble.md
+    - Routing:
+      - TIR: api/routing/tir.md
+      - Attribution: api/routing/attribution.md
+    - PCL:
+      - Combinators: api/pcl/combinators.md
