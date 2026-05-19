@@ -71,6 +71,7 @@ nav:
   - Tutorials:
     - tutorials/index.md
     - Keen predator-prey: tutorials/keen_predator_prey.ipynb
+    - GEMMES (Keen + climate): tutorials/gemmes.ipynb
 
   - API Reference:
     - Core:
