@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "moniac",
+    "title": "MONIAC: The Hydraulic Economy, Differentiable",
+    "description": "Replicates Phillips's 1949 hydraulic computer in EconIAC. Shows PCL conservation, Gibbs slot-cam relaxation, jax.grad fiscal multiplier, and the accelerator bifurcation early-warning signal χ(β).",
+    "notebook": "tutorials/moniac.ipynb",
+    "script": null,
+    "domain": ["macroeconomics"],
+    "tags": ["differentiable", "sfc", "gibbs", "jax", "tir", "bifurcation"],
+    "difficulty": "beginner",
+    "papers": ["289", "291", "294", "315"]
+  },
+  {
+    "slug": "keen-predator-prey",
+    "title": "Keen Predator-Prey",
+    "description": "Debt-deflation dynamics as a predator-prey ODE. Introduces BalanceSheet, PCL choose, TIR routing, and thermal Shapley attribution.",
+    "notebook": "tutorials/keen_predator_prey.ipynb",
+    "script": "examples/keen_predator_prey.py",
+    "domain": ["macroeconomics"],
+    "tags": ["ode", "debt", "sfc", "tir", "shapley"],
+    "difficulty": "beginner",
+    "papers": ["289", "293", "294"]
+  },
+  {
+    "slug": "gemmes",
+    "title": "GEMMES: Keen + Climate",
+    "description": "Keen macro model extended with climate damage curvature, stranded assets, and a 4-player carbon-tax Shapley attribution.",
+    "notebook": "tutorials/gemmes.ipynb",
+    "script": "examples/gemmes.py",
+    "domain": ["macroeconomics", "climate"],
+    "tags": ["climate", "ode", "sfc", "shapley", "carbon-tax"],
+    "difficulty": "intermediate",
+    "papers": ["289", "293", "294", "300", "311"]
+  },
+  {
+    "slug": "gl-pc",
+    "title": "GL Model PC: Portfolio Choice",
+    "description": "Godley-Lavoie portfolio-choice model with Gibbs-weighted asset allocation. Calibrates β* from Flow of Funds data.",
+    "notebook": "tutorials/gl_pc.ipynb",
+    "script": "examples/gl_pc.py",
+    "domain": ["macroeconomics", "finance"],
+    "tags": ["sfc", "portfolio", "gibbs", "calibration"],
+    "difficulty": "intermediate",
+    "papers": ["289", "291", "294"]
+  },
+  {
+    "slug": "lowgrow",
+    "title": "LowGrow SSE: Green Transition",
+    "description": "Low-growth steady-state economy with TIR investment routing, carbon lock-in paradox, and green-transition phase diagram.",
+    "notebook": "tutorials/lowgrow.ipynb",
+    "script": "examples/lowgrow.py",
+    "domain": ["macroeconomics", "climate"],
+    "tags": ["climate", "sfc", "tir", "carbon-tax", "phase-diagram"],
+    "difficulty": "intermediate",
+    "papers": ["289", "291", "300", "311"]
+  },
+  {
+    "slug": "supply-chain-rst",
+    "title": "Supply Chain RST",
+    "description": "Differentiable reverse stress test on a copper supply chain. Demonstrates SupplyCapacity (AND/product type) vs FinancialRisk (OR/sum type) and Curry-Howard duality.",
+    "notebook": "tutorials/supply_chain.ipynb",
+    "script": "examples/supply_chain.py",
+    "domain": ["supply-chain", "risk"],
+    "tags": ["differentiable", "rst", "jax", "tropical", "pcl"],
+    "difficulty": "advanced",
+    "papers": ["293", "294", "314"]
+  },
+  {
+    "slug": "climate-yield",
+    "title": "Climate Hazard Yield Surface",
+    "description": "Computes the 2-D climate investment yield surface Φ(t_inv, t_pay) and the doomsday clock isocurve. Translates to per-household dollar cost.",
+    "notebook": null,
+    "script": "examples/climate_yield.py",
+    "domain": ["climate", "risk"],
+    "tags": ["climate", "yield-surface", "geometry", "policy"],
+    "difficulty": "intermediate",
+    "papers": ["311", "312"]
+  },
+  {
+    "slug": "triangular-arbitrage",
+    "title": "Triangular Arbitrage",
+    "description": "FX triangular arbitrage as holonomy on the Pacioli manifold. Connection curvature detects arbitrage opportunities in currency triples.",
+    "notebook": null,
+    "script": "examples/triangular_arbitrage.py",
+    "domain": ["finance"],
+    "tags": ["fx", "gauge-theory", "holonomy", "curvature"],
+    "difficulty": "advanced",
+    "papers": ["291", "295"]
+  }
+]

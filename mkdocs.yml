@@ -56,6 +56,8 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Examples: examples.md
+  - About: about.md
 
   - Why EconIAC?:
     - Overview: why/README.md
@@ -70,9 +72,12 @@ nav:
 
   - Tutorials:
     - tutorials/index.md
+    - MONIAC — the hydraulic economy, differentiable: tutorials/moniac.ipynb
     - Keen predator-prey: tutorials/keen_predator_prey.ipynb
     - GEMMES (Keen + climate): tutorials/gemmes.ipynb
     - GL Model PC (portfolio choice): tutorials/gl_pc.ipynb
+    - LowGrow SSE (green transition): tutorials/lowgrow.ipynb
+    - Supply chain RST (differentiable ADTs): tutorials/supply_chain.ipynb
 
   - API Reference:
     - Core:
