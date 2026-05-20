@@ -1,5 +1,16 @@
 [
   {
+    "slug": "moniac",
+    "title": "MONIAC: The Hydraulic Economy, Differentiable",
+    "description": "Replicates Phillips's 1949 hydraulic computer in EconIAC. Shows PCL conservation, Gibbs slot-cam relaxation, jax.grad fiscal multiplier, and the accelerator bifurcation early-warning signal χ(β).",
+    "notebook": "tutorials/moniac.ipynb",
+    "script": null,
+    "domain": ["macroeconomics"],
+    "tags": ["differentiable", "sfc", "gibbs", "jax", "tir", "bifurcation"],
+    "difficulty": "beginner",
+    "papers": ["289", "291", "294", "315"]
+  },
+  {
     "slug": "keen-predator-prey",
     "title": "Keen Predator-Prey",
     "description": "Debt-deflation dynamics as a predator-prey ODE. Introduces BalanceSheet, PCL choose, TIR routing, and thermal Shapley attribution.",
@@ -64,6 +75,17 @@
     "tags": ["climate", "yield-surface", "geometry", "policy"],
     "difficulty": "intermediate",
     "papers": ["311", "312"]
+  },
+  {
+    "slug": "cross-currency-swap",
+    "title": "Cross-Currency Swap: Pricing with Gauge Theory",
+    "description": "Prices a USD/EUR 3-year cross-currency swap. CIP basis = connection holonomy. Exact Greeks and cross-gamma Hessian via jax.grad. 3-currency triangular consistency via curvature().",
+    "notebook": "tutorials/cross_currency_swap.ipynb",
+    "script": null,
+    "domain": ["finance"],
+    "tags": ["differentiable", "gauge-theory", "fx", "jax", "holonomy", "curvature"],
+    "difficulty": "advanced",
+    "papers": ["295", "296", "299"]
   },
   {
     "slug": "triangular-arbitrage",

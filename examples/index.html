@@ -890,6 +890,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tutorials/moniac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MONIAC: The Hydraulic Economy, Differentiable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/keen_predator_prey/" class="md-nav__link">
         
   
@@ -1010,6 +1038,34 @@
     
   
     Tutorial: Supply Chain Reverse Stress Testing via Differentiable ADTs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/cross_currency_swap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Currency Swaps as Holonomy: Pricing with Gauge Theory
   
 
     
@@ -1565,6 +1621,15 @@ Each example links to a runnable notebook and a standalone Python script. Filter
 (function() {
   var examples = [
     {
+      "slug": "moniac",
+      "title": "MONIAC: The Hydraulic Economy, Differentiable",
+      "description": "Replicates Phillips\u2019s 1949 hydraulic computer in EconIAC. PCL conservation, Gibbs slot-cam, jax.grad fiscal multiplier, accelerator bifurcation \u03c7(\u03b2) early-warning.",
+      "notebook": "tutorials/moniac.ipynb",
+      "domain": ["macroeconomics"],
+      "tags": ["differentiable", "sfc", "gibbs", "jax", "tir", "bifurcation"],
+      "difficulty": "beginner"
+    },
+    {
       "slug": "keen-predator-prey",
       "title": "Keen Predator-Prey",
       "description": "Debt-deflation dynamics as a predator-prey ODE. Introduces BalanceSheet, PCL choose, TIR routing, and thermal Shapley attribution.",
@@ -1617,6 +1682,15 @@ Each example links to a runnable notebook and a standalone Python script. Filter
       "domain": ["climate", "risk"],
       "tags": ["climate", "yield-surface", "geometry", "policy"],
       "difficulty": "intermediate"
+    },
+    {
+      "slug": "cross-currency-swap",
+      "title": "Cross-Currency Swap: Pricing with Gauge Theory",
+      "description": "Prices a USD/EUR 3-year cross-currency swap. CIP basis = connection holonomy. Exact Greeks and cross-gamma Hessian via jax.grad. 3-currency triangular consistency via curvature().",
+      "notebook": "tutorials/cross_currency_swap.ipynb",
+      "domain": ["finance"],
+      "tags": ["differentiable", "gauge-theory", "fx", "jax", "holonomy", "curvature"],
+      "difficulty": "advanced"
     },
     {
       "slug": "triangular-arbitrage",
