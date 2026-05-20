@@ -97,5 +97,16 @@
     "tags": ["fx", "gauge-theory", "holonomy", "curvature"],
     "difficulty": "advanced",
     "papers": ["291", "295"]
+  },
+  {
+    "slug": "fraud-detection",
+    "title": "Fraud Detection via Topology",
+    "description": "Double-entry bookkeeping as a gauge theory. Fraud = non-zero curvature in the ledger graph. Wilson loop holonomy detects Wirecard/Enron-style conservation violations in one call.",
+    "notebook": "tutorials/fraud_detection.ipynb",
+    "script": "examples/fraud_detection.py",
+    "domain": ["accounting"],
+    "tags": ["gauge-theory", "pcl", "jax", "differentiable"],
+    "difficulty": "intermediate",
+    "papers": ["291", "295", "300"]
   }
 ]
