@@ -1,5 +1,16 @@
 [
   {
+    "slug": "budget-simplex-becker",
+    "title": "The Budget Simplex and the Demand Law: Becker meets β",
+    "description": "Becker (1962) showed random agents produce downward-sloping demand via budget simplex geometry. EGT shows this is the β→0 limit of the Gibbs ensemble. Sweeps β from random to rational; calibrates β* from choice variance; identifies Smith's transfer index as log Z_β.",
+    "notebook": "tutorials/budget_simplex_becker.ipynb",
+    "script": null,
+    "domain": ["macroeconomics"],
+    "tags": ["differentiable", "gibbs", "jax", "calibration"],
+    "difficulty": "intermediate",
+    "papers": ["289"]
+  },
+  {
     "slug": "moniac",
     "title": "MONIAC: The Hydraulic Economy, Differentiable",
     "description": "Replicates Phillips's 1949 hydraulic computer in EconIAC. Shows PCL conservation, Gibbs slot-cam relaxation, jax.grad fiscal multiplier, and the accelerator bifurcation early-warning signal χ(β).",
@@ -77,6 +88,17 @@
     "papers": ["311", "312"]
   },
   {
+    "slug": "cross-currency-swap",
+    "title": "Cross-Currency Swap: Pricing with Gauge Theory",
+    "description": "Prices a USD/EUR 3-year cross-currency swap. CIP basis = connection holonomy. Exact Greeks and cross-gamma Hessian via jax.grad. 3-currency triangular consistency via curvature().",
+    "notebook": "tutorials/cross_currency_swap.ipynb",
+    "script": null,
+    "domain": ["finance"],
+    "tags": ["differentiable", "gauge-theory", "fx", "jax", "holonomy", "curvature"],
+    "difficulty": "advanced",
+    "papers": ["295", "296", "299"]
+  },
+  {
     "slug": "triangular-arbitrage",
     "title": "Triangular Arbitrage",
     "description": "FX triangular arbitrage as holonomy on the Pacioli manifold. Connection curvature detects arbitrage opportunities in currency triples.",
@@ -86,5 +108,16 @@
     "tags": ["fx", "gauge-theory", "holonomy", "curvature"],
     "difficulty": "advanced",
     "papers": ["291", "295"]
+  },
+  {
+    "slug": "fraud-detection",
+    "title": "Fraud Detection via Topology",
+    "description": "Double-entry bookkeeping as a gauge theory. Fraud = non-zero curvature in the ledger graph. Wilson loop holonomy detects Wirecard/Enron-style conservation violations in one call.",
+    "notebook": "tutorials/fraud_detection.ipynb",
+    "script": "examples/fraud_detection.py",
+    "domain": ["accounting"],
+    "tags": ["gauge-theory", "pcl", "jax", "differentiable"],
+    "difficulty": "intermediate",
+    "papers": ["291", "295", "300"]
   }
 ]

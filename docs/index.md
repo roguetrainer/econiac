@@ -55,6 +55,28 @@ pip install econiac
 
 ---
 
+## What EconIAC adds over mainstream simulation frameworks
+
+Mainstream system dynamics, digital twin, and agent-based modelling frameworks
+(Stella, Vensim, AnyLogic, NetLogo) are excellent for building and communicating models.
+EconIAC is designed for what comes next: calibration, differentiation, and stress-testing.
+
+| Capability | Mainstream frameworks | EconIAC |
+| --- | --- | --- |
+| **Exact policy gradients** | Manual parameter sweeping | `jax.grad` — one backward pass |
+| **Calibration** | Manual dial-turning | Gradient descent on `calibrate_beta(data)` |
+| **Reverse stress testing** | Not supported | Differentiable optimisation over survival threshold |
+| **Conservation enforcement** | Modeller discipline | Algebraic — invalid transactions are type errors |
+| **Second-order sensitivities** | Not supported | `jax.hessian` — exact cross-gamma in one call |
+| **Tipping point early-warning** | Simulate through bifurcation | χ(β) computable before the bifurcation arrives |
+| **Differentiable ABMs** | Hard IF/THEN thresholds | Smooth Gibbs relaxations, end-to-end differentiable |
+| **GPU/TPU acceleration** | Limited or none | Native via JAX |
+
+EconIAC can import Stella/Vensim models via the `pysd` backend — use the visual
+modelling tools you already have, then bring the model into EconIAC to differentiate and calibrate it.
+
+---
+
 ## Quick start
 
 ```python

@@ -473,6 +473,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-econiac-adds-over-mainstream-simulation-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What EconIAC adds over mainstream simulation frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1008,6 +1019,34 @@
   
   
     <li class="md-nav__item">
+      <a href="tutorials/budget_simplex_becker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Budget Simplex and the Demand Law: Becker (1962) meets β
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="tutorials/keen_predator_prey/" class="md-nav__link">
         
   
@@ -1128,6 +1167,62 @@
     
   
     Tutorial: Supply Chain Reverse Stress Testing via Differentiable ADTs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/cross_currency_swap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Currency Swaps as Holonomy: Pricing with Gauge Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/fraud_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fraud Detection via Topology: Double-Entry Bookkeeping as a Gauge Theory
   
 
     
@@ -1603,6 +1698,64 @@
 
 </div>
 
+<hr />
+<h2 id="what-econiac-adds-over-mainstream-simulation-frameworks">What EconIAC adds over mainstream simulation frameworks</h2>
+<p>Mainstream system dynamics, digital twin, and agent-based modelling frameworks
+(Stella, Vensim, AnyLogic, NetLogo) are excellent for building and communicating models.
+EconIAC is designed for what comes next: calibration, differentiation, and stress-testing.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Mainstream frameworks</th>
+<th>EconIAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exact policy gradients</strong></td>
+<td>Manual parameter sweeping</td>
+<td><code>jax.grad</code> — one backward pass</td>
+</tr>
+<tr>
+<td><strong>Calibration</strong></td>
+<td>Manual dial-turning</td>
+<td>Gradient descent on <code>calibrate_beta(data)</code></td>
+</tr>
+<tr>
+<td><strong>Reverse stress testing</strong></td>
+<td>Not supported</td>
+<td>Differentiable optimisation over survival threshold</td>
+</tr>
+<tr>
+<td><strong>Conservation enforcement</strong></td>
+<td>Modeller discipline</td>
+<td>Algebraic — invalid transactions are type errors</td>
+</tr>
+<tr>
+<td><strong>Second-order sensitivities</strong></td>
+<td>Not supported</td>
+<td><code>jax.hessian</code> — exact cross-gamma in one call</td>
+</tr>
+<tr>
+<td><strong>Tipping point early-warning</strong></td>
+<td>Simulate through bifurcation</td>
+<td>χ(β) computable before the bifurcation arrives</td>
+</tr>
+<tr>
+<td><strong>Differentiable ABMs</strong></td>
+<td>Hard IF/THEN thresholds</td>
+<td>Smooth Gibbs relaxations, end-to-end differentiable</td>
+</tr>
+<tr>
+<td><strong>GPU/TPU acceleration</strong></td>
+<td>Limited or none</td>
+<td>Native via JAX</td>
+</tr>
+</tbody>
+</table>
+<p>EconIAC can import Stella/Vensim models via the <code>pysd</code> backend — use the visual
+modelling tools you already have, then bring the model into EconIAC to differentiate and calibrate it.</p>
 <hr />
 <h2 id="quick-start">Quick start</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">econiac.pcl</span><span class="w"> </span><span class="kn">import</span> <span class="n">flow</span><span class="p">,</span> <span class="n">sequence</span><span class="p">,</span> <span class="n">choose</span><span class="p">,</span> <span class="nb">compile</span><span class="p">,</span> <span class="n">typecheck</span>

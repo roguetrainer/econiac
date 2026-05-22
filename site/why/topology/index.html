@@ -680,6 +680,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#beckers-theorem-the-demand-law-is-topological-too" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Becker's theorem: the demand law is topological too
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#homology-what-the-topology-tells-you" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1013,6 +1024,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/budget_simplex_becker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Budget Simplex and the Demand Law: Becker (1962) meets β
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/keen_predator_prey/" class="md-nav__link">
         
   
@@ -1133,6 +1172,62 @@
     
   
     Tutorial: Supply Chain Reverse Stress Testing via Differentiable ADTs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/cross_currency_swap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Currency Swaps as Holonomy: Pricing with Gauge Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/fraud_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fraud Detection via Topology: Double-Entry Bookkeeping as a Gauge Theory
   
 
     
@@ -1574,6 +1669,15 @@
 <p>Standard macroeconomic models — DSGE models in particular — routinely violate stock-flow consistency. A household sector can accumulate net financial assets without a corresponding net liability appearing somewhere else. This is not a modelling choice; it is an error. The model is describing a flow network where ∂² ≠ 0 — a mathematical impossibility in the real economy.</p>
 <p>The consequences are real. Godley and Lavoie (2007) showed that standard New Keynesian models implicitly assume the government sector absorbs unlimited net liabilities with no feedback — a violation of the budget constraint that only shows up in multi-period simulations. The 2008 crisis was partly a failure of models that violated stock-flow consistency to detect the accumulating imbalances in the household and financial sectors.</p>
 <p>econiac enforces ∂²=0 by construction. It is not a constraint you add — it is the definition of the Pacioli manifold. A model that violates it is a type error, caught before runtime.</p>
+<h2 id="beckers-theorem-the-demand-law-is-topological-too">Becker's theorem: the demand law is topological too</h2>
+<p>In 1962, Gary Becker published a short paper in the <em>Journal of Political Economy</em> with a claim that most economists found unsettling: <strong>downward-sloping demand does not require rational agents</strong>. An agent who spends their income at random — no preferences, no utility maximisation, no cognition — still produces a demand curve with negative slope.</p>
+<p>The argument is geometric. The budget set is a simplex: a triangle in (q₁, q₂) space whose vertices are at (M/p₁, 0), (0, M/p₂), and (0, 0). A uniform random agent samples from this triangle. The expected quantity of good 1 is the centroid of the triangle along the q₁ axis:</p>
+<div class="arithmatex">\[\mathbb{E}[q_1] = \frac{M}{3p_1}\]</div>
+<p>Raise p₁ and the triangle shrinks along the q₁ axis. The centroid moves left. The demand curve slopes downward — with no utility function, no preferences, no rational calculation. The <strong>budget constraint is the only assumption</strong>.</p>
+<p>This is a topological statement: the demand law is an invariant of the budget simplex. It is preserved under any deformation of the flow network that preserves the budget constraint. Rationality is sufficient for the demand law but not necessary. The simplex geometry is what is necessary.</p>
+<p>EconIAC makes this precise. The Gibbs ensemble on the budget simplex has β as its temperature. At β→0, agents are pure noise and the demand law holds by Becker's geometric argument. At β→∞, agents are fully rational and the demand law holds by utility maximisation. At every β in between, the demand law holds — because it is a topological invariant, not a behavioural one.</p>
+<p>The β parameter tells you <em>how sharply</em> the demand law holds, not <em>whether</em> it holds. That sharpness is calibratable from data — from the observed cross-sectional variance of household expenditure shares. This is what the <a href="../../tutorials/budget_simplex_becker/">budget simplex tutorial</a> demonstrates.</p>
+<p>Becker's insight, in retrospect, was that he had found a topological invariant of consumer theory without having the language to say so. EconIAC provides that language.</p>
 <h2 id="homology-what-the-topology-tells-you">Homology: what the topology tells you</h2>
 <p>Once you accept that the economy is a directed graph with ∂²=0, topology gives you three diagnostic numbers for free:</p>
 <ul>

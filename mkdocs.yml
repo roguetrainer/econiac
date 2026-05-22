@@ -73,11 +73,14 @@ nav:
   - Tutorials:
     - tutorials/index.md
     - MONIAC — the hydraulic economy, differentiable: tutorials/moniac.ipynb
+    - Budget simplex and the demand law (Becker meets β): tutorials/budget_simplex_becker.ipynb
     - Keen predator-prey: tutorials/keen_predator_prey.ipynb
     - GEMMES (Keen + climate): tutorials/gemmes.ipynb
     - GL Model PC (portfolio choice): tutorials/gl_pc.ipynb
     - LowGrow SSE (green transition): tutorials/lowgrow.ipynb
     - Supply chain RST (differentiable ADTs): tutorials/supply_chain.ipynb
+    - Cross-currency swap (gauge theory): tutorials/cross_currency_swap.ipynb
+    - Fraud detection (bookkeeping as topology): tutorials/fraud_detection.ipynb
 
   - API Reference:
     - Core:

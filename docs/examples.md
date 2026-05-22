@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 # Examples
 
-Worked examples spanning macroeconomics, climate, supply chain, and financial gauge theory.
+Worked examples spanning macroeconomics, climate, supply chain, financial gauge theory, and accounting topology.
 Each example links to a runnable notebook and a standalone Python script. Filter by domain or tag.
 
 <div id="ec-filter-domain" style="margin: 1.5rem 0 0.75rem;">
@@ -12,6 +12,7 @@ Each example links to a runnable notebook and a standalone Python script. Filter
   <button class="ec-btn" data-filter="domain" data-value="finance">Finance</button>
   <button class="ec-btn" data-filter="domain" data-value="supply-chain">Supply Chain</button>
   <button class="ec-btn" data-filter="domain" data-value="risk">Risk</button>
+  <button class="ec-btn" data-filter="domain" data-value="accounting">Accounting</button>
 </div>
 
 <div id="ec-filter-tags" style="margin: 0 0 1.5rem;">
@@ -128,6 +129,15 @@ Each example links to a runnable notebook and a standalone Python script. Filter
 (function() {
   var examples = [
     {
+      "slug": "budget-simplex-becker",
+      "title": "The Budget Simplex and the Demand Law: Becker meets \u03b2",
+      "description": "Becker (1962) showed random agents produce downward-sloping demand via budget simplex geometry alone. EGT shows this is the \u03b2\u21920 limit of the Gibbs ensemble. Sweeps \u03b2 from random to rational; calibrates \u03b2* from choice variance; identifies Smith\u2019s transfer index as log Z_\u03b2.",
+      "notebook": "tutorials/budget_simplex_becker.ipynb",
+      "domain": ["macroeconomics"],
+      "tags": ["differentiable", "gibbs", "jax", "calibration"],
+      "difficulty": "intermediate"
+    },
+    {
       "slug": "moniac",
       "title": "MONIAC: The Hydraulic Economy, Differentiable",
       "description": "Replicates Phillips\u2019s 1949 hydraulic computer in EconIAC. PCL conservation, Gibbs slot-cam, jax.grad fiscal multiplier, accelerator bifurcation \u03c7(\u03b2) early-warning.",
@@ -191,6 +201,15 @@ Each example links to a runnable notebook and a standalone Python script. Filter
       "difficulty": "intermediate"
     },
     {
+      "slug": "cross-currency-swap",
+      "title": "Cross-Currency Swap: Pricing with Gauge Theory",
+      "description": "Prices a USD/EUR 3-year cross-currency swap. CIP basis = connection holonomy. Exact Greeks and cross-gamma Hessian via jax.grad. 3-currency triangular consistency via curvature().",
+      "notebook": "tutorials/cross_currency_swap.ipynb",
+      "domain": ["finance"],
+      "tags": ["differentiable", "gauge-theory", "fx", "jax", "holonomy", "curvature"],
+      "difficulty": "advanced"
+    },
+    {
       "slug": "triangular-arbitrage",
       "title": "Triangular Arbitrage",
       "description": "FX triangular arbitrage as holonomy on the Pacioli manifold. Connection curvature detects arbitrage opportunities in currency triples.",
@@ -198,6 +217,15 @@ Each example links to a runnable notebook and a standalone Python script. Filter
       "domain": ["finance"],
       "tags": ["fx", "gauge-theory", "holonomy", "curvature"],
       "difficulty": "advanced"
+    },
+    {
+      "slug": "fraud-detection",
+      "title": "Fraud Detection via Topology",
+      "description": "Double-entry bookkeeping as a gauge theory. Fraud = non-zero curvature in the ledger graph. Wilson loop holonomy detects Wirecard/Enron-style conservation violations in one call.",
+      "notebook": "tutorials/fraud_detection.ipynb",
+      "domain": ["accounting"],
+      "tags": ["gauge-theory", "pcl", "jax", "differentiable"],
+      "difficulty": "intermediate"
     }
   ];
 

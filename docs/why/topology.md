@@ -26,6 +26,24 @@ The consequences are real. Godley and Lavoie (2007) showed that standard New Key
 
 econiac enforces ∂²=0 by construction. It is not a constraint you add — it is the definition of the Pacioli manifold. A model that violates it is a type error, caught before runtime.
 
+## Becker's theorem: the demand law is topological too
+
+In 1962, Gary Becker published a short paper in the *Journal of Political Economy* with a claim that most economists found unsettling: **downward-sloping demand does not require rational agents**. An agent who spends their income at random — no preferences, no utility maximisation, no cognition — still produces a demand curve with negative slope.
+
+The argument is geometric. The budget set is a simplex: a triangle in (q₁, q₂) space whose vertices are at (M/p₁, 0), (0, M/p₂), and (0, 0). A uniform random agent samples from this triangle. The expected quantity of good 1 is the centroid of the triangle along the q₁ axis:
+
+$$\mathbb{E}[q_1] = \frac{M}{3p_1}$$
+
+Raise p₁ and the triangle shrinks along the q₁ axis. The centroid moves left. The demand curve slopes downward — with no utility function, no preferences, no rational calculation. The **budget constraint is the only assumption**.
+
+This is a topological statement: the demand law is an invariant of the budget simplex. It is preserved under any deformation of the flow network that preserves the budget constraint. Rationality is sufficient for the demand law but not necessary. The simplex geometry is what is necessary.
+
+EconIAC makes this precise. The Gibbs ensemble on the budget simplex has β as its temperature. At β→0, agents are pure noise and the demand law holds by Becker's geometric argument. At β→∞, agents are fully rational and the demand law holds by utility maximisation. At every β in between, the demand law holds — because it is a topological invariant, not a behavioural one.
+
+The β parameter tells you *how sharply* the demand law holds, not *whether* it holds. That sharpness is calibratable from data — from the observed cross-sectional variance of household expenditure shares. This is what the [budget simplex tutorial](../tutorials/budget_simplex_becker.ipynb) demonstrates.
+
+Becker's insight, in retrospect, was that he had found a topological invariant of consumer theory without having the language to say so. EconIAC provides that language.
+
 ## Homology: what the topology tells you
 
 Once you accept that the economy is a directed graph with ∂²=0, topology gives you three diagnostic numbers for free:
