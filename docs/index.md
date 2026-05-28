@@ -28,7 +28,7 @@ pip install econiac
 
 <div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
 <strong>Stock-flow consistency</strong><br>
-<span style="font-size:0.85rem; color:#555;">Double-entry accounting as a discrete gauge theory. Conservation is enforced algebraically, not by convention.</span>
+<span style="font-size:0.85rem; color:#555;">Double-entry accounting as a discrete gauge theory. The Pacioli identity (every claim has a counter-claim) is enforced algebraically — money can be created by banks, but only by simultaneously creating a liability.</span>
 </div>
 
 <div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
@@ -76,7 +76,7 @@ EconIAC is designed for what comes next: calibration, differentiation, and stres
 | **Exact policy gradients** | Manual parameter sweeping | `jax.grad` — one backward pass |
 | **Calibration** | Manual dial-turning | Gradient descent on `calibrate_beta(data)` |
 | **Reverse stress testing** | Not supported | Differentiable optimisation over survival threshold |
-| **Conservation enforcement** | Modeller discipline | Algebraic — invalid transactions are type errors |
+| **Double-entry enforcement** | Modeller discipline | Algebraic — every claim must have a counter-claim; violations are type errors |
 | **Second-order sensitivities** | Not supported | `jax.hessian` — exact cross-gamma in one call |
 | **Tipping point early-warning** | Simulate through bifurcation | χ(β) computable before the bifurcation arrives |
 | **Differentiable ABMs** | Hard IF/THEN thresholds | Smooth Gibbs relaxations, end-to-end differentiable |
