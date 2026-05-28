@@ -69,6 +69,7 @@ nav:
     - Non-associative algebra: why/non_associative_algebra.md
     - Combinator library: why/combinators.md
     - Connections and curvature: why/curvature.md
+    - What is money a claim on?: why/money.md
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
     - Topological inconsistency: why/cohomology.md

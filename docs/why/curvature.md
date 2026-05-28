@@ -180,6 +180,27 @@ model an unaccounted current as a short circuit (error), a capacitor (lag), or a
 
 ---
 
+## What the central bank's liability is a claim on
+
+Under a gold standard, the central bank's liability (banknotes) is redeemable
+in a commodity — the connection has an external anchor, the manifold is flat.
+Under fiat money, the central bank's reserve liability is redeemable in more
+of the same liability. ∂²=0 still holds — the balance sheet balances — but
+the *substance* of the liability is the continued functioning of the monetary
+network itself, a topological rather than a balance-sheet property.
+
+Different monetary regimes correspond to different gauge fixings of the unit
+of account. Switching from gold standard to fiat is a gauge transformation;
+the underlying real economic relationships are unchanged, but the reference
+point for the unit of account floats free. This is why models calibrated
+under one monetary regime give systematically different answers from models
+calibrated under another — and why EconIAC's `CurvedBalanceSheet` makes the
+gauge choice explicit rather than hiding it in a calibration constant.
+
+For a fuller treatment see [What is money a claim on?](money.md).
+
+---
+
 ## Design principle
 
 > **Make imbalances visible, not impossible.**
