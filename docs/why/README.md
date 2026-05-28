@@ -12,5 +12,7 @@ econiac is built on concepts borrowed from physics and pure mathematics that mos
 | **Non-associative algebra** | Policy interventions don't associate: (A then B) then C ≠ A then (B then C) when transmission is state-dependent. | [Why non-associative algebra?](non_associative_algebra.md) |
 | **Combinator library** | Conservation is the substrate, not the point. The Pacioli Combinator Library gives you the components — flows, switches, mixers — that determine what a financial model actually does. | [Why a combinator library?](combinators.md) |
 | **Relaxing flatness** | National accounts have discrepancies. Payments are in transit. Arbitrage exists. EconIAC handles all three without abandoning conservation. | [Why relax flatness?](flatness.md) |
+| **Sheaves** | Local information may not fit together globally. Sheaves measure that gap — in contagion networks, market signals, neural networks, and biological energy transfer. | [Why sheaves?](sheaves.md) |
+| **Sheaves for contagion** | Why the contagion library uses sheaf Laplacians, Gibbs lifts, and adjoint operators instead of just writing down the fire-sale equations directly. | [Why these abstractions for contagion?](abstractions_for_contagion.md) |
 
 Each page is written for an economist or quant — it starts from your existing problem, not from the mathematics.
