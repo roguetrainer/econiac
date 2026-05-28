@@ -73,6 +73,7 @@ nav:
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
     - Topological inconsistency: why/cohomology.md
+    - Universality across domains: why/universality.md
 
   - Tutorials:
     - tutorials/index.md
