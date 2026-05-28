@@ -54,6 +54,10 @@ import numpy as np
 from scipy import stats
 
 from econiac.core.ensemble import gibbs_weights
+from econiac.finance.contagion import (
+    pacioli_check,
+    _tatonnement_price_step,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -239,10 +243,12 @@ class DealerBalanceSheet:
         Check Pacioli identity (approximate — repo structure simplifies here).
         Total assets ≈ total repo liabilities (net of haircut) + equity.
         atol is generous because the haircut structure is an approximation.
+        Delegates to contagion.pacioli_check() — the single source of truth.
         """
         assets = self.portfolio_value(prices) + self.liquid
         liab   = self.collateral_value_net(prices, haircuts) + self.equity
-        return bool(jnp.allclose(assets, liab, atol=atol))
+        report = pacioli_check(assets, liab, atol=atol)
+        return report.consistent
 
 
 # ---------------------------------------------------------------------------
@@ -529,9 +535,11 @@ def repo_tatonnement(
         sell_vol   = jnp.sum(sell_qty, axis=0)                   # (n_collateral,) aggregate
 
         # --- Price update ---
-        depth  = jnp.array(params.market_depth)
-        p_new  = p * (1.0 - params.lambda_impact * sell_vol / depth)
-        p_new  = jnp.maximum(p_new, 1e-4)
+        p_new = _tatonnement_price_step(
+            sell_vol, p,
+            market_depth=jnp.array(params.market_depth),
+            lambda_impact=params.lambda_impact,
+        )
 
         # --- Convergence ---
         delta  = jnp.max(jnp.abs(p_new - p))
