@@ -18,8 +18,10 @@ This subpackage provides:
     smooth_loss(), smooth_loss_liquidity(), combined_loss()
 
   Primitive operators (primitives.py) — Step 3 in build order:
+    S_direct (EN solvency), L_direct (GL liquidity), wire_al_symmetry()
     L_A (fire sale), S_D (bank panic / repo run), Rehyp (rehypothecation)
-    S_direct (EN solvency — planned), L_direct (GL liquidity — planned)
+    esl_operator(), repo_esl_operator()
+    SolvencyParams, LiquidityParams, FireSaleParams, PanicParams, RehypParams
 
   Sheaf early-warning (sheaf.py) — Step 4 in build order:
     sheaf_h1_signal(), laplacian_on_graph()
@@ -73,6 +75,28 @@ from econiac.finance.contagion.operators import (
     CascadeStep,
 )
 
+# ── Step 3: primitive operators ─────────────────────────────────────────────
+from econiac.finance.contagion.primitives import (
+    # Parameter types
+    SolvencyParams,
+    LiquidityParams,
+    FireSaleParams,
+    PanicParams,
+    RehypParams,
+    # Primitive operators
+    S_direct,
+    L_direct,
+    wire_al_symmetry,
+    L_A,
+    S_D,
+    Rehyp,
+    # Pre-built ESL compositions
+    esl_operator,
+    repo_esl_operator,
+    # Shared tâtonnement primitive
+    _tatonnement_price_step,
+)
+
 # ── Step 2: Gibbs lifting ────────────────────────────────────────────────────
 from econiac.finance.contagion.gibbs import (
     # Parameter type
@@ -106,4 +130,13 @@ __all__ = [
     "gibbs_lift", "gibbs_threshold", "gibbs_rehyp", "gibbs_weight_asset",
     "beta_sweep", "BetaSweepResult",
     "smooth_loss", "smooth_loss_liquidity", "combined_loss",
+    # Primitives — parameter types
+    "SolvencyParams", "LiquidityParams", "FireSaleParams", "PanicParams", "RehypParams",
+    # Primitives — operators
+    "S_direct", "L_direct", "wire_al_symmetry",
+    "L_A", "S_D", "Rehyp",
+    # Pre-built compositions
+    "esl_operator", "repo_esl_operator",
+    # Shared utility
+    "_tatonnement_price_step",
 ]
