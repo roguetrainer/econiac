@@ -24,7 +24,13 @@ This subpackage provides:
     SolvencyParams, LiquidityParams, FireSaleParams, PanicParams, RehypParams
 
   Sheaf early-warning (sheaf.py) — Step 4 in build order:
-    sheaf_h1_signal(), laplacian_on_graph()
+    FinancialGraph, WeightedEdge
+    sheaf_laplacian(), SheafLaplacianResult
+    h1_signal(), h1_signal_normalised()
+    harmonic_decomposition(), HarmonicDecomposition
+    sheaf_h1_signal(), SheafTimeSeries, SheafPeriod
+    compare_h1_series(), IsomorphismResult
+    gravity_network()
 
   Policy gradient (policy.py) — Step 5 in build order:
     policy_gradient(), optimal_haircut(), haircut_frontier()
@@ -73,6 +79,31 @@ from econiac.finance.contagion.operators import (
     run_cascade,
     CascadeResult,
     CascadeStep,
+)
+
+# ── Step 4: sheaf early-warning ─────────────────────────────────────────────
+from econiac.finance.contagion.sheaf import (
+    # Graph types
+    WeightedEdge,
+    FinancialGraph,
+    # Laplacian
+    sheaf_laplacian,
+    SheafLaplacianResult,
+    # Scalar signals
+    h1_signal,
+    h1_signal_normalised,
+    # Harmonic decomposition
+    harmonic_decomposition,
+    HarmonicDecomposition,
+    # Time-series tracking
+    sheaf_h1_signal,
+    SheafTimeSeries,
+    SheafPeriod,
+    # Cross-model comparison
+    compare_h1_series,
+    IsomorphismResult,
+    # Convenience
+    gravity_network,
 )
 
 # ── Step 3: primitive operators ─────────────────────────────────────────────
@@ -139,4 +170,12 @@ __all__ = [
     "esl_operator", "repo_esl_operator",
     # Shared utility
     "_tatonnement_price_step",
+    # Sheaf
+    "WeightedEdge", "FinancialGraph",
+    "sheaf_laplacian", "SheafLaplacianResult",
+    "h1_signal", "h1_signal_normalised",
+    "harmonic_decomposition", "HarmonicDecomposition",
+    "sheaf_h1_signal", "SheafTimeSeries", "SheafPeriod",
+    "compare_h1_series", "IsomorphismResult",
+    "gravity_network",
 ]
