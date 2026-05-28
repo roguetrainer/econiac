@@ -34,6 +34,10 @@ import numpy as np
 from scipy import stats, optimize
 
 from econiac.core.ensemble import gibbs_weights
+from econiac.finance.contagion import (
+    pacioli_check,
+    _tatonnement_price_step,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -142,10 +146,12 @@ class BankBalanceSheet:
         Check Pacioli identity: total_assets ≈ total_liabilities + equity (∀i).
 
         This is ∂²=0 at the individual bank level (not just system-wide).
+        Delegates to contagion.pacioli_check() — the single source of truth.
         """
         assets = self.total_assets(prices)
         liab_plus_equity = self.total_liabilities() + self.equity
-        return bool(jnp.allclose(assets, liab_plus_equity, atol=atol))
+        report = pacioli_check(assets, liab_plus_equity, atol=atol)
+        return report.consistent
 
 
 # ---------------------------------------------------------------------------
@@ -353,8 +359,11 @@ def tatonnement(
 
         # --- Price update ---
         total_sells = sell_vol_banks + sell_vol_am  # (n_assets,)
-        p_new = p * (1.0 - params.lambda_impact * total_sells / params.market_depth)
-        p_new = jnp.maximum(p_new, 1e-4)  # prices can't go negative
+        p_new = _tatonnement_price_step(
+            total_sells, p,
+            market_depth=params.market_depth,
+            lambda_impact=params.lambda_impact,
+        )
 
         # --- Convergence check ---
         delta_p = jnp.max(jnp.abs(p_new - p))
