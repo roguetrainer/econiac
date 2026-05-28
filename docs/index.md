@@ -150,6 +150,8 @@ EconIAC is the software companion to the [Portfolio G](https://roguetrainer.gith
 | [295 — Currency Bundles](https://doi.org/10.5281/zenodo.20242355) | FX as connection curvature |
 | [298 — Credit Bundles](https://doi.org/10.5281/zenodo.20257596) | Survival probabilities as parallel transport |
 | [311 — The Climate Hazard Yield Surface](https://doi.org/10.5281/zenodo.20291646) | Climate investment geometry |
+| 332 — CHZ Fire Sales (Econiac) | Differentiable interbank contagion; capital paradox; policy gradient |
+| 333 — European Sovereign Repo Run | Rehypothecation collapse; LDI surcharge; sheaf H¹ early-warning |
 
 ---
 
