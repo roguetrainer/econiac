@@ -12,13 +12,13 @@
         <meta name="author" content="Ian R. C. Buckley">
       
       
-        <link rel="canonical" href="https://roguetrainer.github.io/econiac/why/geometry/">
+        <link rel="canonical" href="https://roguetrainer.github.io/econiac/why/abstractions_for_contagion/">
       
       
-        <link rel="prev" href="../topology/">
+        <link rel="prev" href="../sheaves/">
       
       
-        <link rel="next" href="../stock_flow_consistency/">
+        <link rel="next" href="../cohomology/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Differential geometry - EconIAC</title>
+        <title>Abstractions for contagion - EconIAC</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-does-econiac-use-differential-geometry" class="md-skip">
+        <a href="#why-does-econiac-use-sheaves-gibbs-lifts-and-duals-for-contagion" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differential geometry
+              Abstractions for contagion
             
           </span>
         </div>
@@ -623,37 +623,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Differential geometry
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
         
   
   
@@ -669,92 +642,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-problem-with-adding-exchange-rates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem with adding exchange rates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paths-compose-why-connections-are-unavoidable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Paths compose: why connections are unavoidable
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#curvature-is-arbitrage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Curvature is arbitrage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-differential-geometry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why "differential" geometry
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#you-already-use-geometry-implicitly" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        You already use geometry — implicitly
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-short-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The short version
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -932,10 +819,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../abstractions_for_contagion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstractions for contagion
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -951,6 +865,220 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sheaves-why-do-we-need-them-for-contagion-specifically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sheaves — why do we need them for contagion specifically?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Sheaves — why do we need them for contagion specifically?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-sheaf-adds-to-the-balance-sheet-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a sheaf adds to the balance sheet picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-leads-the-cascade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it leads the cascade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-way-isomorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three-way isomorphism
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lifts-what-is-a-gibbs-lift-and-why-do-we-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lifts — what is a Gibbs lift and why do we need it?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Lifts — what is a Gibbs lift and why do we need it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-hard-threshold-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hard-threshold problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-lift-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a lift is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-lift-enables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the lift enables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-duals-why-does-every-operator-have-an-adjoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Duals — why does every operator have an adjoint?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Duals — why does every operator have an adjoint?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-al-symmetry-puzzle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AL symmetry puzzle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-an-adjoint-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What an adjoint is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-al-symmetry-is-structural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why AL symmetry is structural
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-mathematical-tools-was-hurd-2017-exploiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. What mathematical tools was Hurd (2017) exploiting?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-do-not-need-to-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you do NOT need to know
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1739,47 +1867,264 @@
   
 
 
-<h1 id="why-does-econiac-use-differential-geometry">Why does Econiac use differential geometry?</h1>
-<p><em>Exchange rates multiply. That single fact forces you into geometry whether you want to be or not.</em></p>
+<h1 id="why-does-econiac-use-sheaves-gibbs-lifts-and-duals-for-contagion">Why does Econiac use sheaves, Gibbs lifts, and duals for contagion?</h1>
+<p><em>You are an economist or financial regulator. You have read Gorton (2012) and
+Eisenberg-Noe (2001). You want to know why the contagion library uses words like
+"sheaf Laplacian", "Gibbs lift", and "adjoint operator" instead of just writing
+down the fire-sale equations directly.</em></p>
+<p>The short answer: each piece of abstract mathematics solves a specific problem
+that the standard toolkit cannot.</p>
+<blockquote>
+<p><strong>Note on scope</strong>: Sheaves appear in several places in Econiac — contagion
+networks (this document), sheaf neural networks, and topological signal
+processing. This document focuses on the contagion use case. See
+<a href="../topology/">Why topology?</a> for the general sheaf picture and the
+connection to Pacioli ∂²=0.</p>
+</blockquote>
 <hr />
-<h2 id="the-problem-with-adding-exchange-rates">The problem with adding exchange rates</h2>
-<p>Suppose USD/EUR = 0.92 and EUR/GBP = 0.86. What is USD/GBP?</p>
-<p>You multiply: 0.92 × 0.86 = 0.79. You do not add. This seems obvious — but it has a profound consequence. Exchange rates live in a <em>multiplicative</em> world, not an additive one. The mathematical structure of a multiplicative world is a <strong>Lie group</strong>: the positive reals under multiplication, (ℝ₊, ×).</p>
-<p>Standard econometrics is built on additive models: linear regression, vector autoregressions, additive error terms. These tools apply naturally to quantities that live in additive worlds. Exchange rates, discount factors, survival probabilities, and price ratios do not. Fitting a linear model to log-prices and calling it "because of the multiplicative structure" is a workaround — it works, but it hides the geometry that governs the underlying relationships.</p>
-<p>econiac works directly in (ℝ₊, ×). The geometry is not a complication; it is the right language.</p>
-<h2 id="paths-compose-why-connections-are-unavoidable">Paths compose: why connections are unavoidable</h2>
-<p>Consider converting USD to GBP. You can go directly (USD→GBP), or via EUR (USD→EUR→GBP), or via JPY and then EUR (USD→JPY→EUR→GBP). In a perfectly efficient market, all paths give the same result. In practice they do not — and the difference is not noise. It is structure.</p>
-<p>The mathematical object that describes "how quantities transform as you move along a path" is called a <strong>connection</strong>. In econiac:</p>
+<h2 id="1-sheaves-why-do-we-need-them-for-contagion-specifically">1. Sheaves — why do we need them for contagion specifically?</h2>
+<h3 id="the-problem">The problem</h3>
+<p>When a repo market is under stress, a regulator wants to ask:</p>
+<blockquote>
+<p><strong>"Do different parts of the network agree on which dealers are solvent?"</strong></p>
+</blockquote>
+<p>If MMFs think dealer A is fine but LDI pension funds think dealer A is in trouble,
+and both are acting on that belief simultaneously — MMFs rolling their repo while
+LDI funds are withdrawing — the system is <em>inconsistent</em>. This inconsistency is
+not visible in any single balance sheet. It is a network-level phenomenon.</p>
+<p>Standard stress tests measure whether individual banks breach individual thresholds.
+They cannot detect network-level disagreement, because that disagreement lives
+<em>between</em> the nodes, not at them.</p>
+<h3 id="what-a-sheaf-adds-to-the-balance-sheet-picture">What a sheaf adds to the balance sheet picture</h3>
+<p>The <a href="../topology/">topology document</a> explains that double-entry accounting is ∂²=0
+and that the Pacioli manifold is the natural home for balance sheet dynamics.</p>
+<p>What a sheaf adds is <strong>restriction maps</strong> — linear maps that say how much the
+information at one node should agree with the information at an adjacent node,
+weighted by the bilateral exposure between them. In our contagion context:</p>
 <ul>
-<li>An <strong>exchange rate</strong> is a connection on the currency bundle.</li>
-<li>A <strong>yield curve</strong> is a connection on the time bundle (how value transforms as you move forward in time).</li>
-<li>A <strong>survival probability</strong> is a connection on the credit bundle (how value transforms as you move through the risk of default).</li>
+<li><strong>Stalk</strong> at dealer j: funding ratio fⱼ = rolled funding / total repo out</li>
+<li><strong>Restriction map</strong> on edge (lender i → dealer j): F_{i,e} = exposure_ij / assets_i</li>
+<li><strong>Consistency</strong>: lender i's view of dealer j's solvency should agree with
+  dealer j's actual funding ratio, weighted by their bilateral exposure</li>
 </ul>
-<p>These are not metaphors. The equations are identical to those used in gauge theory in physics, with money playing the role of the field and the Pacioli manifold playing the role of spacetime.</p>
-<h2 id="curvature-is-arbitrage">Curvature is arbitrage</h2>
-<p>When you travel around a closed loop — USD→EUR→GBP→USD — and arrive back with a different amount than you started with, you have found an arbitrage. The mathematical name for "the failure of parallel transport around a closed loop to return to the starting value" is <strong>curvature</strong>.</p>
-<p>In a perfectly efficient market, every connection is <strong>flat</strong> (zero curvature). No-arbitrage conditions are flatness conditions. This is not a new insight — it is the standard result of mathematical finance restated in geometric language — but the geometric language makes it computable and generalisable.</p>
-<p>econiac computes curvature automatically. Given a set of market prices (exchange rates, yield curve quotes, CDS spreads), it returns the curvature of the corresponding connection. Large curvature = large arbitrage or mispricing. The XVA adjustments that banks compute (CVA, DVA, FVA) are, in this language, curvature integrals.</p>
-<h2 id="why-differential-geometry">Why "differential" geometry</h2>
-<p>The "differential" in differential geometry means you can take derivatives. This is what connects geometry to the rest of econiac.</p>
-<p>Because connections and curvature are differentiable objects, you can:</p>
-<ul>
-<li>Compute the <strong>gradient of the curvature</strong> with respect to model parameters — this is the sensitivity (the "Greek") of an XVA adjustment.</li>
-<li>Run <strong>gradient descent</strong> to find the connection (the set of market prices) that minimises curvature — this is calibration.</li>
-<li>Integrate curvature over a surface to get a <strong>global invariant</strong> — this is the Chern class, which in financial terms measures the total arbitrage in a market sector.</li>
-</ul>
-<p>None of these computations are available in frameworks that do not make the geometry explicit.</p>
-<h2 id="you-already-use-geometry-implicitly">You already use geometry — implicitly</h2>
-<p>The Heath-Jarrow-Morton framework for interest rate modelling is, in geometric language, the statement that the yield curve connection must be flat (no-arbitrage). The Black-Scholes formula is the solution to a heat equation on a flat connection. The Heston model adds curvature (stochastic volatility) as a correction.</p>
-<p>Every time you use a no-arbitrage condition, you are asserting flatness of a connection. Every time you compute a sensitivity, you are differentiating a geometric object. econiac makes this explicit — so that the geometry works for you rather than hiding behind notation.</p>
-<h2 id="the-short-version">The short version</h2>
-<p>You need differential geometry because:</p>
+<p>The <strong>sheaf Laplacian</strong> L_F measures the total inconsistency across all edges:</p>
+<div class="highlight"><pre><span></span><code>H¹ signal = ‖L_F · s‖² / ‖s‖²
+</code></pre></div>
+<p>where s is the vector of health ratios. Zero = globally consistent. Large =
+agents disagree across the network in a way that cannot be reconciled.</p>
+<h3 id="why-it-leads-the-cascade">Why it leads the cascade</h3>
+<p>The H¹ signal rises <em>before</em> any individual threshold is breached, because:</p>
 <ol>
-<li>Exchange rates multiply — this forces the geometry of (ℝ₊, ×), not additive linear algebra.</li>
-<li>Exchange rates, yield curves, and survival probabilities are all <strong>connections</strong> on the Pacioli manifold — the same mathematical object described in different financial languages.</li>
-<li><strong>Curvature is arbitrage</strong> — no-arbitrage conditions are flatness conditions, automatically enforced and automatically differentiated in econiac.</li>
-<li>You are already using geometry implicitly in every no-arbitrage model you write. econiac makes it explicit so you can compute with it directly.</li>
+<li>Inconsistency in assessments creates funding pressure (counterparties price
+   in the risk they perceive, even before the default event)</li>
+<li>Funding pressure erodes funding ratios</li>
+<li>Threshold breach is the observable event we label "distress"</li>
 </ol>
+<p>In the CHZ fire-sale model (Paper 332, experiment x332e, 20 random seeds):
+H¹ peaks 2-3 periods before the distress count peaks.</p>
+<h3 id="the-three-way-isomorphism">The three-way isomorphism</h3>
+<p>The same sheaf Laplacian construction appears in three different models in Econiac:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Graph</th>
+<th>Section</th>
+<th>H1 signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHZ fire sales (Paper 332)</td>
+<td>Interbank exposure</td>
+<td>Capital ratio</td>
+<td>norm(L_F*g)/norm(g)</td>
+</tr>
+<tr>
+<td>Sovereign repo run (Paper 333)</td>
+<td>Dealer-lender bipartite</td>
+<td>Funding ratio</td>
+<td>norm(L_F*f)/norm(f)</td>
+</tr>
+<tr>
+<td>FMO energy transfer (Paper 325)</td>
+<td>Fano chromophore graph</td>
+<td>Energy efficiency</td>
+<td>norm(L_F*e)/norm(e)</td>
+</tr>
+</tbody>
+</table>
+<p>These are not analogies. The computation is identical on three different graphs.
+Paper 334 §6 proves the structural isomorphism.</p>
+<hr />
+<h2 id="2-lifts-what-is-a-gibbs-lift-and-why-do-we-need-it">2. Lifts — what is a Gibbs lift and why do we need it?</h2>
+<h3 id="the-hard-threshold-problem">The hard-threshold problem</h3>
+<p>Gorton and Metrick (2012) model repo runs with a hard binary rule:</p>
+<ul>
+<li>Haircut exceeds threshold → lender withdraws all funding immediately</li>
+<li>Haircut within threshold → lender rolls all funding without question</li>
+</ul>
+<p>This is economically wrong (LDI pension funds do not behave like a light switch)
+and mathematically crippling: a hard cliff is not differentiable. Without a
+derivative, you cannot compute the gradient of systemic loss with respect to the
+haircut schedule. Without that gradient, you cannot do optimal policy — you can
+only enumerate scenarios and compare them by hand.</p>
+<h3 id="what-a-lift-is">What a lift is</h3>
+<p>In mathematics, a <strong>lift</strong> takes a map that lives in a simpler world and finds
+a corresponding map in a richer world that "projects back" to the original.</p>
+<p>The classic example from topology: a path on the circle S¹ can be lifted to a
+path on the real line ℝ — the covering space — where angles become unbounded
+real numbers. The lift preserves the structure of the path but lives in a richer
+space where more tools are available.</p>
+<p>Our <strong>Gibbs lift</strong> takes the hard binary function (living in the world of
+discontinuous 0/1 maps) and lifts it into the world of smooth functions:</p>
+<div class="highlight"><pre><span></span><code>hard:    1[coverage &gt; threshold]
+lifted:  σ(β × (coverage − threshold))     [sigmoid, logistic function]
+</code></pre></div>
+<p>The lifted function has three properties:</p>
+<ul>
+<li>Equals the hard function in the limit β → ∞</li>
+<li>Is smooth and differentiable at every finite β</li>
+<li>Has a direct economic interpretation: β measures how sharply lenders react</li>
+</ul>
+<p>This is called a <strong>Gibbs lift</strong> because the sigmoid is the one-variable special
+case of the Gibbs distribution from statistical physics. High β (cold system)
+= sharp reaction; low β (hot system) = smooth, gradual response.</p>
+<p>For lenders, calibrated β values are:</p>
+<ul>
+<li>β_mmf = 500: MMF regulatory constraint — near cliff-edge</li>
+<li>β_ldi = 20: LDI pension fund — gradual VaR-triggered de-leveraging</li>
+<li>β_hf = 5: Hedge fund — continuous risk-appetite repricing</li>
+<li>β → ∞: exact Gorton hard rule</li>
+</ul>
+<h3 id="what-the-lift-enables">What the lift enables</h3>
+<p>Once operators are Gibbs-lifted, JAX autodiff gives ∂L/∂(policy parameter)
+through the entire cascade in one backward pass:</p>
+<ul>
+<li>∂L/∂h_ij: policy gradient on the bilateral haircut schedule</li>
+<li>∂L/∂β: how fragility changes with constraint sharpness</li>
+<li>The (β, h_baseline) phase diagram: where the system transitions from stable to run</li>
+</ul>
+<p>None of these exist in Gorton's hard-threshold model. The lift creates them.</p>
+<hr />
+<h2 id="3-duals-why-does-every-operator-have-an-adjoint">3. Duals — why does every operator have an adjoint?</h2>
+<h3 id="the-al-symmetry-puzzle">The AL symmetry puzzle</h3>
+<p>Hurd (2017) proved that the solvency cascade has an exact dual — the liquidity
+cascade — under the substitution A↔D, Z↔X, C↔E. He called this "AL symmetry".
+Is this a coincidence of the Eisenberg-Noe model, or a universal property?</p>
+<h3 id="what-an-adjoint-is">What an adjoint is</h3>
+<p>For any linear map f, its <strong>adjoint</strong> f† is the unique map satisfying:</p>
+<div class="highlight"><pre><span></span><code>⟨f(x), y⟩ = ⟨x, f†(y)⟩
+</code></pre></div>
+<p>If f measures "how x influences y", then f† measures "how y influences x" —
+the dual direction.</p>
+<p>The inner product ⟨·,·⟩ used here is the <strong>Pacioli inner product</strong> — the
+natural inner product on SystemState that respects ∂²=0.</p>
+<h3 id="why-al-symmetry-is-structural">Why AL symmetry is structural</h3>
+<p>Under the Pacioli inner product, S† = L and L† = S. This is not specific to
+Eisenberg-Noe — it follows from ∂²=0 alone. Any model that satisfies Pacioli's
+identity has this solvency-liquidity duality.</p>
+<p><strong>Library</strong>: <code>wire_al_symmetry(S, L)</code> in <code>primitives.py</code> enforces this
+structurally — the type system, not a proof obligation on each new model.</p>
+<hr />
+<h2 id="4-what-mathematical-tools-was-hurd-2017-exploiting">4. What mathematical tools was Hurd (2017) exploiting?</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Economic problem</th>
+<th>Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lattice theory (Knaster-Tarski)</td>
+<td>Who defaults depends on who defaults — circular. Fixed point resolves it.</td>
+<td><code>fixed_point(op, upper_bound)</code></td>
+</tr>
+<tr>
+<td>Pacioli ∂²=0</td>
+<td>Every asset is someone else's liability; models that violate this are wrong.</td>
+<td><code>pacioli_check()</code></td>
+</tr>
+<tr>
+<td>Operator composition</td>
+<td>Fire sales, funding withdrawals, price drops compound each other.</td>
+<td><code>compose(L_A, S_D)</code></td>
+</tr>
+<tr>
+<td>Adjoint functors (AL symmetry)</td>
+<td>Solvency-liquidity duality is universal for stock-flow consistent networks.</td>
+<td><code>wire_al_symmetry(S, L)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-you-do-not-need-to-know">What you do NOT need to know</h2>
+<p>These appear in the proofs but not in the code:</p>
+<ul>
+<li><strong>Natural transformations</strong>: The Gibbs lift is one; you only need <code>gibbs_lift(op, beta)</code>.</li>
+<li><strong>Spectral sequences</strong>: Not used. H¹ signal = eigenvalues of L_F (linear algebra).</li>
+<li><strong>Infinity-categories, derived categories, topos theory</strong>: Not used here.</li>
+</ul>
+<hr />
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Economic meaning</th>
+<th>Entry point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sheaf</td>
+<td>Local assessments that may disagree globally</td>
+<td><code>FinancialGraph</code>, <code>sheaf_laplacian</code></td>
+</tr>
+<tr>
+<td>H1 cohomology</td>
+<td>Measure of network-level inconsistency</td>
+<td><code>h1_signal</code>, <code>sheaf_h1_signal</code></td>
+</tr>
+<tr>
+<td>Gibbs lift</td>
+<td>Smooth differentiable threshold</td>
+<td><code>gibbs_lift(op, beta)</code></td>
+</tr>
+<tr>
+<td>Beta (inverse temperature)</td>
+<td>Sharpness of lender reaction function</td>
+<td><code>GibbsParams</code></td>
+</tr>
+<tr>
+<td>Adjoint / dual</td>
+<td>Solvency-liquidity symmetry</td>
+<td><code>wire_al_symmetry(S, L)</code></td>
+</tr>
+<tr>
+<td>Pacioli ∂²=0</td>
+<td>Double-entry accounting identity</td>
+<td><code>pacioli_check()</code></td>
+</tr>
+<tr>
+<td>Knaster-Tarski fixed point</td>
+<td>Cascade converges to max-recovery equilibrium</td>
+<td><code>fixed_point(op, upper_bound)</code></td>
+</tr>
+<tr>
+<td>Operator composition</td>
+<td>Contagion channels compound</td>
+<td><code>compose(L_A, S_D)</code></td>
+</tr>
+<tr>
+<td>Policy gradient</td>
+<td>dL/dh for optimal haircut policy</td>
+<td><code>policy_gradient()</code>, <code>ldi_surcharge</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2,110 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://roguetrainer.github.io/econiac/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/about/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/examples/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/api/core/ensemble/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/api/core/manifold/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/api/pcl/combinators/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/api/routing/attribution/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/api/routing/tir/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/budget_simplex_becker/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/cross_currency_swap/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/fraud_detection/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/gemmes/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/gl_pc/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/keen_predator_prey/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/lowgrow/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/moniac/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/tutorials/supply_chain/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/abstractions_for_contagion/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/cohomology/</loc>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/combinators/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/curvature/</loc>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/flatness/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/gauge_theory/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/geometry/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/non_associative_algebra/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/sheaves/</loc>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/stock_flow_consistency/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/thermodynamics/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/topology/</loc>
-         <lastmod>2026-05-20</lastmod>
+         <lastmod>2026-05-28</lastmod>
     </url>
 </urlset>
