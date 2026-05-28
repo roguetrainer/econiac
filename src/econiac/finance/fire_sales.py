@@ -67,7 +67,7 @@ class CHZParams:
     eta: float              = 1.0     # AM redemption sensitivity
     xi: float               = 0.5     # credit spread sensitivity to PD
     lambda_impact: float    = 0.1     # price impact per unit sell volume
-    market_depth: float     = 1.0     # normalised market depth
+    market_depth: float     = 2400.0  # total securities outstanding (calibrated to chz_baseline)
     beta_constraint: float  = 50.0   # softness of capital constraint
     n_tatonnement: int      = 20      # max inner-loop steps
     tol_tatonnement: float  = 1e-6   # price convergence tolerance
@@ -428,7 +428,12 @@ def simulate(
         SimulationResult
     """
     prices = shock_prices
-    prices_prev = prices_init
+    # prices_prev for AM redemption calc starts at shock_prices, NOT prices_init.
+    # Reason: the exogenous shock (prices_init → shock_prices) is absorbed
+    # immediately as a mark-to-market write-down on bank equity. The cascade
+    # (tâtonnement) then operates from shock_prices onward. AM redemptions should
+    # react to cascade price moves, not re-fire on the already-absorbed shock.
+    prices_prev = shock_prices
     periods = []
 
     # Update bank equity for shock (mark-to-market)
@@ -563,26 +568,68 @@ def chz_baseline(params: CHZParams | None = None, seed: int = 42) -> tuple:
     # --- Banks: three types (20 each) ---
     n_each = n_b // 3
 
-    def make_bank_block(n, bl_frac, s_frac, bb_frac, equity_frac, rng):
-        """Create a block of similar banks."""
-        total = 100.0  # total assets normalised
-        la = rng.uniform(10.0, 20.0, n)               # liquid assets
+    def make_bank_block(n, bl_frac, s_frac, bb_frac, gamma_target, gamma_reg, rng):
+        """
+        Create a block of n banks calibrated so initial capital ratio ≈ gamma_target.
+
+        gamma_target: desired initial γ_i for this bank type (8–10%)
+        gamma_reg:    regulatory floor γ_min from params — drives portfolio tilt.
+                      Higher γ_min → banks shift toward safe (rw=0) assets to satisfy
+                      the constraint with less equity. This is the homogenisation
+                      mechanism that drives the CHZ capital paradox.
+        """
+        total = 100.0
+        la = rng.uniform(10.0, 20.0, n)
         s  = rng.uniform(0.8, 1.2, n) * s_frac * total
         bl = rng.uniform(0.8, 1.2, n) * bl_frac * total
         bb = rng.uniform(0.8, 1.2, n) * bb_frac * total
-        d  = la + s + bl - bb - equity_frac * total    # deposits (residual)
-        d  = np.maximum(d, 5.0)
-        e  = np.full(n, equity_frac * total)
-        # Portfolio: spread S evenly across assets
-        portfolio = np.outer(s, np.ones(n_a)) / n_a
+        # Portfolio tilt: higher gamma_reg → more gov bonds (rw=0), fewer risky assets.
+        # At gamma_reg=7%:  equal weight across all assets (diverse portfolios).
+        # At gamma_reg=14%: 60% gov bonds, 40% split across rest.
+        # This is the key homogenisation mechanism from CHZ §2.1 LP optimisation.
+        rw = np.array([0.0, 0.5, 1.0, 1.0, 0.5][:n_a])
+        safe_bonus = np.clip((gamma_reg / 0.07 - 1.0) * 0.30, 0.0, 0.60)
+        base_w = np.ones(n_a) / n_a
+        tilt_w = base_w.copy()
+        tilt_w[0] += safe_bonus
+        tilt_w[1:] -= safe_bonus / max(n_a - 1, 1)
+        tilt_w = np.maximum(tilt_w, 0.02)
+        tilt_w /= tilt_w.sum()
+        # Bank-level idiosyncratic noise: larger at low γ_reg (diverse) → smaller at high (herding).
+        # At γ_reg=4%:  noise_scale=0.15 → genuinely diverse portfolios
+        # At γ_reg=14%: noise_scale=0.01 → near-identical portfolios (herding)
+        # This range (15x variation) captures the CHZ homogenisation mechanism.
+        noise_scale = np.maximum(0.01, 0.15 * (1.0 - safe_bonus / 0.60))
+        port_w = tilt_w[None, :] + rng.normal(0, noise_scale, (n, n_a))
+        port_w = np.maximum(port_w, 0.01)
+        port_w /= port_w.sum(axis=1, keepdims=True)
+        portfolio = s[:, None] * port_w
+        # RWA: interbank at 20% weight + securities weighted by risk_weights
+        rwa = 0.2 * bl + np.sum(portfolio * rw[None, :], axis=1)
+        # Equity calibrated to hit gamma_target (not gamma_reg — banks are just above floor)
+        e = gamma_target * rwa * rng.uniform(0.9, 1.1, n)
+        d = la + s + bl - bb - e          # deposits as residual
+        d = np.maximum(d, 5.0)
         return la, s, bl, bb, d, e, portfolio
 
-    # Type 1: Lenders (high interbank lending, low securities)
-    la1, s1, bl1, bb1, d1, e1, p1 = make_bank_block(n_each, 0.30, 0.20, 0.05, 0.10, rng)
-    # Type 2: Investors (low interbank, high securities)
-    la2, s2, bl2, bb2, d2, e2, p2 = make_bank_block(n_each, 0.05, 0.50, 0.05, 0.10, rng)
-    # Type 3: High-leverage (low equity, high borrowing)
-    la3, s3, bl3, bb3, d3, e3, p3 = make_bank_block(n_b - 2*n_each, 0.10, 0.30, 0.25, 0.07, rng)
+    gamma_reg = params.gamma_min   # regulatory floor drives portfolio tilt
+    # CHZ calibration mechanism (§2.1 LP optimisation):
+    # As gamma_min rises, banks tilt portfolios toward safe (rw=0) assets — reducing RWA.
+    # Equity rises, but more slowly than gamma_min: the portfolio shift absorbs some
+    # of the constraint tightening. This creates the homogenisation / capital-paradox.
+    #
+    # equity_scale: equity rises at half the rate of gamma_min above the 7% baseline.
+    # Below 7%: equity falls proportionally (banks are thinner, more exposed).
+    GAMMA_BASE = 0.07
+    equity_scale = max(1.0 + 0.5 * (gamma_reg / GAMMA_BASE - 1.0), 0.5)
+    gt_std = GAMMA_BASE * 1.30 * equity_scale   # lenders/investors: 30% buffer at baseline
+    gt_hl  = GAMMA_BASE * 1.10 * equity_scale   # high-leverage: 10% buffer (tightest)
+    # Type 1: Lenders
+    la1, s1, bl1, bb1, d1, e1, p1 = make_bank_block(n_each, 0.30, 0.20, 0.05, gt_std, gamma_reg, rng)
+    # Type 2: Investors
+    la2, s2, bl2, bb2, d2, e2, p2 = make_bank_block(n_each, 0.05, 0.50, 0.05, gt_std, gamma_reg, rng)
+    # Type 3: High-leverage
+    la3, s3, bl3, bb3, d3, e3, p3 = make_bank_block(n_b - 2*n_each, 0.10, 0.30, 0.25, gt_hl, gamma_reg, rng)
 
     banks = BankBalanceSheet(
         liquid_assets     = jnp.array(np.concatenate([la1, la2, la3])),
