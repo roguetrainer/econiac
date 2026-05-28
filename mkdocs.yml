@@ -71,6 +71,7 @@ nav:
     - Relaxing flatness: why/flatness.md
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
+    - Topological inconsistency: why/cohomology.md
 
   - Tutorials:
     - tutorials/index.md

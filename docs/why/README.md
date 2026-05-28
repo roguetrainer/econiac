@@ -14,5 +14,6 @@ econiac is built on concepts borrowed from physics and pure mathematics that mos
 | **Relaxing flatness** | National accounts have discrepancies. Payments are in transit. Arbitrage exists. EconIAC handles all three without abandoning conservation. | [Why relax flatness?](flatness.md) |
 | **Sheaves** | Local information may not fit together globally. Sheaves measure that gap — in contagion networks, market signals, neural networks, and biological energy transfer. | [Why sheaves?](sheaves.md) |
 | **Sheaves for contagion** | Why the contagion library uses sheaf Laplacians, Gibbs lifts, and adjoint operators instead of just writing down the fire-sale equations directly. | [Why these abstractions for contagion?](abstractions_for_contagion.md) |
+| **Topological inconsistency** | Residuals measure deviation from a model. H¹ cohomology measures whether local data is mutually reconcilable at all — without any model. These are different, and only the second predicts cascades. | [Why measure inconsistency topologically?](cohomology.md) |
 
 Each page is written for an economist or quant — it starts from your existing problem, not from the mathematics.
