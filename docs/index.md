@@ -51,6 +51,16 @@ pip install econiac
 <span style="font-size:0.85rem; color:#555;">A typed DSL for financial flows. <code>flow</code>, <code>sequence</code>, <code>choose</code>, <code>fold</code> — every combinator preserves conservation by construction.</span>
 </div>
 
+<div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
+<strong>Systemic risk &amp; contagion</strong><br>
+<span style="font-size:0.85rem; color:#555;">Fire sales, repo runs, rehypothecation collapse — modelled as a typed operator algebra. Policy gradient <code>∂loss/∂haircut</code> in one pass. Covers interbank, sovereign repo, and deposit-run channels.</span>
+</div>
+
+<div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
+<strong>Sheaf early-warning</strong><br>
+<span style="font-size:0.85rem; color:#555;">Topological H¹ cohomology detects network-level inconsistency 2–3 periods before any individual threshold is breached. Works on financial networks, biological networks, and market microstructure signals.</span>
+</div>
+
 </div>
 
 ---
@@ -152,3 +162,4 @@ EconIAC is the software companion to the [Portfolio G](https://roguetrainer.gith
 | `econiac.pcl` | Pacioli Combinator Library — conservation-enforcing DSL |
 | `econiac.economics` | Macro models: Keen, GEMMES, LowGrow, supply-chain RST, climate yield |
 | `econiac.finance` | FX, yield curves, credit spreads, XVA — gauge-theoretic finance |
+| `econiac.finance.contagion` | Systemic risk operator algebra — fire sales, repo runs, sheaf H¹ early-warning, policy gradient |
