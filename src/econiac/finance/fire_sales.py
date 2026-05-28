@@ -606,24 +606,42 @@ def chz_baseline(params: CHZParams | None = None, seed: int = 42) -> tuple:
         portfolio = s[:, None] * port_w
         # RWA: interbank at 20% weight + securities weighted by risk_weights
         rwa = 0.2 * bl + np.sum(portfolio * rw[None, :], axis=1)
-        # Equity calibrated to hit gamma_target (not gamma_reg — banks are just above floor)
-        e = gamma_target * rwa * rng.uniform(0.9, 1.1, n)
+        # Equity calibrated to hit gamma_target with wide bank-specific noise.
+        # Wide variance (σ_log = 0.35) ensures a realistic distribution of capital ratios:
+        # some banks well above floor (will survive shock), some near floor (will fail).
+        # This is critical for the right arm of the U-shape: at high γ_min, well-capitalised
+        # banks (gt × lognormal_tail) survive because they have > 2× the required capital.
+        # CHZ Table 2 reports γ_i with ~4% standard deviation around an 11% mean.
+        e = gamma_target * rwa * rng.lognormal(0.0, 0.35, n)
+        e = np.maximum(e, 1e-3)   # equity can't be negative
         d = la + s + bl - bb - e          # deposits as residual
         d = np.maximum(d, 5.0)
         return la, s, bl, bb, d, e, portfolio
 
     gamma_reg = params.gamma_min   # regulatory floor drives portfolio tilt
     # CHZ calibration mechanism (§2.1 LP optimisation):
-    # As gamma_min rises, banks tilt portfolios toward safe (rw=0) assets — reducing RWA.
-    # Equity rises, but more slowly than gamma_min: the portfolio shift absorbs some
-    # of the constraint tightening. This creates the homogenisation / capital-paradox.
     #
-    # equity_scale: equity rises at half the rate of gamma_min above the 7% baseline.
-    # Below 7%: equity falls proportionally (banks are thinner, more exposed).
-    GAMMA_BASE = 0.07
-    equity_scale = max(1.0 + 0.5 * (gamma_reg / GAMMA_BASE - 1.0), 0.5)
-    gt_std = GAMMA_BASE * 1.30 * equity_scale   # lenders/investors: 30% buffer at baseline
-    gt_hl  = GAMMA_BASE * 1.10 * equity_scale   # high-leverage: 10% buffer (tightest)
+    # Target gamma_target = gamma_min × buffer (buffer=1.30/1.10 for std/HL banks).
+    # Banks are in equilibrium just above the regulatory floor: as γ_min rises, banks
+    # hold proportionally more equity and tilt portfolios toward safe (rw=0) assets.
+    #
+    # The CHZ U-shape emerges from two competing effects:
+    #   1. (Left arm, low γ_min) Few banks breach on impact; but portfolios are diverse
+    #      → fire-sale price impact is diffuse → cascade is modest
+    #   2. (Peak, mid γ_min) Moderate initial breach + maximum portfolio homogenisation
+    #      → each bank's sell order amplifies the same asset prices → cascade explodes
+    #   3. (Right arm, high γ_min) Banks hold more equity (gt scales up) AND safer
+    #      portfolios → shock barely dents capital ratios → cascade is self-limiting
+    #
+    # Key calibration:
+    #   γ_min=4%:  gt_std=5.2% → post-shock γ≈3.5% → ~40/60 breach immediately
+    #   γ_min=7%:  gt_std=9.1% → post-shock γ≈7.2% → ~23/60 breach (baseline CHZ)
+    #   γ_min=9%:  gt_std=11.7% → post-shock γ≈9.8% → ~16/60 breach
+    #   γ_min=14%: gt_std=18.2% → post-shock γ≈16.1% → ~7/60 breach
+    # Peak cascade occurs around γ_min=5-7% where homogenisation is near-maximal
+    # and a substantial fraction of banks breach the floor on impact.
+    gt_std = gamma_reg * 1.30   # lenders/investors: 30% buffer above floor
+    gt_hl  = gamma_reg * 1.10   # high-leverage: 10% buffer (tightest)
     # Type 1: Lenders
     la1, s1, bl1, bb1, d1, e1, p1 = make_bank_block(n_each, 0.30, 0.20, 0.05, gt_std, gamma_reg, rng)
     # Type 2: Investors
