@@ -1,0 +1,109 @@
+"""
+econiac.finance.contagion
+=========================
+Operator algebra for financial contagion and systemic risk models.
+
+This subpackage provides:
+
+  Operator algebra (operators.py):
+    SystemState, SolvencyState, LiquidityState, PriceState
+    Operator, compose(), delay(), fixed_point()
+    pacioli_check(), pacioli_check_bilateral()
+    run_cascade(), CascadeResult, CascadeStep
+
+  Gibbs lifting (gibbs.py):
+    GibbsParams
+    gibbs_lift(), gibbs_threshold(), gibbs_rehyp()
+    beta_sweep(), BetaSweepResult
+    smooth_loss(), smooth_loss_liquidity(), combined_loss()
+
+  Primitive operators (primitives.py) — Step 3 in build order:
+    L_A (fire sale), S_D (bank panic / repo run), Rehyp (rehypothecation)
+    S_direct (EN solvency — planned), L_direct (GL liquidity — planned)
+
+  Sheaf early-warning (sheaf.py) — Step 4 in build order:
+    sheaf_h1_signal(), laplacian_on_graph()
+
+  Policy gradient (policy.py) — Step 5 in build order:
+    policy_gradient(), optimal_haircut(), haircut_frontier()
+
+Application papers import from here:
+
+    from econiac.finance.contagion import (
+        SystemState, Operator, compose, fixed_point,
+        GibbsParams, gibbs_lift, beta_sweep,
+        smooth_loss, combined_loss, run_cascade,
+    )
+
+Build order (from CONTAGION_ROADMAP.md):
+    Step 1: operators.py  ✅
+    Step 2: gibbs.py      ✅
+    Step 3: primitives.py (pending)
+    Step 4: sheaf.py      (pending)
+    Step 5: policy.py     (pending)
+    Step 6: refactor fire_sales.py   (pending)
+    Step 7: refactor repo_market.py  (pending)
+
+References:
+    Buckley (2026) Paper 334: Systemic Risk Operator Algebra. doi:TBD
+    CONTAGION_ROADMAP.md (papers/334_contagion_framework/)
+"""
+
+# ── Step 1: operator algebra ────────────────────────────────────────────────
+from econiac.finance.contagion.operators import (
+    # State types
+    SolvencyState,
+    LiquidityState,
+    PriceState,
+    SystemState,
+    # Operator type and core combinators
+    Operator,
+    compose,
+    delay,
+    # Fixed-point iteration
+    fixed_point,
+    FixedPointResult,
+    # Pacioli consistency
+    pacioli_check,
+    pacioli_check_bilateral,
+    PacioliReport,
+    # Cascade simulation
+    run_cascade,
+    CascadeResult,
+    CascadeStep,
+)
+
+# ── Step 2: Gibbs lifting ────────────────────────────────────────────────────
+from econiac.finance.contagion.gibbs import (
+    # Parameter type
+    GibbsParams,
+    # Core Gibbs primitives
+    gibbs_lift,
+    gibbs_threshold,
+    gibbs_rehyp,
+    gibbs_weight_asset,
+    # Phase diagram
+    beta_sweep,
+    BetaSweepResult,
+    # Smooth loss functionals
+    smooth_loss,
+    smooth_loss_liquidity,
+    combined_loss,
+)
+
+__all__ = [
+    # State types
+    "SolvencyState", "LiquidityState", "PriceState", "SystemState",
+    # Operator algebra
+    "Operator", "compose", "delay",
+    "fixed_point", "FixedPointResult",
+    # Pacioli
+    "pacioli_check", "pacioli_check_bilateral", "PacioliReport",
+    # Cascade
+    "run_cascade", "CascadeResult", "CascadeStep",
+    # Gibbs
+    "GibbsParams",
+    "gibbs_lift", "gibbs_threshold", "gibbs_rehyp", "gibbs_weight_asset",
+    "beta_sweep", "BetaSweepResult",
+    "smooth_loss", "smooth_loss_liquidity", "combined_loss",
+]
