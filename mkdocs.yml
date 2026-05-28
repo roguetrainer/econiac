@@ -68,7 +68,7 @@ nav:
     - Gauge theory: why/gauge_theory.md
     - Non-associative algebra: why/non_associative_algebra.md
     - Combinator library: why/combinators.md
-    - Relaxing flatness: why/flatness.md
+    - Connections and curvature: why/curvature.md
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
     - Topological inconsistency: why/cohomology.md
