@@ -69,6 +69,8 @@ nav:
     - Non-associative algebra: why/non_associative_algebra.md
     - Combinator library: why/combinators.md
     - Relaxing flatness: why/flatness.md
+    - Sheaves: why/sheaves.md
+    - Abstractions for contagion: why/abstractions_for_contagion.md
 
   - Tutorials:
     - tutorials/index.md
