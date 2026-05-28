@@ -33,7 +33,11 @@ This subpackage provides:
     gravity_network()
 
   Policy gradient (policy.py) — Step 5 in build order:
-    policy_gradient(), optimal_haircut(), haircut_frontier()
+    cascade_loss(), endpoint_loss()
+    policy_gradient(), PolicyGradientResult, policy_report()
+    optimal_haircut_frontier(), HaircutFrontierResult
+    ldi_surcharge(), LDISurcharge
+    beta_sensitivity(), BetaSensitivityResult
 
 Application papers import from here:
 
@@ -79,6 +83,26 @@ from econiac.finance.contagion.operators import (
     run_cascade,
     CascadeResult,
     CascadeStep,
+)
+
+# ── Step 5: policy gradient ─────────────────────────────────────────────────
+from econiac.finance.contagion.policy import (
+    # Loss functionals
+    cascade_loss,
+    endpoint_loss,
+    # Policy gradient
+    policy_gradient,
+    PolicyGradientResult,
+    policy_report,
+    # Optimal haircut frontier
+    optimal_haircut_frontier,
+    HaircutFrontierResult,
+    # LDI surcharge
+    ldi_surcharge,
+    LDISurcharge,
+    # Beta sensitivity
+    beta_sensitivity,
+    BetaSensitivityResult,
 )
 
 # ── Step 4: sheaf early-warning ─────────────────────────────────────────────
@@ -170,6 +194,12 @@ __all__ = [
     "esl_operator", "repo_esl_operator",
     # Shared utility
     "_tatonnement_price_step",
+    # Policy
+    "cascade_loss", "endpoint_loss",
+    "policy_gradient", "PolicyGradientResult", "policy_report",
+    "optimal_haircut_frontier", "HaircutFrontierResult",
+    "ldi_surcharge", "LDISurcharge",
+    "beta_sensitivity", "BetaSensitivityResult",
     # Sheaf
     "WeightedEdge", "FinancialGraph",
     "sheaf_laplacian", "SheafLaplacianResult",
