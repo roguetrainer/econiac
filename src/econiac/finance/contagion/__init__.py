@@ -116,6 +116,7 @@ from econiac.finance.contagion.sheaf import (
     # Scalar signals
     h1_signal,
     h1_signal_normalised,
+    h1_obstruction_signal,
     # Harmonic decomposition
     harmonic_decomposition,
     HarmonicDecomposition,
@@ -203,7 +204,7 @@ __all__ = [
     # Sheaf
     "WeightedEdge", "FinancialGraph",
     "sheaf_laplacian", "SheafLaplacianResult",
-    "h1_signal", "h1_signal_normalised",
+    "h1_signal", "h1_signal_normalised", "h1_obstruction_signal",
     "harmonic_decomposition", "HarmonicDecomposition",
     "sheaf_h1_signal", "SheafTimeSeries", "SheafPeriod",
     "compare_h1_series", "IsomorphismResult",

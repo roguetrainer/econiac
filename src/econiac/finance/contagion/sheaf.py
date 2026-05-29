@@ -268,10 +268,12 @@ def h1_signal(
             maximal curvature — i.e., agents strongly disagree on relative
             solvency/funding across bilateral exposures.
 
-    This signal is large *before* any individual threshold is breached,
-    because it measures systemic inconsistency (disagreement in the network)
-    rather than individual failure. This is why it leads the cascade by 2-3
-    periods in the CHZ model (x332e) and the repo model (x333e).
+    WARNING (2026-05-29): this Rayleigh-quotient form does NOT lead the cascade
+    and barely fires for near-flat health-ratio sections — it is dominated by
+    the harmonic (constant) component. Empirically (x332e_h1_diagnostic.py) its
+    mean lead is +0.2 periods at magnitude ~1e-4. Use h1_obstruction_signal()
+    instead, which leads by ~1 period and fires at O(1). Retained only for
+    backward compatibility / comparison; do NOT use as the early-warning signal.
 
     Args:
         L_F:     sheaf Laplacian from sheaf_laplacian()
@@ -285,6 +287,56 @@ def h1_signal(
     num = float(np.dot(Ls, Ls))
     den = float(np.dot(s, s)) + 1e-10
     return num / den
+
+
+def h1_obstruction_signal(
+    L_F:      np.ndarray,   # (n_nodes, n_nodes) sheaf Laplacian
+    section:  np.ndarray,   # (n_nodes,) health-ratio section
+    zero_tol: float = 1e-6,
+) -> float:
+    """
+    Cohomological obstruction signal: ‖s − P_ker s‖ / ‖s‖,
+    where P_ker is the orthogonal projector onto ker(L_F) (the harmonic =
+    globally-consistent sections). This is the fraction of the section that
+    CANNOT be reconciled to a consistent global valuation — the genuine H¹
+    obstruction.
+
+    Why this and not the Rayleigh quotient ‖L_F s‖²/‖s‖²
+    ----------------------------------------------------
+    The Rayleigh quotient (the previous ``h1_signal``) is dominated by the
+    near-CONSTANT component of the section. For health-ratio data (capital
+    ratios, funding ratios) the section is nearly flat across agents, and a
+    constant vector is harmonic (in ker L_F), so the Rayleigh quotient is tiny
+    (~1e-4 in the CHZ model) and tracks the VARIANCE of s, not its cohomological
+    inconsistency. Empirically (x332e_h1_diagnostic.py, 15 seeds) the Rayleigh
+    signal does NOT lead the cascade (mean lead +0.2 periods) and barely fires,
+    whereas this obstruction signal leads by ~1 period (max 2) and fires at
+    O(1). It is the correct early-warning observable.
+
+    Interpretation
+    --------------
+    0    : s lies entirely in ker(L_F) — globally consistent (no obstruction).
+    →1   : s is almost entirely obstructed — agents hold mutually irreconcilable
+           bilateral valuations around cycles in the network.
+
+    Args:
+        L_F:      sheaf Laplacian from sheaf_laplacian()
+        section:  (n_nodes,) health ratios
+        zero_tol: eigenvalue threshold defining the harmonic (kernel) subspace
+
+    Returns:
+        scalar in [0, 1]
+    """
+    s = np.array(section, dtype=float)
+    eigs, vecs = np.linalg.eigh(L_F)             # ascending
+    harm = eigs < zero_tol
+    if np.any(harm):
+        Vh = vecs[:, harm]                        # (n, k) kernel basis
+        s_harm = Vh @ (Vh.T @ s)                  # projection onto ker(L_F)
+    else:
+        s_harm = np.zeros_like(s)
+    obstruction = s - s_harm
+    return float(np.linalg.norm(obstruction) / (np.linalg.norm(s) + 1e-12))
 
 
 def h1_signal_normalised(
