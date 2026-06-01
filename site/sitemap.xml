@@ -93,15 +93,15 @@
          <lastmod>2026-05-28</lastmod>
     </url>
     <url>
-         <loc>https://roguetrainer.github.io/econiac/why/flatness/</loc>
-         <lastmod>2026-05-28</lastmod>
-    </url>
-    <url>
          <loc>https://roguetrainer.github.io/econiac/why/gauge_theory/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/geometry/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/money/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
     <url>
@@ -122,6 +122,10 @@
     </url>
     <url>
          <loc>https://roguetrainer.github.io/econiac/why/topology/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://roguetrainer.github.io/econiac/why/universality/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
 </urlset>
