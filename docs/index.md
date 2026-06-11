@@ -5,7 +5,8 @@
 
 EconIAC is a Python library for building differentiable macroeconomic and financial models grounded in gauge theory, thermodynamics, and double-entry bookkeeping. Named after [MONIAC](https://en.wikipedia.org/wiki/MONIAC) (1949), Bill Phillips's hydraulic computer — EconIAC is MONIAC for the 21st century. [Learn more →](about.md)
 
-<div style="display:flex; gap:0.75rem; margin: 1.5rem 0;">
+<div style="display:flex; gap:0.75rem; margin: 1.5rem 0; flex-wrap:wrap;">
+  <a href="for/overview/" style="display:inline-block; padding:0.5rem 1.2rem; background:#c62828; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">For Practitioners →</a>
   <a href="examples/" style="display:inline-block; padding:0.5rem 1.2rem; background:#3f51b5; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">Examples</a>
   <a href="tutorials/" style="display:inline-block; padding:0.5rem 1.2rem; background:#fff; color:#3f51b5; border:1.5px solid #3f51b5; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">Tutorials</a>
   <a href="https://github.com/roguetrainer/econiac" target="_blank" style="display:inline-block; padding:0.5rem 1.2rem; background:#24292e; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">★ Star on GitHub</a>
@@ -57,8 +58,8 @@ pip install econiac
 </div>
 
 <div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
-<strong>Sheaf early-warning</strong><br>
-<span style="font-size:0.85rem; color:#555;">Topological H¹ cohomology detects network-level inconsistency 2–3 periods before any individual threshold is breached. Works on financial networks, biological networks, and market microstructure signals.</span>
+<strong>Cohomological risk classification</strong><br>
+<span style="font-size:0.85rem; color:#555;"><strong>Bilateral risk</strong> (H⁰) is hedgeable with swaps. <strong>Triangular risk</strong> (H¹) — convexity, basis, XVA correlation — requires options; no bilateral hedge covers it. <strong>Systemic risk</strong> (H²) — wrong-way risk, cascade amplification — requires CCPs or central banks. EconIAC computes all three and detects when H² becomes non-trivial before any individual institution fails.</span>
 </div>
 
 </div>
@@ -139,19 +140,55 @@ See [Why EconIAC?](why/README.md) for motivation from economic first principles.
 
 ## Papers
 
-EconIAC is the software companion to the [Portfolio G](https://roguetrainer.github.io/adelic-simplicial-architecture/portfolios/portfolio-g/) papers of the Adelic Simplicial Architecture (ASA). Key papers:
+EconIAC is the software companion to the [Portfolio G](https://roguetrainer.github.io/adelic-simplicial-architecture/portfolios/portfolio-g/) papers of the Adelic Simplicial Architecture (ASA). Full bibliography at the [ASA site](https://roguetrainer.github.io/adelic-simplicial-architecture/).
 
-| Paper | What it grounds |
+### Foundations
+
+| Paper | What it establishes |
 | --- | --- |
-| [289 — The Temperature of Rationality](https://doi.org/10.5281/zenodo.20234841) | Gibbs ensemble as economic foundation |
-| [291 — The Topology of Conservation](https://doi.org/10.5281/zenodo.20234853) | Double-entry as discrete gauge theory |
-| [293 — Thermal Attribution](https://doi.org/10.5281/zenodo.20236870) | Differentiable Shapley values |
-| [294 — Thermodynamic Information Routing](https://doi.org/10.5281/zenodo.20237288) | TIR unified framework |
-| [295 — Currency Bundles](https://doi.org/10.5281/zenodo.20242355) | FX as connection curvature |
+| [289 — The Temperature of Rationality](https://doi.org/10.5281/zenodo.20234841) | Maslov–Gibbs ensemble as economic foundation; rationality as temperature |
+| [291 — The Topology of Conservation](https://doi.org/10.5281/zenodo.20234853) | Double-entry accounting as discrete gauge theory; the Pacioli manifold |
+| [293 — Thermal Attribution](https://doi.org/10.5281/zenodo.20236870) | Differentiable Shapley values via the Gibbs ensemble |
+| [294 — Thermodynamic Information Routing](https://doi.org/10.5281/zenodo.20237288) | TIR unified framework across economics, computation, knowledge retrieval |
+| [313 — Thermal Economics](https://doi.org/10.5281/zenodo.20318505) | Implicit differentiation through fixed points as unifying schema |
+| [315 — Differentiable Nash](https://doi.org/10.5281/zenodo.20318527) | QRE as implicit differentiation; coalition stability; climate policy |
+| [316 — EconIAC / MONIAC](https://doi.org/10.5281/zenodo.20315689) | The platform paper; differentiable macroeconomics via Gibbs ensemble |
+| [305 — Differentiable ABM](https://doi.org/10.5281/zenodo.20261945) | Gauge-theoretic digital twin on the Pacioli manifold |
+
+### Financial gauge theory
+
+| Paper | What it establishes |
+| --- | --- |
+| [295 — Currency Bundles](https://doi.org/10.5281/zenodo.20242355) | FX as connection curvature; triangular arbitrage = non-zero holonomy |
+| [296 — Term Structure Bundles](https://doi.org/10.5281/zenodo.20244445) | Interest rates as temporal connections on the Pacioli manifold |
 | [298 — Credit Bundles](https://doi.org/10.5281/zenodo.20257596) | Survival probabilities as parallel transport |
-| [311 — The Climate Hazard Yield Surface](https://doi.org/10.5281/zenodo.20291646) | Climate investment geometry |
-| 332 — CHZ Fire Sales (Econiac) | Differentiable interbank contagion; capital paradox; policy gradient |
-| 333 — European Sovereign Repo Run | Rehypothecation collapse; LDI surcharge; sheaf H¹ early-warning |
+| [299 — XVA as Curvature](https://doi.org/10.5281/zenodo.20257724) | CVA/DVA/FVA/MVA as gauge curvature; Burgard–Kjaer PDE as flatness condition |
+| [300 — Economic Gauge Theory](https://doi.org/10.5281/zenodo.20259495) | Stock-flow consistency, thermodynamic constraints, climate risk |
+| [301 — Primer on Economic Gauge Theory](https://doi.org/10.5281/zenodo.20259505) | Connections, curvature, and conservation on the Pacioli manifold |
+| [303 — Pacioli Combinator Library](https://doi.org/10.5281/zenodo.20262070) | Conservation-enforcing DSL for financial and economic computation |
+
+### Cohomological risk (bilateral · triangular · systemic)
+
+| Paper | What it establishes |
+| --- | --- |
+| [**396 — The 6j Symbol as H¹**](https://doi.org/10.5281/zenodo.20635479) | **The unhedgeability theorem: bilateral risk = H⁰, triangular risk = H¹, systemic risk = H². Options exist because H¹ ≠ 0.** |
+| [**397 — Systemic Risk as H²**](https://doi.org/10.5281/zenodo.20642908) | **Cohomological stress test; SIFI theorem; XVA wrong-way risk as H²; 2008 as a topological event.** |
+| [**398 — The Topology of Risk (Primer)**](https://doi.org/10.5281/zenodo.20642983) | **Plain-language introduction for practitioners. No prior topology required.** |
+
+### Systemic risk and contagion
+
+| Paper | What it establishes |
+| --- | --- |
+| 332 — CHZ Fire Sales *(in preparation)* | Differentiable interbank contagion; capital paradox; sheaf H¹ early-warning precedes cascade by 2–3 periods |
+| 333 — European Sovereign Repo Run *(in preparation)* | Rehypothecation collapse; LDI surcharge; 2022 UK gilt crisis as H² event |
+| 335 — Topological Inconsistency *(in preparation)* | H¹ as first-class economic observable; R²=1 and H¹≠0 simultaneously possible |
+
+### Climate and macro
+
+| Paper | What it establishes |
+| --- | --- |
+| [311 — Climate Hazard Yield Surface](https://doi.org/10.5281/zenodo.20291646) | 2D yield surface for climate investment; doomsday clock isocurve; EGT holonomy |
+| [290 — Beyond DAGs](https://doi.org/10.5281/zenodo.20234870) | Non-associative algebra of policy interventions |
 
 ---
 

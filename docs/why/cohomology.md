@@ -1,4 +1,26 @@
-# Why does EconIAC measure inconsistency topologically?
+# Bilateral · Triangular · Systemic Risk
+
+> *"Just because I don't know what the connection is doesn't mean there isn't one."*
+> — Douglas Adams, *The Long Dark Tea-Time of the Soul*
+
+Financial risk has three structural levels. Existing tools address the first two.
+EconIAC computes all three.
+
+| Level | Name | What it is | Instruments | Who manages |
+| --- | --- | --- | --- | --- |
+| $H^0$ | **Bilateral risk** | Consistency of bilateral prices | Forwards, swaps | Trading desks |
+| $H^1$ | **Triangular risk** | Unhedgeable residual; convexity, basis, XVA | Options, swaptions | XVA desks |
+| $H^2$ | **Systemic risk** | Mutual inconsistency of triangular risks; cascade | CCPs, central banks | Regulators, CRO |
+
+A risk is hedgeable with bilateral instruments if and only if its $H^1$ class is trivial.
+The 2008 crisis was an $H^2$ event. No regulator was computing $H^2$.
+
+**Start here:** [The Topology of Risk — a plain-language primer](https://doi.org/10.5281/zenodo.20642983)
+(13 pages, no prior mathematics required).
+
+---
+
+## Why does EconIAC measure inconsistency topologically?
 
 *You have a network of banks, lenders, or trading venues. Each holds a local piece
 of information: a capital ratio, a funding assessment, a price. The question is not

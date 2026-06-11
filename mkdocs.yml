@@ -59,6 +59,12 @@ nav:
   - Examples: examples.md
   - About: about.md
 
+  - For Practitioners:
+    - The topology of risk: for/overview.md
+    - Central banks & regulators: for/regulators.md
+    - Banks & financial institutions: for/banks.md
+    - RegTech & model vendors: for/regtech.md
+
   - Why EconIAC?:
     - Overview: why/README.md
     - Thermodynamics: why/thermodynamics.md
@@ -72,7 +78,7 @@ nav:
     - What is money a claim on?: why/money.md
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
-    - Topological inconsistency: why/cohomology.md
+    - Bilateral · Triangular · Systemic risk: why/cohomology.md
     - Universality across domains: why/universality.md
 
   - Tutorials:
