@@ -29,6 +29,8 @@ jobs:
             mkdocs-material \
             "mkdocstrings[python]" \
             mkdocs-jupyter
+          # Install econiac so mkdocstrings can import it for API docs
+          pip install -e . --no-deps 2>/dev/null || pip install -e .
 
       - name: Deploy to gh-pages
         run: mkdocs gh-deploy --force
