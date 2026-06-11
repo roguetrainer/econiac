@@ -79,6 +79,7 @@ nav:
     - Sheaves: why/sheaves.md
     - Abstractions for contagion: why/abstractions_for_contagion.md
     - Bilateral · Triangular · Systemic risk: why/cohomology.md
+    - The Origami ISA — computational engine: why/origami_isa.md
     - Universality across domains: why/universality.md
 
   - Tutorials:
