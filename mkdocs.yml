@@ -57,6 +57,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Examples: examples.md
+  - Glossary: glossary.md
   - About: about.md
 
   - For Practitioners:
