@@ -26,11 +26,20 @@ This subpackage provides:
   Sheaf early-warning (sheaf.py) — Step 4 in build order:
     FinancialGraph, WeightedEdge
     sheaf_laplacian(), SheafLaplacianResult
-    h1_signal(), h1_signal_normalised()
+    h1_signal() [DEPRECATED — use h1_obstruction_signal()]
+    h1_obstruction_signal(), h1_signal_normalised()
     harmonic_decomposition(), HarmonicDecomposition
     sheaf_h1_signal(), SheafTimeSeries, SheafPeriod
     compare_h1_series(), IsomorphismResult
     gravity_network()
+
+  H² systemic cascade (h2.py) — the unhedgeable residual:
+    h0_section()             — H⁰: globally consistent section
+    h2_obstruction()         — H²: irresolvable systemic cascade signal
+    H2Result
+    find_triangles()         — 3-cycles in the financial graph
+    cohomology_report()      — full H⁰/H¹/H² report in one call
+    CohomologyReport
 
   Policy gradient (policy.py) — Step 5 in build order:
     cascade_loss(), endpoint_loss()
@@ -103,6 +112,21 @@ from econiac.finance.contagion.policy import (
     # Beta sensitivity
     beta_sensitivity,
     BetaSensitivityResult,
+)
+
+# ── H² systemic cascade obstruction ─────────────────────────────────────────
+from econiac.finance.contagion.h2 import (
+    # H⁰ explicit section
+    h0_section,
+    # H² obstruction
+    h2_obstruction,
+    H2Result,
+    # Triangle enumeration
+    find_triangles,
+    delta1_matrix,
+    # Full H⁰/H¹/H² report
+    cohomology_report,
+    CohomologyReport,
 )
 
 # ── Step 4: sheaf early-warning ─────────────────────────────────────────────
@@ -201,6 +225,11 @@ __all__ = [
     "optimal_haircut_frontier", "HaircutFrontierResult",
     "ldi_surcharge", "LDISurcharge",
     "beta_sensitivity", "BetaSensitivityResult",
+    # H⁰/H²
+    "h0_section",
+    "h2_obstruction", "H2Result",
+    "find_triangles", "delta1_matrix",
+    "cohomology_report", "CohomologyReport",
     # Sheaf
     "WeightedEdge", "FinancialGraph",
     "sheaf_laplacian", "SheafLaplacianResult",

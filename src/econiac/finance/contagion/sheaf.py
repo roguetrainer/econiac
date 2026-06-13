@@ -58,6 +58,7 @@ References:
 
 from __future__ import annotations
 
+import warnings
 from dataclasses import dataclass, field
 from typing import NamedTuple, Optional, Sequence
 
@@ -268,12 +269,11 @@ def h1_signal(
             maximal curvature — i.e., agents strongly disagree on relative
             solvency/funding across bilateral exposures.
 
-    WARNING (2026-05-29): this Rayleigh-quotient form does NOT lead the cascade
-    and barely fires for near-flat health-ratio sections — it is dominated by
-    the harmonic (constant) component. Empirically (x332e_h1_diagnostic.py) its
-    mean lead is +0.2 periods at magnitude ~1e-4. Use h1_obstruction_signal()
-    instead, which leads by ~1 period and fires at O(1). Retained only for
-    backward compatibility / comparison; do NOT use as the early-warning signal.
+    .. deprecated::
+        Use :func:`h1_obstruction_signal` instead. This Rayleigh-quotient
+        form barely fires for near-flat sections (mean lead +0.2 periods,
+        magnitude ~1e-4). ``h1_obstruction_signal`` leads by ~1 period at
+        O(1) magnitude and is the correct early-warning observable.
 
     Args:
         L_F:     sheaf Laplacian from sheaf_laplacian()
@@ -282,6 +282,13 @@ def h1_signal(
     Returns:
         scalar ≥ 0
     """
+    warnings.warn(
+        "h1_signal() is deprecated and barely fires for near-flat sections. "
+        "Use h1_obstruction_signal() instead (leads cascade by ~1 period). "
+        "See sheaf.py line 271 for details.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     s   = np.array(section, dtype=float)
     Ls  = L_F @ s
     num = float(np.dot(Ls, Ls))
