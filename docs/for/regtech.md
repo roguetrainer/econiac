@@ -126,7 +126,7 @@ pip install econiac
 
 | Paper | Content |
 | --- | --- |
-| [396 — The 6j Symbol as $H^1$](https://doi.org/10.5281/zenodo.20635479) | Mathematical foundation; unhedgeability theorem; Origami ISA as Čech cohomology |
+| [396 — The Unhedgeability Theorem](https://doi.org/10.5281/zenodo.20635479) | Mathematical foundation; unhedgeability theorem; Origami ISA as Čech cohomology |
 | [397 — Systemic Risk as $H^2$](https://doi.org/10.5281/zenodo.20642908) | $H^2$ stress test; SIFI theorem; implementation path |
 | [303 — Pacioli Combinator Library](https://doi.org/10.5281/zenodo.20262070) | Conservation-enforcing DSL; typed financial computation |
 | [316 — EconIAC/MONIAC](https://doi.org/10.5281/zenodo.20315689) | Platform architecture; differentiable ABM foundation |

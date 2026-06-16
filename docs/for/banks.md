@@ -112,7 +112,7 @@ estimates under joint stress.
 
 | Paper | Content |
 | --- | --- |
-| [396 — The 6j Symbol as $H^1$](https://doi.org/10.5281/zenodo.20635479) | Unhedgeability theorem; CVA/FVA/convexity as $H^1$; five-instance table |
+| [396 — The Unhedgeability Theorem](https://doi.org/10.5281/zenodo.20635479) | Unhedgeability theorem; CVA/FVA/convexity as $H^1$; five-instance table |
 | [397 — Systemic Risk as $H^2$](https://doi.org/10.5281/zenodo.20642908) | XVA section; wrong-way risk as $H^2$; SIFI theorem; KVA at boundary |
 | [299 — XVA as Curvature](https://doi.org/10.5281/zenodo.20257724) | CVA/DVA/FVA/MVA as gauge curvature; Burgard–Kjaer PDE as flatness |
 | [296 — Term Structure Bundles](https://doi.org/10.5281/zenodo.20244445) | HJM convexity as $H^1$; the $\frac{1}{2}$ from Maslov = the $\frac{1}{2}$ from Itô |

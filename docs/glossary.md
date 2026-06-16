@@ -124,7 +124,7 @@ In the EconIAC library, curvature is computed via `econiac.pacioli`
 connection objects. Arbitrage-free ↔ flat connection ↔ zero curvature.
 
 *See:* [Paper 299 (XVA as Curvature)](https://doi.org/10.5281/zenodo.20257724),
-[Paper 396 (6j Symbol as H¹)](https://doi.org/10.5281/zenodo.20635479)
+[Paper 396 (Unhedgeability Theorem)](https://doi.org/10.5281/zenodo.20635479)
 
 ---
 
@@ -210,7 +210,7 @@ Standard models only measured $H^0$.
 In `econiac.risk`: `cohomology_report(graph, section)` returns all three
 levels in one call with a human-readable summary string.
 
-*See:* [Paper 396 (6j Symbol as H¹)](https://doi.org/10.5281/zenodo.20635479),
+*See:* [Paper 396 (Unhedgeability Theorem)](https://doi.org/10.5281/zenodo.20635479),
 [Paper 397 (Systemic Risk as H²)](https://doi.org/10.5281/zenodo.20642908),
 [Paper 398 (Topology of Risk primer)](https://doi.org/10.5281/zenodo.20642983)
 
@@ -273,7 +273,7 @@ The pricing sheaf is a strict generalisation of the **constant sheaf**
 numbers, the pricing sheaf gives financially loaded cohomology that
 detects whether the network topology is carrying dangerous exposures.
 
-*See:* [Paper 396 (6j Symbol as H¹)](https://doi.org/10.5281/zenodo.20635479),
+*See:* [Paper 396 (Unhedgeability Theorem)](https://doi.org/10.5281/zenodo.20635479),
 [Paper 397 (Systemic Risk as H²)](https://doi.org/10.5281/zenodo.20642908)
 
 ---
@@ -469,7 +469,7 @@ the counterparty graph topology, without requiring a model for the
 correlation structure.
 
 *See:* [Paper 299 (XVA as Curvature)](https://doi.org/10.5281/zenodo.20257724),
-[Paper 396 (6j Symbol as H¹)](https://doi.org/10.5281/zenodo.20635479),
+[Paper 396 (Unhedgeability Theorem)](https://doi.org/10.5281/zenodo.20635479),
 [Paper 399 (Origami ISA as Financial Middleware)](https://doi.org/10.5281/zenodo.20645695)
 
 ---

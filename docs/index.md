@@ -171,7 +171,7 @@ EconIAC is the software companion to the [Portfolio G](https://roguetrainer.gith
 
 | Paper | What it establishes |
 | --- | --- |
-| [**396 — The 6j Symbol as H¹**](https://doi.org/10.5281/zenodo.20635479) | **The unhedgeability theorem: bilateral risk = H⁰, triangular risk = H¹, systemic risk = H². Options exist because H¹ ≠ 0.** |
+| [**396 — The Unhedgeability Theorem**](https://doi.org/10.5281/zenodo.20635479) | **The unhedgeability theorem: bilateral risk = H⁰, triangular risk = H¹, systemic risk = H². Options exist because H¹ ≠ 0.** |
 | [**397 — Systemic Risk as H²**](https://doi.org/10.5281/zenodo.20642908) | **Cohomological stress test; SIFI theorem; XVA wrong-way risk as H²; 2008 as a topological event.** |
 | [**398 — The Topology of Risk (Primer)**](https://doi.org/10.5281/zenodo.20642983) | **Plain-language introduction for practitioners. No prior topology required.** |
 

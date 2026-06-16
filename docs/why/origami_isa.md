@@ -136,7 +136,7 @@ in HJM. Paper 395 (in preparation) develops this in full.
 | Paper | Content |
 | --- | --- |
 | [370 — The Origami ISA as Nature's Universal Computer](https://doi.org/10.5281/zenodo.20543454) | Five opcodes across 20 orders of magnitude; universality proof |
-| [396 — The 6j Symbol as $H^1$](https://doi.org/10.5281/zenodo.20635479) | ISA opcodes as Čech cohomology operations (§6); five-instance table |
+| [396 — The Unhedgeability Theorem](https://doi.org/10.5281/zenodo.20635479) | ISA opcodes as Čech cohomology operations (§6); five-instance table |
 | [397 — Systemic Risk as $H^2$](https://doi.org/10.5281/zenodo.20642908) | ISA applied to systemic risk; Pentagon = HJM = stability |
 | [303 — Pacioli Combinator Library](https://doi.org/10.5281/zenodo.20262070) | The typed DSL for ISA circuits in EconIAC |
 | [393 — Projective Geometry as the Mother Tongue of QM](https://doi.org/10.5281/zenodo.20634729) | ISA as the finite-field limit of the Penrose transform |

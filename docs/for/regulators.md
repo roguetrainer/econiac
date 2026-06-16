@@ -127,7 +127,7 @@ An $H^2$ stress test in 2006 would have shown:
 | Paper | Content |
 | --- | --- |
 | [397 — Systemic Risk as $H^2$](https://doi.org/10.5281/zenodo.20642908) | Cohomological stress test; SIFI theorem; XVA; 2008 analysis |
-| [396 — The 6j Symbol as $H^1$](https://doi.org/10.5281/zenodo.20635479) | Unhedgeability theorem; five-instance table; Pentagon identity |
+| [396 — The Unhedgeability Theorem](https://doi.org/10.5281/zenodo.20635479) | Unhedgeability theorem; five-instance table; Pentagon identity |
 | [398 — The Topology of Risk (Primer)](https://doi.org/10.5281/zenodo.20642983) | Plain-language introduction; no mathematics required |
 | [291 — The Topology of Conservation](https://doi.org/10.5281/zenodo.20234853) | Double-entry accounting as discrete gauge theory |
 | 332 — CHZ Fire Sales *(in preparation)* | Differentiable ABM; sheaf $H^1$ leads cascade by 2–3 periods |

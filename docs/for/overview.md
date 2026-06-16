@@ -156,7 +156,7 @@ The fastest path to understanding the framework:
 
 1. [The Topology of Risk: A Primer](https://doi.org/10.5281/zenodo.20642983) —
    13 pages, no prior mathematics required, Holmes vs Gently framing
-2. [The 6j Symbol as $H^1$](https://doi.org/10.5281/zenodo.20635479) —
+2. [The Unhedgeability Theorem](https://doi.org/10.5281/zenodo.20635479) —
    the unhedgeability theorem and five-instance table
 3. [Systemic Risk as $H^2$](https://doi.org/10.5281/zenodo.20642908) —
    cohomological stress test, SIFI theorem, XVA section
