@@ -87,6 +87,68 @@ where L_F = δ₀ᵀδ₀ is the sheaf Laplacian and s is the section.
 
 ---
 
+## Worked example: independent vs. dependent funding loops
+
+Paper 426 measures network fragility with a related but distinct
+quantity: $\beta_1$, the number of *independent funding loops*, defined
+as the first Betti number of the exposure graph,
+$\beta_1 = m - n + c$ (edges minus nodes plus connected components).
+"Independent" is doing real work in that phrase, and it does not mean
+what it sounds like on first read — it is not about whether two loops
+look different, or share edges, or share no edges. It is about whether
+one loop can be written as a sum of others plus a *boundary* (a trivial
+back-and-forth contribution that adds nothing new).
+
+Take four institutions $A, B, C, D$ with obligations:
+
+```text
+A → B,  B → C,  C → A,  C → D,  D → A
+```
+
+Here $n=4$ nodes, $m=5$ edges, $c=1$ component, so
+$\beta_1 = 5 - 4 + 1 = 2$: the network has exactly two independent
+funding loops, not five (the number of edges) and not one (the number
+of "obvious" triangles).
+
+Three loops are visible by eye:
+
+- **Loop 1** ($A\to B\to C\to A$): the triangle through $B$.
+- **Loop 2** ($C\to D\to A\to C$, i.e. traversing $C\to A$ backwards):
+  the triangle through $D$.
+- **Loop 3** ($A\to B\to C\to D\to A$): the quadrilateral around the
+  outside.
+
+$\beta_1=2$ says only two of these three are independent — and indeed,
+Loop 3 is exactly **Loop 1 + Loop 2**: travelling $A\to B\to C$ (shared
+with Loop 1), then $C \to D \to A$ (shared with Loop 2), is the same
+net obligation pattern as doing Loop 1 and Loop 2 separately and
+cancelling the shared $C\to A$ / $A\to C$ leg. Loop 3 is therefore
+**dependent** on Loops 1 and 2 — it adds no new systemic fragility
+beyond what Loops 1 and 2 already represent, even though it is a
+perfectly real, traceable cycle of obligations. A regulator who counted
+"how many cycles can I find by inspection" would see three and
+overstate the network's fragility; $\beta_1$ correctly reports two.
+
+This is the homological content of "financial redundancy": a loop adds
+systemic fragility only if it cannot be re-expressed as a combination
+of other loops already counted. Loops 1 and 2, by contrast, share no
+edges and have no such relation — both are needed to generate the full
+cycle space, so both count.
+
+Direction matters only through sign, not through which way arrows
+point. Loop 2 above was written traversing $C\to A$ *backwards*
+(against its stated direction, $A$ owes $C$) precisely because the
+loop closes that way — in the signed, ℝ-coefficient chain complex this
+is legitimate: the edge contributes with a $-1$ coefficient instead of
+$+1$, and the cycle still closes (its boundary is still zero). A loop
+that runs against an edge's stated direction is not a different kind of
+object from one that runs with it, and counts toward $\beta_1$ in
+exactly the same way — see
+[β₁](../glossary.md#β₁-independent-funding-loops) for why edge
+orientation is a sign convention, not a separate cycle-counting rule.
+
+---
+
 ## What makes this different from a residual
 
 The conceptual gap is subtle but load-bearing:
