@@ -41,6 +41,37 @@ measured.
 
 ---
 
+## β₁ (Independent Funding Loops)
+
+**$\beta_1$** is the first Betti number of the exposure graph $\Gamma$ —
+the rank of $H^1(\Gamma)$, computed as $\beta_1 = m - n + c$ where $m$ is
+the number of bilateral exposures (edges), $n$ is the number of
+institutions (nodes), and $c$ is the number of connected components.
+
+"Independent" is meant in the homological sense — a basis for the cycle
+space modulo boundaries — not as a separate financial criterion that
+needs translating after the fact. Two loops that look different as lists
+of edges can be homologically *dependent* (one equals the other plus a
+boundary, i.e. plus ordinary bilateral exposures); only a maximal set of
+loops with no such relation among them counts toward $\beta_1$. See the
+worked example in [`docs/why/cohomology.md`](why/cohomology.md) for a
+concrete 4-node case distinguishing dependent from independent loops.
+
+$\beta_1$ does not depend on edge direction beyond the sign convention
+used to build the boundary map: a "loop" need not be consistently
+oriented (e.g. $A\to B\to C \to A$ and $A \to B \to C \leftarrow A$ both
+count, the latter via a $-1$ coefficient on the reversed edge) — what
+matters is that the directed edges sum to zero on the boundary, not that
+they point the same way around.
+
+Computable in $O(n+m)$ time from the exposure graph alone, with no model
+of individual institution behaviour.
+
+*See:* [Paper 426 (Beyond Basel)](https://doi.org/10.5281/zenodo.20701683),
+[ρ (Load Factor)](#ρ-load-factor), [ρ* (Critical Threshold)](#ρ-critical-threshold)
+
+---
+
 ## Carnot Efficiency (η)
 
 In EconIAC's thermodynamic framework, the **Carnot efficiency** $\eta$
@@ -244,6 +275,56 @@ detects whether the network topology is carrying dangerous exposures.
 
 *See:* [Paper 396 (6j Symbol as H¹)](https://doi.org/10.5281/zenodo.20635479),
 [Paper 397 (Systemic Risk as H²)](https://doi.org/10.5281/zenodo.20642908)
+
+---
+
+## ρ (Load Factor)
+
+The **load factor** $\rho$ measures how cycle-dense an exposure network
+is relative to its size:
+
+$$\rho = \frac{\beta_1}{m} = \frac{\text{independent funding loops}}{\text{total bilateral exposures}}$$
+
+where $\beta_1$ is the first Betti number ([β₁](#β₁-independent-funding-loops))
+and $m$ is the edge count. **The convention for $m$ matters and is not
+yet fixed in the literature**: whether $m$ counts exposures before or
+after bilateral netting (i.e. whether $A\rightleftarrows B$ contributes
+one netted edge or two directed edges) changes $\rho$ without changing
+$\beta_1$ the same way. Until stated otherwise, treat $m$ as the netted
+edge count (one edge per ordered pair with non-zero net exposure).
+
+Small $\rho$: safe regime, funding gaps reroutable through alternative
+paths. $\rho$ approaching the critical threshold $\rho^*$: the network
+becomes maximally sensitive to single-institution failure.
+
+*See:* [Paper 426 (Beyond Basel)](https://doi.org/10.5281/zenodo.20701683),
+[ρ* (Critical Threshold)](#ρ-critical-threshold)
+
+---
+
+## ρ* (Critical Threshold)
+
+**$\rho^*$** is the conjectured critical value of the load factor
+[ρ](#ρ-load-factor) beyond which a network enters a regime of maximal
+sensitivity to perturbation. The commonly cited value is
+
+$$\rho^* = 1 - e^{-8/3} \approx 0.931$$
+
+**This value is imported, not derived for financial networks.** It is
+the $\beta^*=1$ case of the general Forge ISA formula
+$\beta^*(\rho) = \tfrac{3}{8}\ln(1/(1-\rho))$, and $0.931$ itself is a
+known threshold from classical hashing/occupancy theory, recovered by
+that formula rather than independently derived for exposure graphs. The
+deeper claim underlying the formula — that the critical inverse
+temperature equals the inverse spectral gap of the Hodge Laplacian on
+the graph, $\beta^* = 1/\lambda_1(\Delta)$ — is proved only for the ring
+topology ($\mathcal{M}_P = S^1$) and is otherwise a conjecture, not an
+established result. Treat $\rho^*=0.931$ as a reference point borrowed
+from a different domain, not a threshold derived for obligation
+networks.
+
+*See:* [Paper 426 (Beyond Basel)](https://doi.org/10.5281/zenodo.20701683)
+(§3.1, with caveat), [Paper 419 (The Forge ISA)](https://doi.org/10.5281/zenodo.20694527)
 
 ---
 
