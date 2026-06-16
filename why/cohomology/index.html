@@ -1210,6 +1210,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#worked-example-independent-vs-dependent-funding-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: independent vs. dependent funding loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-makes-this-different-from-a-residual" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2189,6 +2200,58 @@ zero. Applied to an inconsistent section it gives a non-zero vector of disagreem
   state of topological inconsistency. The magnitude measures how far it is from
   reconcilability.</li>
 </ul>
+<hr />
+<h2 id="worked-example-independent-vs-dependent-funding-loops">Worked example: independent vs. dependent funding loops</h2>
+<p>Paper 426 measures network fragility with a related but distinct
+quantity: <span class="arithmatex">\(\beta_1\)</span>, the number of <em>independent funding loops</em>, defined
+as the first Betti number of the exposure graph,
+<span class="arithmatex">\(\beta_1 = m - n + c\)</span> (edges minus nodes plus connected components).
+"Independent" is doing real work in that phrase, and it does not mean
+what it sounds like on first read — it is not about whether two loops
+look different, or share edges, or share no edges. It is about whether
+one loop can be written as a sum of others plus a <em>boundary</em> (a trivial
+back-and-forth contribution that adds nothing new).</p>
+<p>Take four institutions <span class="arithmatex">\(A, B, C, D\)</span> with obligations:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>A → B,  B → C,  C → A,  C → D,  D → A
+</code></pre></div>
+<p>Here <span class="arithmatex">\(n=4\)</span> nodes, <span class="arithmatex">\(m=5\)</span> edges, <span class="arithmatex">\(c=1\)</span> component, so
+<span class="arithmatex">\(\beta_1 = 5 - 4 + 1 = 2\)</span>: the network has exactly two independent
+funding loops, not five (the number of edges) and not one (the number
+of "obvious" triangles).</p>
+<p>Three loops are visible by eye:</p>
+<ul>
+<li><strong>Loop 1</strong> (<span class="arithmatex">\(A\to B\to C\to A\)</span>): the triangle through <span class="arithmatex">\(B\)</span>.</li>
+<li><strong>Loop 2</strong> (<span class="arithmatex">\(C\to D\to A\to C\)</span>, i.e. traversing <span class="arithmatex">\(C\to A\)</span> backwards):
+  the triangle through <span class="arithmatex">\(D\)</span>.</li>
+<li><strong>Loop 3</strong> (<span class="arithmatex">\(A\to B\to C\to D\to A\)</span>): the quadrilateral around the
+  outside.</li>
+</ul>
+<p><span class="arithmatex">\(\beta_1=2\)</span> says only two of these three are independent — and indeed,
+Loop 3 is exactly <strong>Loop 1 + Loop 2</strong>: travelling <span class="arithmatex">\(A\to B\to C\)</span> (shared
+with Loop 1), then <span class="arithmatex">\(C \to D \to A\)</span> (shared with Loop 2), is the same
+net obligation pattern as doing Loop 1 and Loop 2 separately and
+cancelling the shared <span class="arithmatex">\(C\to A\)</span> / <span class="arithmatex">\(A\to C\)</span> leg. Loop 3 is therefore
+<strong>dependent</strong> on Loops 1 and 2 — it adds no new systemic fragility
+beyond what Loops 1 and 2 already represent, even though it is a
+perfectly real, traceable cycle of obligations. A regulator who counted
+"how many cycles can I find by inspection" would see three and
+overstate the network's fragility; <span class="arithmatex">\(\beta_1\)</span> correctly reports two.</p>
+<p>This is the homological content of "financial redundancy": a loop adds
+systemic fragility only if it cannot be re-expressed as a combination
+of other loops already counted. Loops 1 and 2, by contrast, share no
+edges and have no such relation — both are needed to generate the full
+cycle space, so both count.</p>
+<p>Direction matters only through sign, not through which way arrows
+point. Loop 2 above was written traversing <span class="arithmatex">\(C\to A\)</span> <em>backwards</em>
+(against its stated direction, <span class="arithmatex">\(A\)</span> owes <span class="arithmatex">\(C\)</span>) precisely because the
+loop closes that way — in the signed, ℝ-coefficient chain complex this
+is legitimate: the edge contributes with a <span class="arithmatex">\(-1\)</span> coefficient instead of
+<span class="arithmatex">\(+1\)</span>, and the cycle still closes (its boundary is still zero). A loop
+that runs against an edge's stated direction is not a different kind of
+object from one that runs with it, and counts toward <span class="arithmatex">\(\beta_1\)</span> in
+exactly the same way — see
+<a href="../../glossary/#β₁-independent-funding-loops">β₁</a> for why edge
+orientation is a sign convention, not a separate cycle-counting rule.</p>
 <hr />
 <h2 id="what-makes-this-different-from-a-residual">What makes this different from a residual</h2>
 <p>The conceptual gap is subtle but load-bearing:</p>

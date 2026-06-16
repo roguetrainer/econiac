@@ -579,6 +579,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-independent-funding-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        β₁ (Independent Funding Loops)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#carnot-efficiency" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -682,6 +693,28 @@
     <span class="md-ellipsis">
       
         Pricing Sheaf
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ρ (Load Factor)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ρ* (Critical Threshold)
       
     </span>
   </a>
@@ -2231,6 +2264,30 @@ risk models (PD, LGD, EAD). It is the only level that pre-2008 models
 measured.</p>
 <p><em>See:</em> <a href="https://doi.org/10.5281/zenodo.20642983">Paper 398 (Topology of Risk primer)</a></p>
 <hr />
+<h2 id="1-independent-funding-loops">β₁ (Independent Funding Loops)</h2>
+<p><strong><span class="arithmatex">\(\beta_1\)</span></strong> is the first Betti number of the exposure graph <span class="arithmatex">\(\Gamma\)</span> —
+the rank of <span class="arithmatex">\(H^1(\Gamma)\)</span>, computed as <span class="arithmatex">\(\beta_1 = m - n + c\)</span> where <span class="arithmatex">\(m\)</span> is
+the number of bilateral exposures (edges), <span class="arithmatex">\(n\)</span> is the number of
+institutions (nodes), and <span class="arithmatex">\(c\)</span> is the number of connected components.</p>
+<p>"Independent" is meant in the homological sense — a basis for the cycle
+space modulo boundaries — not as a separate financial criterion that
+needs translating after the fact. Two loops that look different as lists
+of edges can be homologically <em>dependent</em> (one equals the other plus a
+boundary, i.e. plus ordinary bilateral exposures); only a maximal set of
+loops with no such relation among them counts toward <span class="arithmatex">\(\beta_1\)</span>. See the
+worked example in <a href="../why/cohomology/"><code>docs/why/cohomology.md</code></a> for a
+concrete 4-node case distinguishing dependent from independent loops.</p>
+<p><span class="arithmatex">\(\beta_1\)</span> does not depend on edge direction beyond the sign convention
+used to build the boundary map: a "loop" need not be consistently
+oriented (e.g. <span class="arithmatex">\(A\to B\to C \to A\)</span> and <span class="arithmatex">\(A \to B \to C \leftarrow A\)</span> both
+count, the latter via a <span class="arithmatex">\(-1\)</span> coefficient on the reversed edge) — what
+matters is that the directed edges sum to zero on the boundary, not that
+they point the same way around.</p>
+<p>Computable in <span class="arithmatex">\(O(n+m)\)</span> time from the exposure graph alone, with no model
+of individual institution behaviour.</p>
+<p><em>See:</em> <a href="https://doi.org/10.5281/zenodo.20701683">Paper 426 (Beyond Basel)</a>,
+<a href="#ρ-load-factor">ρ (Load Factor)</a>, <a href="#ρ-critical-threshold">ρ* (Critical Threshold)</a></p>
+<hr />
 <h2 id="carnot-efficiency">Carnot Efficiency (η)</h2>
 <p>In EconIAC's thermodynamic framework, the <strong>Carnot efficiency</strong> <span class="arithmatex">\(\eta\)</span>
 measures how much of the available information-thermodynamic free energy
@@ -2406,6 +2463,43 @@ numbers, the pricing sheaf gives financially loaded cohomology that
 detects whether the network topology is carrying dangerous exposures.</p>
 <p><em>See:</em> <a href="https://doi.org/10.5281/zenodo.20635479">Paper 396 (6j Symbol as H¹)</a>,
 <a href="https://doi.org/10.5281/zenodo.20642908">Paper 397 (Systemic Risk as H²)</a></p>
+<hr />
+<h2 id="load-factor">ρ (Load Factor)</h2>
+<p>The <strong>load factor</strong> <span class="arithmatex">\(\rho\)</span> measures how cycle-dense an exposure network
+is relative to its size:</p>
+<div class="arithmatex">\[\rho = \frac{\beta_1}{m} = \frac{\text{independent funding loops}}{\text{total bilateral exposures}}\]</div>
+<p>where <span class="arithmatex">\(\beta_1\)</span> is the first Betti number (<a href="#β₁-independent-funding-loops">β₁</a>)
+and <span class="arithmatex">\(m\)</span> is the edge count. <strong>The convention for <span class="arithmatex">\(m\)</span> matters and is not
+yet fixed in the literature</strong>: whether <span class="arithmatex">\(m\)</span> counts exposures before or
+after bilateral netting (i.e. whether <span class="arithmatex">\(A\rightleftarrows B\)</span> contributes
+one netted edge or two directed edges) changes <span class="arithmatex">\(\rho\)</span> without changing
+<span class="arithmatex">\(\beta_1\)</span> the same way. Until stated otherwise, treat <span class="arithmatex">\(m\)</span> as the netted
+edge count (one edge per ordered pair with non-zero net exposure).</p>
+<p>Small <span class="arithmatex">\(\rho\)</span>: safe regime, funding gaps reroutable through alternative
+paths. <span class="arithmatex">\(\rho\)</span> approaching the critical threshold <span class="arithmatex">\(\rho^*\)</span>: the network
+becomes maximally sensitive to single-institution failure.</p>
+<p><em>See:</em> <a href="https://doi.org/10.5281/zenodo.20701683">Paper 426 (Beyond Basel)</a>,
+<a href="#ρ-critical-threshold">ρ* (Critical Threshold)</a></p>
+<hr />
+<h2 id="critical-threshold">ρ* (Critical Threshold)</h2>
+<p><strong><span class="arithmatex">\(\rho^*\)</span></strong> is the conjectured critical value of the load factor
+<a href="#ρ-load-factor">ρ</a> beyond which a network enters a regime of maximal
+sensitivity to perturbation. The commonly cited value is</p>
+<div class="arithmatex">\[\rho^* = 1 - e^{-8/3} \approx 0.931\]</div>
+<p><strong>This value is imported, not derived for financial networks.</strong> It is
+the <span class="arithmatex">\(\beta^*=1\)</span> case of the general Forge ISA formula
+<span class="arithmatex">\(\beta^*(\rho) = \tfrac{3}{8}\ln(1/(1-\rho))\)</span>, and <span class="arithmatex">\(0.931\)</span> itself is a
+known threshold from classical hashing/occupancy theory, recovered by
+that formula rather than independently derived for exposure graphs. The
+deeper claim underlying the formula — that the critical inverse
+temperature equals the inverse spectral gap of the Hodge Laplacian on
+the graph, <span class="arithmatex">\(\beta^* = 1/\lambda_1(\Delta)\)</span> — is proved only for the ring
+topology (<span class="arithmatex">\(\mathcal{M}_P = S^1\)</span>) and is otherwise a conjecture, not an
+established result. Treat <span class="arithmatex">\(\rho^*=0.931\)</span> as a reference point borrowed
+from a different domain, not a threshold derived for obligation
+networks.</p>
+<p><em>See:</em> <a href="https://doi.org/10.5281/zenodo.20701683">Paper 426 (Beyond Basel)</a>
+(§3.1, with caveat), <a href="https://doi.org/10.5281/zenodo.20694527">Paper 419 (The Forge ISA)</a></p>
 <hr />
 <h2 id="sheaf-laplacian">Sheaf Laplacian</h2>
 <p>The <strong>sheaf Laplacian</strong> <span class="arithmatex">\(L_\mathcal{F} = \delta^{0\top}\delta^0\)</span> is the
