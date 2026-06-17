@@ -194,23 +194,81 @@ a cascade is imminent.
 
 ---
 
-## Why this is universal
+## Why H¹ transfers across systems
 
-The same H¹ signal appears in three apparently unrelated systems in EconIAC:
+Theorem 3 of Paper 335 (Universality) says the H¹ signal depends only on the graph
+topology and the restriction maps, not on the specific dynamics generating the section
+values. This is a structural fact about the construction, not an empirical claim about
+any particular pair of systems: CHZ interbank contagion (Paper 332), the sovereign repo
+run (Paper 333), and other section-on-a-graph data are all instances of the *same*
+H¹ machinery and inherit the same lead-time and separation guarantees from Section
+2's definitions, because they share the same restriction-map structure.
 
-| System | Graph | Section | H¹ measures |
-| --- | --- | --- | --- |
-| CHZ interbank contagion (Paper 332) | Interbank exposure | Capital ratios | Bilateral solvency disagreement |
-| Sovereign repo run (Paper 333) | Dealer-lender bipartite | Funding ratios | Roll probability inconsistency |
-| FMO energy transfer (Paper 325) | Chromophore Fano graph | Energy efficiency | Broken topological symmetry |
+We do not claim — and have not measured — that the resulting time series are
+*quantitatively* similar across systems that are not financial (the construction has
+been suggested as relevant to physically unrelated processes such as photosynthetic
+energy transfer, but no cross-correlation between that and a financial instance has
+been computed; treat any such claim elsewhere as a structural conjecture, not a result).
 
-These are not analogies. The computation is identical on three different graphs.
+---
 
-The reason is Theorem 3 of Paper 335: the H¹ signal depends only on the graph topology
-and the restriction maps, not on the specific dynamics. Fire sales, repo runs, and
-quantum energy transfer are different mechanisms, but they all produce the same
-topological signal because they all involve the same structural question: *can the
-local pieces be globally reconciled?*
+## From H¹ to H²: it takes a tetrahedron, not just two triangles
+
+H¹ measures whether one set of bilateral rates closes consistently around *one*
+triangle. It is tempting to think H² is just "two triangles disagreeing" — for
+instance, two dealers quoting different EUR/JPY crosses even though each dealer's
+own book is internally consistent. **That is not quite right, and the difference
+matters.** Two sources disagreeing about a single triangle is visible by looking at
+*that one triangle alone* (just give each edge a pair of quotes instead of one, and
+ask the pair to agree) — it is a richer instance of H¹, indexed by source as well as
+by edge, not a new, higher obstruction. No tetrahedron is needed to see it, and none
+is doing any work.
+
+Genuine H² is a strictly higher-degree statement. It is not about two sources
+disagreeing on one triangle — it is about whether the **H¹ residuals already computed
+on the four faces of a tetrahedron** are mutually consistent with each other. Take
+four institutions $A,B,C,D$, forming four face-triangles $(A,B,C)$, $(A,B,D)$,
+$(A,C,D)$, $(B,C,D)$ — the *hollow* boundary of a tetrahedron, not the solid
+tetrahedron itself. The distinction matters: if the solid tetrahedron were included
+as a data-bearing cell in its own right, the resulting shape would be a filled-in
+3-ball — contractible, like a filled-in triangle is a contractible 2-disc — and its
+H² would vanish identically for any data, by the same mechanism that forces H¹ of a
+filled-in triangle to vanish. Leaving the tetrahedron hollow, so that its four faces
+form a closed shell topologically equivalent to a sphere $S^2$, is what allows the
+four residuals on those faces to fail to close. Each face can carry its own
+correlation-implied H¹ residual.
+If all four are computed from one consistent data source, they automatically satisfy
+the simplicial boundary identity
+
+```text
+c_BCD − c_ACD + c_ABD − c_ABC = 0
+```
+
+— this is the Pentagon identity (δ²∘δ¹ = 0) in its simplest form, and it is a
+tautology, with zero empirical content, for a single source. **One source, however
+many triangles, cannot generate a non-trivial H² class.**
+
+A genuine H² obstruction needs the four face residuals to come from more than one
+source. Suppose three faces are priced from one consistent correlation model:
+$c_{ABC}=0.012$, $c_{ABD}=0.031$, $c_{ACD}=0.043$. Consistency forces the fourth face
+to be $c_{BCD} = c_{ACD} - c_{ABD} + c_{ABC} = 0.024$. Now suppose face $BCD$ is
+instead priced by a different desk, with a different correlation assumption for that
+specific triple, reporting $c_{BCD} = 0.042$ — only $0.018$ away from the forced value,
+and not obviously anomalous as a number on its own. Each face individually still looks
+fine: no triangle's own residual is unusual, and no institution's book is internally
+inconsistent. But
+
+```text
+c_BCD − c_ACD + c_ABD − c_ABC = 0.042 − 0.043 + 0.031 − 0.012 = 0.018 ≠ 0
+```
+
+so H² ≠ 0 on this tetrahedron. The obstruction is invisible at every triangle taken
+alone and becomes visible only when the four faces are checked against each other —
+exactly the mechanism behind Paper 397's account of correlation risk in 2008: no
+single desk's triangle looked wrong, but the desks' independently-priced, overlapping
+correlation triangles failed to close around the tetrahedron once correlations
+spiked. That closed-boundary failure, not any pairwise disagreement, is what aggregate
+or single-institution risk measures cannot see.
 
 ---
 
@@ -265,7 +323,7 @@ ECB repo statistics), then:
   in Financial Networks. *AER* 105(2), 564–608.
   The eigenvalue-based fragility measure that H¹ supersedes for early-warning purposes.
 
-- Buckley (2026). Paper 335: Topological Inconsistency. doi:TBD
+- Buckley (2026). Paper 335: Topological Inconsistency. doi:10.5281/zenodo.20721097
 - Buckley (2026). Paper 332: CHZ Fire Sales. doi:TBD
 - Buckley (2026). Paper 333: Sovereign Repo Run. doi:TBD
 - Buckley (2026). Paper 325: FMO Topological Heat Engine. doi:10.5281/zenodo.20400638
