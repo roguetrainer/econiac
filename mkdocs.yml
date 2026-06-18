@@ -68,6 +68,7 @@ nav:
 
   - Concepts:
     - Overview: concepts/README.md
+    - Rationality is temperature: concepts/rationality_temperature.md
     - The Pentagon identity: concepts/pentagon_identity.md
     - Clearing and netting: concepts/clearing.md
 
