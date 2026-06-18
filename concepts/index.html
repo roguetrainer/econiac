@@ -1942,10 +1942,41 @@
 
 <h1 id="concepts">Concepts</h1>
 <p>How specific financial mechanisms work inside the EconIAC framework.</p>
-<p>These pages sit between the abstract mathematical tools explained in <a href="../why/">Why does Econiac use abstract mathematics?</a>
-and the code-first <a href="../tutorials/">Tutorials</a>.
-Each page takes one financial mechanism — clearing, term structure, XVA — and
-shows how the cohomological framework changes what can be said about it.</p>
+<p>These pages sit between the abstract mathematical tools explained in
+<a href="../why/">Why does Econiac use abstract mathematics?</a> and the
+code-first <a href="../tutorials/">Tutorials</a>. Each page takes one financial
+mechanism and shows how the framework changes what can be said about it.</p>
+<hr />
+<h2 id="foundational-concepts">Foundational concepts</h2>
+<p>These three ideas underpin everything else in EconIAC. Start here.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>The core claim</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rationality is temperature</strong></td>
+<td>Replacing argmax with softmax (β parameter) turns any economic model differentiable and calibratable. At β→∞ you recover the classical model exactly.</td>
+<td><em>(coming soon)</em></td>
+</tr>
+<tr>
+<td><strong>The three levels of risk</strong></td>
+<td>Financial risk has three structural levels — bilateral (H⁰), triangular (H¹), systemic (H²) — and existing tools only address the first two. Options exist because H¹ ≠ 0. The 2008 crisis was H².</td>
+<td><em>(coming soon)</em></td>
+</tr>
+<tr>
+<td><strong>Clearing and netting</strong></td>
+<td>Bilateral netting removes edges; CCP novation fills triangles; H² obstructions require a government-level instrument. The Eisenberg-Noe model is an H⁰ fixed-point computation — and what that means for what it can and cannot detect.</td>
+<td><a href="clearing/">Clearing, netting, and the topology of obligation</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="financial-mechanisms">Financial mechanisms</h2>
 <table>
 <thead>
 <tr>
@@ -1956,9 +1987,9 @@ shows how the cohomological framework changes what can be said about it.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Clearing and netting</strong></td>
-<td>Bilateral netting removes edges; CCP novation fills triangles; H² obstructions require a government-level instrument. The Eisenberg-Noe model is an H⁰ fixed-point computation — and what that means for what it can and cannot detect.</td>
-<td><a href="clearing/">Clearing, netting, and the topology of obligation</a></td>
+<td><em>(more coming soon)</em></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
