@@ -26,4 +26,4 @@ These three ideas underpin everything else in EconIAC. Start here.
 
 | Mechanism | What the framework adds | Read |
 | --- | --- | --- |
-| *(more coming soon)* | | |
+| **Covered interest parity** | CIP holds iff the FX connection is flat (H¹ = 0). Post-2008 persistent deviations are a non-trivial H¹ class — a topological obstruction whose floor is set by regulatory capital costs. Central bank swap lines are topological surgery. | [Covered interest parity as an H¹ condition](covered_interest_parity.md) |
