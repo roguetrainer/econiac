@@ -105,6 +105,13 @@ Take four institutions $A, B, C, D$ with obligations:
 A → B,  B → C,  C → A,  C → D,  D → A
 ```
 
+$A \to B$ means A has a gross obligation to B — A owes B money. The arrow
+points from obligor to creditor. These are **gross** exposures: bilateral
+netting is not assumed. This is the right setting for repo and
+securities-lending markets, where rehypothecation means that gross positions
+can be many times net positions, and where a net position of zero can still
+sit inside a large funding loop that matters for systemic risk.
+
 Here $n=4$ nodes, $m=5$ edges, $c=1$ component, so
 $\beta_1 = 5 - 4 + 1 = 2$: the network has exactly two independent
 funding loops, not five (the number of edges) and not one (the number
@@ -146,6 +153,22 @@ object from one that runs with it, and counts toward $\beta_1$ in
 exactly the same way — see
 [β₁](../glossary.md#β₁-independent-funding-loops) for why edge
 orientation is a sign convention, not a separate cycle-counting rule.
+
+**Netting reduces $\beta_1$; CCP novation fills triangles.** Bilateral
+netting between $A$ and $C$ would remove the edge $C \to A$ from the
+graph — Loop 1 ($A \to B \to C \to A$) collapses, the triangle
+disappears, and $\beta_1$ drops from 2 to 1. This is the topological
+content of bilateral netting: it is an instrument that *removes edges*
+from the exposure graph, reducing the cycle rank. A CCP that novates
+all three legs of Loop 1 simultaneously does something stronger: it
+adds the triangular face as a filled-in 2-simplex, making the loop a
+boundary (something that bounds a filled region) rather than a free
+cycle. In homological terms, bilateral netting lowers $m$ and therefore
+$\beta_1$; CCP novation moves a cycle from $H^1$ into the image of the
+boundary map, annihilating it as a generator of $H^1$ entirely. Both
+reduce $\beta_1$, but by different mechanisms — and only CCP novation
+gives the multilateral guarantee that makes the reduction robust to
+the default of one leg.
 
 ---
 
