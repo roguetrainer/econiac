@@ -71,6 +71,7 @@ nav:
     - Rationality is temperature: concepts/rationality_temperature.md
     - The Pentagon identity: concepts/pentagon_identity.md
     - Clearing and netting: concepts/clearing.md
+    - Covered interest parity: concepts/covered_interest_parity.md
 
   - Why EconIAC?:
     - Overview: why/README.md
