@@ -2056,10 +2056,12 @@ edge effectively disappears from the graph.</p>
 <p>If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(C\)</span> net bilaterally in the example above, the edge <span class="arithmatex">\(C \to A\)</span>
 disappears. Loop 1 (<span class="arithmatex">\(A \to B \to C \to A\)</span>) collapses — it can no longer be
 traversed. <span class="arithmatex">\(\beta_1\)</span> drops from 2 to 1.</p>
-<p>But bilateral netting between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(C\)</span> does nothing about:
-- The <span class="arithmatex">\(C \to D \to A\)</span> loop (Loop 2) — it remains
-- Any triangle involving <span class="arithmatex">\(B\)</span> — still present
-- Any default correlation between <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> — invisible to netting</p>
+<p>But bilateral netting between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(C\)</span> does nothing about:</p>
+<ul>
+<li>The <span class="arithmatex">\(C \to D \to A\)</span> loop (Loop 2) — it remains</li>
+<li>Any triangle involving <span class="arithmatex">\(B\)</span> — still present</li>
+<li>Any default correlation between <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> — invisible to netting</li>
+</ul>
 <p>Bilateral netting reduces edge count. It does not change the <em>dimension</em> of the
 simplicial complex. The highest non-degenerate cells are still edges (1-simplices).
 No triangle is filled in.</p>
