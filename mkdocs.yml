@@ -66,6 +66,11 @@ nav:
     - Banks & financial institutions: for/banks.md
     - RegTech & model vendors: for/regtech.md
 
+  - Concepts:
+    - Overview: concepts/README.md
+    - The Pentagon identity: concepts/pentagon_identity.md
+    - Clearing and netting: concepts/clearing.md
+
   - Why EconIAC?:
     - Overview: why/README.md
     - Thermodynamics: why/thermodynamics.md
