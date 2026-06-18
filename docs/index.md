@@ -7,6 +7,7 @@ EconIAC is a Python library for building differentiable macroeconomic and financ
 
 <div style="display:flex; gap:0.75rem; margin: 1.5rem 0; flex-wrap:wrap;">
   <a href="for/overview/" style="display:inline-block; padding:0.5rem 1.2rem; background:#c62828; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">For Practitioners →</a>
+  <a href="concepts/" style="display:inline-block; padding:0.5rem 1.2rem; background:#2e7d32; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">Concepts</a>
   <a href="examples/" style="display:inline-block; padding:0.5rem 1.2rem; background:#3f51b5; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">Examples</a>
   <a href="tutorials/" style="display:inline-block; padding:0.5rem 1.2rem; background:#fff; color:#3f51b5; border:1.5px solid #3f51b5; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">Tutorials</a>
   <a href="https://github.com/roguetrainer/econiac" target="_blank" style="display:inline-block; padding:0.5rem 1.2rem; background:#24292e; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem;">★ Star on GitHub</a>
