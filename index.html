@@ -998,6 +998,34 @@
   
   
     <li class="md-nav__item">
+      <a href="concepts/rationality_temperature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rationality is temperature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="concepts/pentagon_identity/" class="md-nav__link">
         
   
@@ -2430,13 +2458,11 @@ modelling tools you already have, then bring the model into EconIAC to different
 EconIAC treats rationality as a temperature parameter <span class="arithmatex">\(\beta\)</span> — the inverse of decision noise.</p>
 <div class="arithmatex">\[Z_\beta = \frac{1}{\beta} \ln \sum_i e^{\beta U_i}\]</div>
 <p>This single substitution turns every argmax into a differentiable softmax, every
-threshold into a smooth sigmoid, every Leontief minimum into a SoftMin. The result
-is an end-to-end differentiable model calibratable from data.</p>
-<p>At <span class="arithmatex">\(\beta \to \infty\)</span> you recover the classical model exactly — Nash equilibria,
-Leontief multipliers, Shapley values. At finite <span class="arithmatex">\(\beta^*\)</span> (calibrated from observed
-choice variance) you get policy gradients, reverse stress tests, and early-warning
-signals for tipping points.</p>
-<p>See <a href="why/">Why EconIAC?</a> for motivation from economic first principles.</p>
+threshold into a smooth sigmoid, every Leontief minimum into a SoftMin. At
+<span class="arithmatex">\(\beta \to \infty\)</span> you recover the classical model exactly. At finite <span class="arithmatex">\(\beta^*\)</span>
+(calibrated from observed choice variance) you get policy gradients, reverse
+stress tests, and early-warning signals for tipping points.</p>
+<p><a href="concepts/rationality_temperature/">Read more: Rationality is temperature →</a></p>
 <hr />
 <h2 id="papers">Papers</h2>
 <p>EconIAC is the software companion to the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/portfolios/portfolio-g/">Portfolio G</a> papers of the Adelic Simplicial Architecture (ASA). Full bibliography at the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/">ASA site</a>.</p>
