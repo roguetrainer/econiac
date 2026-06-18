@@ -145,6 +145,10 @@ specific result, not just a checkmark.
   $H^2$ early-warning indicator, topological SIFI designation
 - [**Banks and financial institutions**](banks.md) — XVA wrong-way risk, triangular
   risk classification, model-free correlation pricing
+- [**Fund managers**](fund_managers.md) — $\beta_1$ portfolio topology, LDI crisis
+  as $H^2$, currency overlays, ALM joint sheaf, topology arbitrage
+- [**Broker-dealers and prime brokers**](broker_dealers.md) — matched book topology,
+  rehypothecation chain depth, intermediation void risk, clearing scope
 - [**RegTech and model vendors**](regtech.md) — the computational platform for
   bilateral/triangular/systemic risk as a service
 
