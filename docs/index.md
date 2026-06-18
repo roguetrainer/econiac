@@ -127,15 +127,12 @@ EconIAC treats rationality as a temperature parameter $\beta$ — the inverse of
 $$Z_\beta = \frac{1}{\beta} \ln \sum_i e^{\beta U_i}$$
 
 This single substitution turns every argmax into a differentiable softmax, every
-threshold into a smooth sigmoid, every Leontief minimum into a SoftMin. The result
-is an end-to-end differentiable model calibratable from data.
+threshold into a smooth sigmoid, every Leontief minimum into a SoftMin. At
+$\beta \to \infty$ you recover the classical model exactly. At finite $\beta^*$
+(calibrated from observed choice variance) you get policy gradients, reverse
+stress tests, and early-warning signals for tipping points.
 
-At $\beta \to \infty$ you recover the classical model exactly — Nash equilibria,
-Leontief multipliers, Shapley values. At finite $\beta^*$ (calibrated from observed
-choice variance) you get policy gradients, reverse stress tests, and early-warning
-signals for tipping points.
-
-See [Why EconIAC?](why/README.md) for motivation from economic first principles.
+[Read more: Rationality is temperature →](concepts/rationality_temperature.md)
 
 ---
 
