@@ -12,31 +12,27 @@
         <meta name="author" content="Ian R. C. Buckley">
       
       
-        <link rel="canonical" href="https://roguetrainer.github.io/econiac/why/">
+        <link rel="canonical" href="https://roguetrainer.github.io/econiac/concepts/clearing/">
       
       
-        <link rel="prev" href="../for/regtech/">
-      
-      
-        <link rel="next" href="thermodynamics/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Overview - EconIAC</title>
+        <title>Clearing, Netting, and the Topology of Obligation - EconIAC</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +51,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-does-econiac-use-abstract-mathematics" class="md-skip">
+        <a href="#clearing-netting-and-the-topology-of-obligation" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="EconIAC" class="md-header__button md-logo" aria-label="EconIAC" data-md-component="logo">
+    <a href="../.." title="EconIAC" class="md-header__button md-logo" aria-label="EconIAC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Clearing, Netting, and the Topology of Obligation
             
           </span>
         </div>
@@ -227,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -246,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../examples/" class="md-tabs__link">
+      <a href="../../examples/" class="md-tabs__link">
         
   
   
@@ -265,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../glossary/" class="md-tabs__link">
+      <a href="../../glossary/" class="md-tabs__link">
         
   
   
@@ -284,7 +280,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -305,7 +301,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../for/overview/" class="md-tabs__link">
+        <a href="../../for/overview/" class="md-tabs__link">
           
   
   
@@ -321,13 +317,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../why/" class="md-tabs__link">
           
   
   
@@ -347,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../tutorials/" class="md-tabs__link">
+        <a href="../../tutorials/" class="md-tabs__link">
           
   
   
@@ -374,7 +368,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../api/core/manifold/" class="md-tabs__link">
+        <a href="../../api/core/manifold/" class="md-tabs__link">
           
   
   
@@ -413,7 +407,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="EconIAC" class="md-nav__button md-logo" aria-label="EconIAC" data-md-component="logo">
+    <a href="../.." title="EconIAC" class="md-nav__button md-logo" aria-label="EconIAC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -443,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -470,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   
@@ -497,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         
   
   
@@ -524,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -605,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../for/overview/" class="md-nav__link">
+      <a href="../../for/overview/" class="md-nav__link">
         
   
   
@@ -633,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../for/regulators/" class="md-nav__link">
+      <a href="../../for/regulators/" class="md-nav__link">
         
   
   
@@ -661,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../for/banks/" class="md-nav__link">
+      <a href="../../for/banks/" class="md-nav__link">
         
   
   
@@ -689,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../for/regtech/" class="md-nav__link">
+      <a href="../../for/regtech/" class="md-nav__link">
         
   
   
@@ -721,31 +715,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -763,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -778,19 +769,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../why/" class="md-nav__link">
         
   
   
@@ -806,7 +788,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -819,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="thermodynamics/" class="md-nav__link">
+      <a href="../../why/thermodynamics/" class="md-nav__link">
         
   
   
@@ -847,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topology/" class="md-nav__link">
+      <a href="../../why/topology/" class="md-nav__link">
         
   
   
@@ -875,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="geometry/" class="md-nav__link">
+      <a href="../../why/geometry/" class="md-nav__link">
         
   
   
@@ -903,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stock_flow_consistency/" class="md-nav__link">
+      <a href="../../why/stock_flow_consistency/" class="md-nav__link">
         
   
   
@@ -931,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gauge_theory/" class="md-nav__link">
+      <a href="../../why/gauge_theory/" class="md-nav__link">
         
   
   
@@ -959,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="non_associative_algebra/" class="md-nav__link">
+      <a href="../../why/non_associative_algebra/" class="md-nav__link">
         
   
   
@@ -987,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="combinators/" class="md-nav__link">
+      <a href="../../why/combinators/" class="md-nav__link">
         
   
   
@@ -1015,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="curvature/" class="md-nav__link">
+      <a href="../../why/curvature/" class="md-nav__link">
         
   
   
@@ -1043,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="money/" class="md-nav__link">
+      <a href="../../why/money/" class="md-nav__link">
         
   
   
@@ -1071,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sheaves/" class="md-nav__link">
+      <a href="../../why/sheaves/" class="md-nav__link">
         
   
   
@@ -1099,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="abstractions_for_contagion/" class="md-nav__link">
+      <a href="../../why/abstractions_for_contagion/" class="md-nav__link">
         
   
   
@@ -1127,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cohomology/" class="md-nav__link">
+      <a href="../../why/cohomology/" class="md-nav__link">
         
   
   
@@ -1155,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="origami_isa/" class="md-nav__link">
+      <a href="../../why/origami_isa/" class="md-nav__link">
         
   
   
@@ -1183,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="universality/" class="md-nav__link">
+      <a href="../../why/universality/" class="md-nav__link">
         
   
   
@@ -1272,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/" class="md-nav__link">
+      <a href="../../tutorials/" class="md-nav__link">
         
   
   
@@ -1300,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/moniac/" class="md-nav__link">
+      <a href="../../tutorials/moniac/" class="md-nav__link">
         
   
   
@@ -1328,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/budget_simplex_becker/" class="md-nav__link">
+      <a href="../../tutorials/budget_simplex_becker/" class="md-nav__link">
         
   
   
@@ -1356,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/keen_predator_prey/" class="md-nav__link">
+      <a href="../../tutorials/keen_predator_prey/" class="md-nav__link">
         
   
   
@@ -1384,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/gemmes/" class="md-nav__link">
+      <a href="../../tutorials/gemmes/" class="md-nav__link">
         
   
   
@@ -1412,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/gl_pc/" class="md-nav__link">
+      <a href="../../tutorials/gl_pc/" class="md-nav__link">
         
   
   
@@ -1440,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/lowgrow/" class="md-nav__link">
+      <a href="../../tutorials/lowgrow/" class="md-nav__link">
         
   
   
@@ -1468,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/supply_chain/" class="md-nav__link">
+      <a href="../../tutorials/supply_chain/" class="md-nav__link">
         
   
   
@@ -1496,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/cross_currency_swap/" class="md-nav__link">
+      <a href="../../tutorials/cross_currency_swap/" class="md-nav__link">
         
   
   
@@ -1524,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/fraud_detection/" class="md-nav__link">
+      <a href="../../tutorials/fraud_detection/" class="md-nav__link">
         
   
   
@@ -1667,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/core/manifold/" class="md-nav__link">
+      <a href="../../api/core/manifold/" class="md-nav__link">
         
   
   
@@ -1695,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/core/ensemble/" class="md-nav__link">
+      <a href="../../api/core/ensemble/" class="md-nav__link">
         
   
   
@@ -1785,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routing/tir/" class="md-nav__link">
+      <a href="../../api/routing/tir/" class="md-nav__link">
         
   
   
@@ -1813,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routing/attribution/" class="md-nav__link">
+      <a href="../../api/routing/attribution/" class="md-nav__link">
         
   
   
@@ -1903,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/pcl/combinators/" class="md-nav__link">
+      <a href="../../api/pcl/combinators/" class="md-nav__link">
         
   
   
@@ -1959,90 +1940,277 @@
   
 
 
-<h1 id="why-does-econiac-use-abstract-mathematics">Why does Econiac use abstract mathematics?</h1>
-<p>econiac is built on concepts borrowed from physics and pure mathematics that most economists and quants will not have encountered before. This is not gratuitous abstraction — each tool solves a specific problem that the standard toolkit cannot.</p>
+<h1 id="clearing-netting-and-the-topology-of-obligation">Clearing, Netting, and the Topology of Obligation</h1>
+<blockquote>
+<p><em>"The gold at the centre of the system is not gold at all —
+it is the promise of orderly netting."</em>
+— Perry Mehrling, <em>The New Lombard Street</em></p>
+</blockquote>
+<p>Whether a network of financial obligations clears bilaterally, through a
+central counterparty, or not at all is not just an operational detail.
+It changes the <em>topology</em> of the network — which determines what kinds
+of failure cascade are even possible.</p>
+<hr />
+<h2 id="the-three-levels">The three levels</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>The problem it solves</th>
-<th>Read</th>
+<th>Arrangement</th>
+<th>Topology</th>
+<th>Cohomology</th>
+<th>What it eliminates</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Thermodynamics</strong></td>
-<td>How do heterogeneous agents aggregate? The Gibbs distribution is the only honest answer.</td>
-<td><a href="thermodynamics/">Why thermodynamics?</a></td>
+<td>No netting (gross exposures)</td>
+<td>Bare graph</td>
+<td>—</td>
+<td>nothing</td>
 </tr>
 <tr>
-<td><strong>Topology</strong></td>
-<td>Double-entry bookkeeping is ∂²=0 — a theorem, not a convention. Models that violate it are wrong by construction.</td>
-<td><a href="topology/">Why topology?</a></td>
+<td>Bilateral netting</td>
+<td>Fewer edges</td>
+<td>Reduces <span class="arithmatex">\(\beta_1\)</span></td>
+<td>Edge-level loops</td>
 </tr>
 <tr>
-<td><strong>Differential geometry</strong></td>
-<td>Exchange rates multiply. Multiplicative composition along paths is geometry. Curvature is arbitrage.</td>
-<td><a href="geometry/">Why geometry?</a></td>
-</tr>
-<tr>
-<td><strong>Stock-flow consistency</strong></td>
-<td>Every pound exists on two balance sheets. Crises are stock problems; models without stocks cannot detect them.</td>
-<td><a href="stock_flow_consistency/">Why stock-flow consistency?</a></td>
-</tr>
-<tr>
-<td><strong>Gauge theory</strong></td>
-<td>The unit of account is a choice. Models that give different answers in euros vs. dollars have a bug. Gauge invariance fixes it.</td>
-<td><a href="gauge_theory/">Why gauge theory?</a></td>
-</tr>
-<tr>
-<td><strong>Non-associative algebra</strong></td>
-<td>Policy interventions don't associate: (A then B) then C ≠ A then (B then C) when transmission is state-dependent.</td>
-<td><a href="non_associative_algebra/">Why non-associative algebra?</a></td>
-</tr>
-<tr>
-<td><strong>Combinator library</strong></td>
-<td>Conservation is the substrate, not the point. The Pacioli Combinator Library gives you the components — flows, switches, mixers — that determine what a financial model actually does.</td>
-<td><a href="combinators/">Why a combinator library?</a></td>
-</tr>
-<tr>
-<td><strong>Connections and curvature</strong></td>
-<td>The Pacioli identity (∂²=0) says every financial claim has a matching counter-claim — money can be created by banks, but only by simultaneously creating a liability. Flatness is the stronger claim that the path doesn't matter. Only ∂²=0 is always true. Non-flat connections handle discrepancies, float, and arbitrage without abandoning it.</td>
-<td><a href="curvature/">Why connections and curvature?</a></td>
-</tr>
-<tr>
-<td><strong>What is money a claim on?</strong></td>
-<td>Under commodity money the answer is gold. Under credit money it is a loan portfolio. Under fiat money it is the continued functioning of the monetary network itself — a topological property, not a balance-sheet entry. The three regimes are three gauge fixings of the unit of account.</td>
-<td><a href="money/">What is money a claim on?</a></td>
-</tr>
-<tr>
-<td><strong>Sheaves</strong></td>
-<td>Local information may not fit together globally. Sheaves measure that gap — in contagion networks, market signals, neural networks, and biological energy transfer.</td>
-<td><a href="sheaves/">Why sheaves?</a></td>
-</tr>
-<tr>
-<td><strong>Sheaves for contagion</strong></td>
-<td>Why the contagion library uses sheaf Laplacians, Gibbs lifts, and adjoint operators instead of just writing down the fire-sale equations directly.</td>
-<td><a href="abstractions_for_contagion/">Why these abstractions for contagion?</a></td>
-</tr>
-<tr>
-<td><strong>Topological inconsistency</strong></td>
-<td>Residuals measure deviation from a model. H¹ cohomology measures whether local data is mutually reconcilable at all — without any model. H² measures whether the H¹ residuals on the faces of a tetrahedron are mutually consistent with each other. These are different instruments, and only they predict cascades.</td>
-<td><a href="cohomology/">Why measure inconsistency topologically?</a></td>
-</tr>
-<tr>
-<td><strong>Clearing and netting</strong></td>
-<td>Bilateral netting removes edges from the exposure graph. CCP novation fills in a triangle. A genuine H² obstruction cannot be resolved by either — it requires a four-party instrument that fills in a tetrahedron. The 2008 crisis reached that level; only government intervention resolved it.</td>
-<td><a href="../concepts/clearing/">Clearing, netting, and the topology of obligation</a></td>
-</tr>
-<tr>
-<td><strong>Universality across domains</strong></td>
-<td>The three pillars of Econiac — ∂²=0, Gibbs dynamics, H¹ cohomology — appear identically in neuroscience (Friston free energy), ecology, climate tipping points, and metabolism. Econiac is the economics instance of a universal framework called Thermology.</td>
-<td><a href="universality/">Why does Econiac generalise beyond economics?</a></td>
+<td>CCP / multilateral clearing</td>
+<td>Filled triangles</td>
+<td>Annihilates <span class="arithmatex">\(H^1\)</span> generators</td>
+<td>Loop as topological class</td>
 </tr>
 </tbody>
 </table>
-<p>Each page is written for an economist or quant — it starts from your existing problem, not from the mathematics.</p>
+<p>The distinction matters because <em>topology determines what can go wrong</em>, not just
+<em>how much</em> is at risk.</p>
+<hr />
+<h2 id="level-0-gross-exposures">Level 0: gross exposures</h2>
+<p>Start with four institutions <span class="arithmatex">\(A, B, C, D\)</span> and a set of gross obligations:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>A → B  (A owes B)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>B → C  (B owes C)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>C → A  (C owes A)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>C → D
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>D → A
+</code></pre></div>
+<p><span class="arithmatex">\(A \to B\)</span> means A has a gross obligation to B. The arrow runs from obligor to
+creditor. These are <strong>gross</strong> exposures before any netting. This is the natural
+setting for repo and securities-lending markets, where rehypothecation means gross
+positions can be many times net positions — and a net position of zero can still
+sit inside a large funding loop that matters for systemic risk.</p>
+<p>The network has <span class="arithmatex">\(n=4\)</span> nodes, <span class="arithmatex">\(m=5\)</span> edges, <span class="arithmatex">\(c=1\)</span> component, so
+<span class="arithmatex">\(\beta_1 = m - n + c = 2\)</span>: exactly two independent funding loops.</p>
+<hr />
+<h2 id="the-eisenberg-noe-model-clearing-as-an-h0-problem">The Eisenberg-Noe model: clearing as an H⁰ problem</h2>
+<p>The Eisenberg-Noe (2001) model asks: if some institutions cannot pay in full,
+what is the <em>clearing payment vector</em> <span class="arithmatex">\(p^*\)</span> — the actual payments made, respecting
+seniority and pro-rata rules?</p>
+<p>The answer is a fixed point:</p>
+<div class="arithmatex">\[p_i^* = \min\!\left(\bar{p}_i,\; e_i + \sum_j \frac{L_{ji}}{\bar{p}_j} p_j^*\right)\]</div>
+<p>where <span class="arithmatex">\(\bar{p}_i\)</span> is the total liability of institution <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(e_i\)</span> is its
+external asset value.</p>
+<p><strong>In cohomological language, this is an H⁰ computation.</strong> The clearing vector
+<span class="arithmatex">\(p^*\)</span> is the unique global section of the payments sheaf on the <em>1-skeleton</em>
+(the graph of bilateral edges). EN uses only the edges — the bilateral
+exposure matrix <span class="arithmatex">\(L_{ij}\)</span>. When <span class="arithmatex">\(p^*\)</span> exists and is unique, the payments sheaf
+has a consistent global section: <span class="arithmatex">\(H^0\)</span> is well-posed. EN's main theorem
+(existence and uniqueness of <span class="arithmatex">\(p^*\)</span>) is exactly a statement about <span class="arithmatex">\(H^0\)</span>.</p>
+<p><strong>What EN correctly captures:</strong> direct, first-order contagion. If <span class="arithmatex">\(A\)</span> defaults,
+<span class="arithmatex">\(B\)</span> loses exactly the unpaid portion of <span class="arithmatex">\(L_{AB}\)</span>. The cascade propagates along
+edges.</p>
+<p><strong>What EN cannot see:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure mode</th>
+<th>Why EN misses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Funding freeze via shared repo counterparty</td>
+<td>No bilateral edge between MMF and distant dealer — indirect channel is a triangle, not an edge</td>
+</tr>
+<tr>
+<td>Basis blow-out (credit/rates correlation)</td>
+<td>H¹ of the joint sheaf; no bilateral clearing can unwind it</td>
+</tr>
+<tr>
+<td>AIG's CDS book: collateral calls created by the very protection it sold</td>
+<td>Conflict cycle across four institutions — H²; EN's iteration does not converge uniquely</td>
+</tr>
+</tbody>
+</table>
+<p>EN is the right instrument for its level. The problem in 2008 was applying an
+<span class="arithmatex">\(H^0\)</span> tool to a system whose failure was <span class="arithmatex">\(H^1\)</span> (funding loops) and <span class="arithmatex">\(H^2\)</span>
+(cross-desk correlation inconsistency).</p>
+<hr />
+<h2 id="bilateral-netting-removing-edges">Bilateral netting: removing edges</h2>
+<p>A <strong>bilateral netting agreement</strong> (e.g. an ISDA Master Agreement between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>)
+allows <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> to replace their gross claims on each other with a single net
+position:</p>
+<div class="arithmatex">\[L_{AB}^{\mathrm{net}} = \max(L_{AB} - L_{BA},\; 0), \qquad L_{BA}^{\mathrm{net}} = \max(L_{BA} - L_{AB},\; 0)\]</div>
+<p>If both owe each other comparable amounts, <span class="arithmatex">\(L_{AB}^{\mathrm{net}} \approx 0\)</span>: the
+edge effectively disappears from the graph.</p>
+<p><strong>Topological effect: removes an edge, reduces <span class="arithmatex">\(\beta_1\)</span>.</strong></p>
+<p>If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(C\)</span> net bilaterally in the example above, the edge <span class="arithmatex">\(C \to A\)</span>
+disappears. Loop 1 (<span class="arithmatex">\(A \to B \to C \to A\)</span>) collapses — it can no longer be
+traversed. <span class="arithmatex">\(\beta_1\)</span> drops from 2 to 1.</p>
+<p>But bilateral netting between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(C\)</span> does nothing about:</p>
+<ul>
+<li>The <span class="arithmatex">\(C \to D \to A\)</span> loop (Loop 2) — it remains</li>
+<li>Any triangle involving <span class="arithmatex">\(B\)</span> — still present</li>
+<li>Any default correlation between <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> — invisible to netting</li>
+</ul>
+<p>Bilateral netting reduces edge count. It does not change the <em>dimension</em> of the
+simplicial complex. The highest non-degenerate cells are still edges (1-simplices).
+No triangle is filled in.</p>
+<hr />
+<h2 id="when-do-we-fill-in-a-triangle">When do we fill in a triangle?</h2>
+<p>A triangle <span class="arithmatex">\(A\)</span>-<span class="arithmatex">\(B\)</span>-<span class="arithmatex">\(C\)</span> is <strong>filled in</strong> (added as a 2-simplex) when
+<span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(C\)</span> enter a genuinely trilateral arrangement — one where the
+commitment runs to the <em>triple</em>, not just to each bilateral pair.</p>
+<p><strong>The test:</strong> does closing out <span class="arithmatex">\(A\)</span>'s position automatically and simultaneously
+affect <span class="arithmatex">\(B\)</span>'s and <span class="arithmatex">\(C\)</span>'s positions, without any further bilateral negotiation?
+If yes, the triangle is filled in.</p>
+<p>Three examples:</p>
+<h3 id="1-ccp-novation">1. CCP novation</h3>
+<p>A central counterparty (CCP) novates three bilateral trades: <span class="arithmatex">\(A\)</span>-<span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(B\)</span>-<span class="arithmatex">\(C\)</span>,
+<span class="arithmatex">\(C\)</span>-<span class="arithmatex">\(A\)</span>. After novation, the CCP is buyer to every seller and seller to every
+buyer. The three bilateral edges are replaced by three edges to a central node
+(the CCP), and the <em>original triangle</em> <span class="arithmatex">\(A\)</span>-<span class="arithmatex">\(B\)</span>-<span class="arithmatex">\(C\)</span> is filled in as a 2-simplex.</p>
+<p>The loop <span class="arithmatex">\(A \to B \to C \to A\)</span>, which was a free generator of <span class="arithmatex">\(H^1\)</span>, is now the
+<em>boundary</em> of the filled triangle. A boundary is not a free cycle — it bounds
+something. So the loop is annihilated as an <span class="arithmatex">\(H^1\)</span> generator. <span class="arithmatex">\(\beta_1\)</span> drops by 1.</p>
+<p>This is stronger than bilateral netting: CCP novation moves the cycle from <span class="arithmatex">\(H^1\)</span>
+into the <em>image of the boundary map</em> <span class="arithmatex">\(\partial_2\)</span>. Bilateral netting removes an
+edge (changes the graph); CCP novation changes the <em>homological class</em> of the cycle.</p>
+<p>Concretely: CCP novation gives multilateral default protection that bilateral
+netting does not. If <span class="arithmatex">\(A\)</span> defaults under bilateral netting, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> have
+separate close-out processes that may not coordinate. Under CCP novation, a
+single waterfall (initial margin, default fund, CCP equity) covers all three
+simultaneously.</p>
+<h3 id="2-trilateral-repo-agreement">2. Trilateral repo agreement</h3>
+<p>Three dealers agree to a tri-party repo with a custodian bank as agent. The custodian
+holds the collateral and manages substitution rights for all three simultaneously.
+This fills in the triangle: the custodian's simultaneous management of all three legs
+makes it a 2-simplex, not three separate bilateral 1-simplices.</p>
+<h3 id="3-cross-margin-agreement-across-three-products">3. Cross-margin agreement across three products</h3>
+<p>An exchange allows margin offsets across equity futures (<span class="arithmatex">\(A\)</span>), equity options (<span class="arithmatex">\(B\)</span>),
+and index futures (<span class="arithmatex">\(C\)</span>). The offset is computed at the portfolio level — not pairwise.
+This fills in the product-type triangle and annihilates the basis-risk loop as an
+<span class="arithmatex">\(H^1\)</span> generator.</p>
+<hr />
+<h2 id="when-do-we-fill-in-a-tetrahedron">When do we fill in a tetrahedron?</h2>
+<p>A tetrahedron <span class="arithmatex">\(A\)</span>-<span class="arithmatex">\(B\)</span>-<span class="arithmatex">\(C\)</span>-<span class="arithmatex">\(D\)</span> is <strong>filled in</strong> (added as a 3-simplex) when
+all four institutions enter a genuinely quadrilateral arrangement — one where
+the commitment runs to the <em>quadruple</em> simultaneously.</p>
+<p>In practice, this almost never happens in finance. Four-party simultaneous
+commitments are rare: CCPs clear pairs or triples; cross-margining covers
+product pairs or triples at a single venue. This is precisely why <span class="arithmatex">\(H^2\)</span>
+obstructions persist in the financial system — because the resolution instruments
+(bilateral netting, CCPs) only go up to the triangle level.</p>
+<p><strong>The hollow tetrahedron is the default state of any four-institution network.</strong>
+The four triangular faces <span class="arithmatex">\((A,B,C)\)</span>, <span class="arithmatex">\((A,B,D)\)</span>, <span class="arithmatex">\((A,C,D)\)</span>, <span class="arithmatex">\((B,C,D)\)</span> each carry
+their own pricing or risk residual — an <span class="arithmatex">\(H^1\)</span> class computed on that face. Genuine
+<span class="arithmatex">\(H^2\)</span> is a statement about whether those four face-level residuals are mutually
+consistent. If they were all computed from a single model, they automatically satisfy</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>c_BCD − c_ACD + c_ABD − c_ABC = 0
+</code></pre></div>
+<p>This is the boundary identity <span class="arithmatex">\(\delta^2 \circ \delta^1 = 0\)</span> (Pentagon identity in
+its simplest form). A single source, however many triangles, cannot generate <span class="arithmatex">\(H^2\)</span>.</p>
+<p>The <span class="arithmatex">\(H^2\)</span> obstruction appears when the four face residuals come from <em>more than one
+source</em> — different desks, different models, different jurisdictions — that each
+produce internally consistent triangles but whose triangle-level residuals fail to
+close around the tetrahedron.</p>
+<p>This is precisely the structure of the 2008 correlation desk failure: each desk's
+own triangle looked fine; the four overlapping triangles did not close.</p>
+<hr />
+<h2 id="the-rule-of-thumb">The rule of thumb</h2>
+<table>
+<thead>
+<tr>
+<th>Fill in when...</th>
+<th>Cohomological effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(k+1\)</span> parties enter a simultaneous joint arrangement</td>
+<td>Adds a <span class="arithmatex">\(k\)</span>-simplex</td>
+</tr>
+<tr>
+<td>Bilateral netting (2-party)</td>
+<td>Removes an edge (reduces <span class="arithmatex">\(m\)</span>, reduces <span class="arithmatex">\(\beta_1\)</span>)</td>
+</tr>
+<tr>
+<td>CCP novation (3-party simultaneous)</td>
+<td>Fills a triangle (annihilates <span class="arithmatex">\(H^1\)</span> generator)</td>
+</tr>
+<tr>
+<td>Hypothetical 4-party simultaneous resolution</td>
+<td>Fills a tetrahedron (would annihilate <span class="arithmatex">\(H^2\)</span> generator)</td>
+</tr>
+<tr>
+<td>Government bailout of AIG / Lehman</td>
+<td>The only actual <span class="arithmatex">\(H^2\)</span> resolution in 2008 — no private 4-party mechanism existed</td>
+</tr>
+</tbody>
+</table>
+<p>The absence of a filling is not just an operational gap — it is a structural
+constraint on what resolution mechanisms exist. An <span class="arithmatex">\(H^2\)</span> obstruction cannot be
+resolved by any combination of bilateral agreements or CCPs. It requires an
+instrument that acts at the tetrahedron level: a central bank, a resolution
+authority, or (in Paper 426's framework) a <span class="arithmatex">\(K^{\text{top}}\)</span> charge that prices
+the irresolvability before the fact.</p>
+<hr />
+<h2 id="what-the-topology-tells-the-regulator">What the topology tells the regulator</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Classical answer</th>
+<th>Topological answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is this institution safe?</td>
+<td>Net exposure, VaR</td>
+<td><span class="arithmatex">\(H^0\)</span>: consistent global section of payments sheaf</td>
+</tr>
+<tr>
+<td>Is this funding loop dangerous?</td>
+<td>Count the cycles</td>
+<td><span class="arithmatex">\(H^1\)</span>: <span class="arithmatex">\(\beta_1\)</span> independent funding loops; netting or CCP reduces this</td>
+</tr>
+<tr>
+<td>Is this crisis resolvable bilaterally?</td>
+<td>Workout, ISDA close-out</td>
+<td><span class="arithmatex">\(H^2 = 0\)</span>? If not, no bilateral resolution exists</td>
+</tr>
+<tr>
+<td>What would it take to resolve it?</td>
+<td>Government intervention</td>
+<td>Fill the tetrahedron: act at the 4-party level</td>
+</tr>
+</tbody>
+</table>
+<p>The 2008 crisis was a sequence of <span class="arithmatex">\(H^1\)</span> loops (repo, commercial paper)
+cascading into an <span class="arithmatex">\(H^2\)</span> obstruction (AIG, Lehman prime brokerage) that
+only a government-level instrument could resolve.
+No amount of bilateral netting or CCP novation of triangles resolves an <span class="arithmatex">\(H^2\)</span>
+obstruction — because the obstruction lives one dimension higher than any
+available instrument.</p>
+<hr />
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li>Eisenberg, L. &amp; Noe, T.H. (2001). Systemic Risk in Financial Systems. <em>Management Science</em> 47(2).</li>
+<li>Buckley (2026). Paper 397: Systemic Risk as H². doi:10.5281/zenodo.20642908</li>
+<li>Buckley (2026). Paper 426: The Cohomological Regulator. doi:TBD</li>
+<li>Buckley (2026). Paper 430: The Topology of Intermediation. doi:10.5281/zenodo.20694463</li>
+<li>Mehrling, P. (2011). <em>The New Lombard Street</em>. Princeton University Press.</li>
+</ul>
 
 
 
@@ -2092,10 +2260,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
