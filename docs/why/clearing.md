@@ -74,7 +74,7 @@ edges.
 **What EN cannot see:**
 
 | Failure mode | Why EN misses it |
-|---|---|
+| --- | --- |
 | Funding freeze via shared repo counterparty | No bilateral edge between MMF and distant dealer — indirect channel is a triangle, not an edge |
 | Basis blow-out (credit/rates correlation) | H¹ of the joint sheaf; no bilateral clearing can unwind it |
 | AIG's CDS book: collateral calls created by the very protection it sold | Conflict cycle across four institutions — H²; EN's iteration does not converge uniquely |
@@ -103,6 +103,7 @@ disappears. Loop 1 ($A \to B \to C \to A$) collapses — it can no longer be
 traversed. $\beta_1$ drops from 2 to 1.
 
 But bilateral netting between $A$ and $C$ does nothing about:
+
 - The $C \to D \to A$ loop (Loop 2) — it remains
 - Any triangle involving $B$ — still present
 - Any default correlation between $B$ and $C$ — invisible to netting
@@ -200,7 +201,7 @@ own triangle looked fine; the four overlapping triangles did not close.
 ## The rule of thumb
 
 | Fill in when... | Cohomological effect |
-|---|---|
+| --- | --- |
 | $k+1$ parties enter a simultaneous joint arrangement | Adds a $k$-simplex |
 | Bilateral netting (2-party) | Removes an edge (reduces $m$, reduces $\beta_1$) |
 | CCP novation (3-party simultaneous) | Fills a triangle (annihilates $H^1$ generator) |
@@ -219,7 +220,7 @@ the irresolvability before the fact.
 ## What the topology tells the regulator
 
 | Question | Classical answer | Topological answer |
-|---|---|---|
+| --- | --- | --- |
 | Is this institution safe? | Net exposure, VaR | $H^0$: consistent global section of payments sheaf |
 | Is this funding loop dangerous? | Count the cycles | $H^1$: $\beta_1$ independent funding loops; netting or CCP reduces this |
 | Is this crisis resolvable bilaterally? | Workout, ISDA close-out | $H^2 = 0$? If not, no bilateral resolution exists |
