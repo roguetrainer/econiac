@@ -68,6 +68,17 @@ nav:
     - Broker-dealers & prime brokers: for/broker_dealers.md
     - RegTech & model vendors: for/regtech.md
 
+  - The Topology of Risk (book):
+    - Overview: book_topology_of_risk/index.md
+    - "Ch 1: Double-entry as ∂²=0": book_topology_of_risk/ch01_double_entry.md
+    - "Ch 2: Balance sheet as simplicial complex": book_topology_of_risk/ch02_balance_sheet_complex.md
+    - "Ch 3: When do bilateral rates fit together?": book_topology_of_risk/ch03_h0_global_sections.md
+    - "Ch 4: Funding loops and β₁": book_topology_of_risk/ch04_h1_funding_loops.md
+    - "Ch 5: Netting and clearing": book_topology_of_risk/ch05_netting_clearing.md
+    - "Ch 6: Basis, convexity, wrong-way risk": book_topology_of_risk/ch06_h1_unhedgeable.md
+    - "Ch 7: The hollow tetrahedron": book_topology_of_risk/ch07_hollow_tetrahedron.md
+    - "Ch 8: The 2008 crisis as H²": book_topology_of_risk/ch08_2008_crisis.md
+
   - Concepts:
     - Overview: concepts/README.md
     - Rationality is temperature: concepts/rationality_temperature.md
