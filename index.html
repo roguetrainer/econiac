@@ -574,10 +574,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-core-idea-rationality-is-temperature" class="md-nav__link">
+  <a href="#the-core-idea-one-temperature-parameter-every-scale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The core idea: rationality is temperature
+        The core idea: one temperature parameter, every scale
       
     </span>
   </a>
@@ -2834,6 +2834,10 @@
 </code></pre></div>
 <hr />
 <h2 id="what-econiac-does">What EconIAC does</h2>
+<div style="background:#f0f4ff; border-left:4px solid #3f51b5; padding:0.75rem 1rem; margin:1.5rem 0; border-radius:4px;">
+  <strong>New here?</strong> See the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/framework">ASA framework map</a> — a one-page guide showing how MGE, TRS, the ISA trilogy, the H^k ladder, and EconIAC fit together in five layers.
+</div>
+
 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem; margin:1.5rem 0;">
 
 <div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
@@ -2960,19 +2964,73 @@ modelling tools you already have, then bring the model into EconIAC to different
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">min_cost_buffers</span><span class="p">)</span>     <span class="c1"># minimum buffer allocation</span>
 </code></pre></div>
 <hr />
-<h2 id="the-core-idea-rationality-is-temperature">The core idea: rationality is temperature</h2>
-<p>Standard economic models treat agents as perfectly rational (<span class="arithmatex">\(\beta \to \infty\)</span>).
-EconIAC treats rationality as a temperature parameter <span class="arithmatex">\(\beta\)</span> — the inverse of decision noise.</p>
-<div class="arithmatex">\[Z_\beta = \frac{1}{\beta} \ln \sum_i e^{\beta U_i}\]</div>
-<p>This single substitution turns every argmax into a differentiable softmax, every
-threshold into a smooth sigmoid, every Leontief minimum into a SoftMin. At
-<span class="arithmatex">\(\beta \to \infty\)</span> you recover the classical model exactly. At finite <span class="arithmatex">\(\beta^*\)</span>
-(calibrated from observed choice variance) you get policy gradients, reverse
-stress tests, and early-warning signals for tipping points.</p>
+<h2 id="the-core-idea-one-temperature-parameter-every-scale">The core idea: one temperature parameter, every scale</h2>
+<p>The ⊕_β semiring operation</p>
+<div class="arithmatex">\[a \oplus_\beta b = -\frac{1}{\beta}\ln\!\left(e^{-\beta a}+e^{-\beta b}\right)\]</div>
+<p>interpolates continuously between ordinary addition (β → 0), Gibbs weighting
+(0 &lt; β &lt; ∞), and the hard minimum (β → ∞). This single substitution makes any
+discrete model differentiable — and the same parameter β governs systems across
+every scale:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>β → ∞ (classical)</th>
+<th>Finite β</th>
+<th>β = it (quantum)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Economics</td>
+<td>Perfect rationality</td>
+<td>Calibrated agent behaviour</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Statistical mechanics</td>
+<td>Ground state</td>
+<td>Gibbs ensemble</td>
+<td>Quantum amplitude</td>
+</tr>
+<tr>
+<td>Shor's algorithm</td>
+<td>Classical modular exp</td>
+<td>—</td>
+<td>QFT interference</td>
+</tr>
+<tr>
+<td>FMO photosynthesis</td>
+<td>Hard energy minimum</td>
+<td>Thermal fluctuations</td>
+<td>Coherent transfer</td>
+</tr>
+<tr>
+<td>Optimal transport</td>
+<td>Monge map</td>
+<td>Sinkhorn plan</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rationality is temperature</strong> is the economics corollary: standard models treat
+agents as perfectly rational (β → ∞, argmax). EconIAC treats rationality as a
+calibrated temperature — finite β, fit from observed choice variance. At β → ∞
+you recover the classical model exactly. At finite β<em> you get policy gradients,
+reverse stress tests, and early-warning signals for tipping points before they
+arrive. The snap event at β</em> = (3/8)ln(1/(1−ρ)) marks the transition from
+exploratory to committed regimes — computable from network density ρ alone,
+before any individual institution fails.</p>
+<p>EconIAC is the economics and finance engine of the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/">Topological Resonance
+Synthesis (TRS) framework</a>.
+The same β parameter and the same five opcodes (SPLIT/SPLAT/FLIP/FLOP/TWIST)
+that describe quantum circuits and nuclear spectroscopy also describe
+the Keynesian multiplier, XVA pricing, and systemic contagion — not by analogy,
+but as the same theorem instantiated for different sheaves.</p>
 <p><a href="concepts/rationality_temperature/">Read more: Rationality is temperature →</a></p>
 <hr />
 <h2 id="papers">Papers</h2>
-<p>EconIAC is the software companion to the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/portfolios/portfolio-g/">Portfolio G</a> papers of the Adelic Simplicial Architecture (ASA). Full bibliography at the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/">ASA site</a>.</p>
+<p>EconIAC is the economics and finance engine of the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/">Adelic Simplicial Architecture (ASA)</a> — the same β parameter and five-opcode instruction set that governs FMO photosynthesis efficiency, Shor's algorithm, and nuclear spectroscopy also governs the Keynesian multiplier, XVA pricing, and systemic contagion. The papers below are Portfolio G of the ASA; the full bibliography is at the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/">ASA site</a>.</p>
 <h3 id="foundations">Foundations</h3>
 <table>
 <thead>
