@@ -21,6 +21,10 @@ pip install econiac
 
 ## What EconIAC does
 
+<div style="background:#f0f4ff; border-left:4px solid #3f51b5; padding:0.75rem 1rem; margin:1.5rem 0; border-radius:4px;">
+  <strong>New here?</strong> See the <a href="https://roguetrainer.github.io/adelic-simplicial-architecture/framework">ASA framework map</a> — a one-page guide showing how MGE, TRS, the ISA trilogy, the H^k ladder, and EconIAC fit together in five layers.
+</div>
+
 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem; margin:1.5rem 0;">
 
 <div style="border:1px solid #ddd; border-radius:8px; padding:1rem;">
@@ -160,7 +164,7 @@ but as the same theorem instantiated for different sheaves.
 
 ## Papers
 
-EconIAC is the economics and finance engine of the [Topological Resonance Synthesis (TRS) framework](https://roguetrainer.github.io/adelic-simplicial-architecture/) — the same β parameter and five-opcode instruction set that governs FMO photosynthesis efficiency, Shor's algorithm, and nuclear spectroscopy also governs the Keynesian multiplier, XVA pricing, and systemic contagion. The papers below are Portfolio G of the ASA; the full bibliography is at the [ASA site](https://roguetrainer.github.io/adelic-simplicial-architecture/).
+EconIAC is the economics and finance engine of the [Adelic Simplicial Architecture (ASA)](https://roguetrainer.github.io/adelic-simplicial-architecture/) — the same β parameter and five-opcode instruction set that governs FMO photosynthesis efficiency, Shor's algorithm, and nuclear spectroscopy also governs the Keynesian multiplier, XVA pricing, and systemic contagion. The papers below are Portfolio G of the ASA; the full bibliography is at the [ASA site](https://roguetrainer.github.io/adelic-simplicial-architecture/).
 
 ### Foundations
 
